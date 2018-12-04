@@ -4,3 +4,6 @@ C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\bin\D
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Debug\StudyGuide.exe
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Debug\StudyGuide.pdb
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Debug\StudyGuide.csprojResolveAssemblyReference.cache
+C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe.config
+C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.exe
+C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.pdb
