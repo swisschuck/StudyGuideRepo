@@ -1,0 +1,6 @@
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\bin\Debug\StudyGuide.exe.config
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\bin\Debug\StudyGuide.exe
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\bin\Debug\StudyGuide.pdb
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Debug\StudyGuide.exe
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Debug\StudyGuide.pdb
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Debug\StudyGuide.csprojResolveAssemblyReference.cache

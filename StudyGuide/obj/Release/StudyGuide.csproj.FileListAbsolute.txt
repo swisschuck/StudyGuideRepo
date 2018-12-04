@@ -1,0 +1,5 @@
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\bin\Release\StudyGuide.exe.config
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\bin\Release\StudyGuide.exe
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\bin\Release\StudyGuide.pdb
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Release\StudyGuide.exe
+C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Release\StudyGuide.pdb

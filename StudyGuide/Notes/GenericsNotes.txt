@@ -1,0 +1,10 @@
+﻿Generics
+----------------------
+
+1) Generic types allow code reuse with type safety
+
+
+
+Terminology
+-----------------------
+- Generic Class - a class that uses a generic type: <T>
