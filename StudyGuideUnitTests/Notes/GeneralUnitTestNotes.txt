@@ -1,0 +1,6 @@
+﻿Basics of a unit test:
+------------------------------------
+
+1) Test Attributes
+	- [TestClass] - associated with a test class that visual studio will read on build/rebuild and populate the Test Explorer with.
+	- [TestMethod] - associated with a test method that visual studio will read on build/rebuild and populate the Test Explorer with.

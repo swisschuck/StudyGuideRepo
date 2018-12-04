@@ -1,0 +1,40 @@
+﻿Asynchronous Programming Notes
+==============================================
+
+
+- General Notes
+	+ using the .Result on a task makes an implicit call to Task.Wait()
+	+ TPL - Task Parallel Library, The Task Parallel Library (TPL) is a set of public types and APIs in the System.Threading and 
+	  System.Threading.Tasks namespaces. The purpose of the TPL is to make developers more productive by simplifying the process 
+	  of adding parallelism and concurrency to applications. 
+
+- Most common problems with Async programming:
+	+ Race Conditions - The results of asynchronous tasks can be returned in an unpredictable order.
+	+ Results of concurrent tasks must be aggregated - synchronised
+	+ Some tasks may fail - error handling, dealing with lost tasks.
+	+ Thread and processor core usage.
+
+- Task: 
+	+ represents an async operation or a unit of work, an object denoting an ongoing operation or computation.
+	+ This object provides a means to check status, wait, harvest results, store exceptions, etc.
+	+ Two types of tasks:
+		- Code Tasks: make use of the StartNew() and use a thread to execute the operation denoted by the code.
+		- Facade Task: 
+
+- Execution Model:
+	+ Code based tasks are executed by a thread on some processor.
+	+ The thread is dedicated to a task until it completes.
+
+- Closure: 
+	+ is a code block plus is supporting data environment.
+	+ the complier computes closure in response to lambda expression.
+
+- Exception Handling: 
+	+ If a Task throws an exception that goes unhandled
+		- The Task is terminated
+		- Exception is caught and saved as part of an AggregateException and stored in the in task objects Exception property
+		- The stored exception is called uopn during .Wait, .Result, or .WaitAll
+
+- Task Cancellation:
+	+ Cancellation is a cooperative model where the Creator passes a cancellation token, starts the task and later signals to cancel.
+	+ The Task monitors the token, if cancelled performs cleanup and throws exception
