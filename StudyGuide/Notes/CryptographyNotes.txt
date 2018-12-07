@@ -1,0 +1,6 @@
+﻿Security Concepts
+=======================
++ Confidentiality - the process of making data completely unreadable.
++ Inegrity - maintainig consistancy and accuracy throughout its entire lifecycle.
++ Non-Repudiation - the assurance that someone cannot deny the authenticity of the signature of a document/data.
++ Authentication - using a cryptographic system we can establish the identity of a user or system.

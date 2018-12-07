@@ -59,6 +59,7 @@
     <Compile Include="Classes\Examples\Async\ExternalFacadeData.cs" />
     <Compile Include="Classes\Examples\Async\SimpleAsyncClass2.cs" />
     <Compile Include="Classes\Examples\Async\StockData.cs" />
+    <Compile Include="Classes\Examples\Cryptography\CryptographyMenu.cs" />
     <Compile Include="Classes\Examples\Delegates\EventsAndDelegates.cs" />
     <Compile Include="Classes\Examples\GeneralExampleClass.cs" />
     <Compile Include="Classes\Examples\Generics\DataBaseUtilitiesExample.cs" />
@@ -87,6 +88,7 @@
   <ItemGroup>
     <Content Include="Media\Music\GetoBoys-Still instrumental.wav" />
     <Content Include="Notes\AsyncProgrammingNotes.txt" />
+    <Content Include="Notes\CryptographyNotes.txt" />
     <Content Include="Notes\GeneralCSharpNotes.txt" />
     <Content Include="Notes\GenericsNotes.txt" />
   </ItemGroup>

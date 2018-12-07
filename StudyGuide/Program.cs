@@ -1,5 +1,6 @@
 ﻿using StudyGuide.Classes.Examples;
 using StudyGuide.Classes.Examples.Async;
+using StudyGuide.Classes.Examples.Cryptography;
 using StudyGuide.Classes.Examples.Generics;
 using StudyGuide.Classes.Examples.LINQ;
 using System;
@@ -50,6 +51,10 @@ namespace StudyGuide
                         RunAsyncExample();
                         break;
 
+                    case "9":
+                        RunCryptographyExample();
+                        break;
+
                     default:
                         Console.WriteLine("Sorry that option is not valid");
                         Console.WriteLine("");
@@ -75,6 +80,7 @@ namespace StudyGuide
             Console.WriteLine("6 - Generics");
             Console.WriteLine("7 - LINQ");
             Console.WriteLine("8 - ASYNC Programming");
+            Console.WriteLine("9 - Cryptography");
             Console.WriteLine("Esc - Exit Program");
         }
 
@@ -183,6 +189,12 @@ namespace StudyGuide
         {
             AsyncMenu2 AM = new AsyncMenu2();
             AM.RunAsyncMenu();
+        }
+
+        private static void RunCryptographyExample()
+        {
+            CryptographyMenu C = new CryptographyMenu();
+            C.RunCryptographyMenu();
         }
     }
 }
