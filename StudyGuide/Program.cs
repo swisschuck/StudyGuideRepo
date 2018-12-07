@@ -9,7 +9,6 @@ namespace StudyGuide
 {
     class Program
     {
-        // test
         static void Main(string[] args)
         {
             PrintMenu();
