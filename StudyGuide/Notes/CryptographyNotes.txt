@@ -4,3 +4,16 @@
 + Inegrity - maintainig consistancy and accuracy throughout its entire lifecycle.
 + Non-Repudiation - the assurance that someone cannot deny the authenticity of the signature of a document/data.
 + Authentication - using a cryptographic system we can establish the identity of a user or system.
+
+
+Random Numbers
+========================
++ Used for Generating encryption keys.
++ Software based random numbers ares not truly random.
++ Randomness can be created from human interaction.
++ Not practical for server applications.
++ Can use dedicated hardware or a specfically designed algorithm.
++ Microsoft recommends creating 1 instance of System.Random to generate numbers for your application. However System.Random is not thread safe, if your
+  application calls methods on the random objects from multiple threads you must use synchronization objects to ensure that only one thread can access the
+  random number generator at a time.
++ The RNGCryptoServiceProvider class is a more secure way to generate random numbers and is thread safe but it tends to be slower to execute.

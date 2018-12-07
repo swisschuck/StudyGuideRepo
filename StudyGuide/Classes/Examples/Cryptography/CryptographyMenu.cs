@@ -35,9 +35,11 @@ namespace StudyGuide.Classes.Examples.Cryptography
             switch (Console.ReadLine())
             {
                 case "1":
+                    RunSimpleRandomNumbersExample();
                     break;
 
                 case "2":
+                    RunRNGCryptoServiceRandomNumbersExample();
                     break;
 
                 case "3":
@@ -66,13 +68,50 @@ namespace StudyGuide.Classes.Examples.Cryptography
 
         #region private methods
 
+        private void RunRNGCryptoServiceRandomNumbersExample()
+        {
+            Console.WriteLine("RNGCryptoService Simple Random Numbers started");
+            Console.WriteLine();
+
+            CryptographyExample CE = new CryptographyExample(32);
+
+            for (int index = 1; index < 11; index++)
+            {
+                Console.WriteLine(String.Format("Random Number {0}: {1}", index, Convert.ToBase64String(CE.GenerateRandomNumber())));
+                //The final '==' sequence indicates that the last group contained only one byte, and '=' indicates that it contained two bytes.
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("RNGCryptoService Simple Random Numbers complete");
+        }
+
+
+        private void RunSimpleRandomNumbersExample()
+        {
+            Console.WriteLine("Generating Simple Random Numbers");
+
+            Random randomObject = new Random(250);
+
+            for (int index = 0; index < 10; index++)
+            {
+                Console.WriteLine("{0,3}   ", randomObject.Next(-10, 11));
+            }
+
+            Console.WriteLine("Generating Simple Random Numbers complete");
+        }
+
+
         private void printCryptographyMenu()
         {
             Console.WriteLine("Cryptography Menu:");
             Console.WriteLine("----------------------");
-            Console.WriteLine("1) ");
+            Console.WriteLine("1) Random Numbers");
+            Console.WriteLine("2) RNG Crypto Service Random Number");
             Console.WriteLine("0) Back Home");
         }
+
+
+
         #endregion private methods
     }
 }

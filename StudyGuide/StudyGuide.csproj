@@ -59,6 +59,7 @@
     <Compile Include="Classes\Examples\Async\ExternalFacadeData.cs" />
     <Compile Include="Classes\Examples\Async\SimpleAsyncClass2.cs" />
     <Compile Include="Classes\Examples\Async\StockData.cs" />
+    <Compile Include="Classes\Examples\Cryptography\CryptographyExample.cs" />
     <Compile Include="Classes\Examples\Cryptography\CryptographyMenu.cs" />
     <Compile Include="Classes\Examples\Delegates\EventsAndDelegates.cs" />
     <Compile Include="Classes\Examples\GeneralExampleClass.cs" />
