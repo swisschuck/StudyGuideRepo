@@ -5,3 +5,10 @@ C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuideUnitTe
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.pdb
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuideUnitTests\bin\Debug\StudyGuide.exe
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuideUnitTests\bin\Debug\StudyGuide.pdb
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuideUnitTests.dll
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuideUnitTests.pdb
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuide.exe
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuide.pdb
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.csprojResolveAssemblyReference.cache
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.dll
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.pdb

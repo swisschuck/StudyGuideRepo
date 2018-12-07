@@ -543,7 +543,7 @@ namespace StudyGuide.Classes.Examples.Async
 
         private void printAsyncMenu()
         {
-            Console.WriteLine("Generics:");
+            Console.WriteLine("Async Menu:");
             Console.WriteLine("----------------------");
             Console.WriteLine("1) A simple task");
             Console.WriteLine("2) Closure Variable Example");
