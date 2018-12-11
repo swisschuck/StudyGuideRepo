@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Speech" />
@@ -61,6 +65,7 @@
     <Compile Include="Classes\Examples\Async\StockData.cs" />
     <Compile Include="Classes\Examples\Cryptography\CryptographyExample.cs" />
     <Compile Include="Classes\Examples\Cryptography\CryptographyMenu.cs" />
+    <Compile Include="Classes\Examples\Cryptography\User.cs" />
     <Compile Include="Classes\Examples\Delegates\EventsAndDelegates.cs" />
     <Compile Include="Classes\Examples\GeneralExampleClass.cs" />
     <Compile Include="Classes\Examples\Generics\DataBaseUtilitiesExample.cs" />
@@ -80,11 +85,14 @@
     <Compile Include="Classes\Speech\TextToSpeech.cs" />
     <Compile Include="Classes\Testing\GradeBook.cs" />
     <Compile Include="Classes\Testing\GradeStatistics.cs" />
+    <Compile Include="Database\JSON\JSONDataBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Database\JSON\Users.json" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Media\Music\GetoBoys-Still instrumental.wav" />
@@ -94,7 +102,6 @@
     <Content Include="Notes\GenericsNotes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\Utilities\" />
     <Folder Include="Media\Docs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

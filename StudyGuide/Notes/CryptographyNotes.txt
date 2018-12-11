@@ -17,3 +17,40 @@ Random Numbers
   application calls methods on the random objects from multiple threads you must use synchronization objects to ensure that only one thread can access the
   random number generator at a time.
 + The RNGCryptoServiceProvider class is a more secure way to generate random numbers and is thread safe but it tends to be slower to execute.
+
+
+Hashing Numbers
+==========================
++ Hashing is a method of cryptography that converts any form of data into a unique string of text. Any piece of data can be hashed, no matter its size or type. 
+  In traditional hashing, regardless of the data's size, type, or length, the hash that any data produces is always the same length.
++ Makes it easy to compute the hash value for any given message.
++ It is not possible to generate a message that has any given hash.
++ It is not possible to modify a message without changing the hash.
++ It is not possible to find two different messages with the same hash.
++ Hashing is a one way operation, meaning once a piece of data has been hashed it cannot be reversed, unlike encryption which is two way via a key.
++ Explained in General
+	- Someone creates a message to send to another person, they create a hash of that message.
+	- They then send the message and the hash to the person they intend.
+	- The person getting the message uses the hash to check the message for validity and data loss.
+	- If the Hash and data do not match then the sender or method used to send cannot be trusted.
+
++ Common Hashing Algorithms
+	- MD 5: 
+		- replaced MD4 in 1991.
+		- Produces a 128 bit (16 byte) hash value.
+		- Commonly used to verify file integrity.
+		- First collision resistance flaw found in 1996, leading to people recommending moving over to the Secure Hash Family.
+	- SHA-1 (Secure Hash Family): published by the National institute for standards and technology. A 160 bit Hash function which resembles the early MD5 algorithm.
+	- SHA-2 (Secure Hash Family): a family of two similiar hash functions with different block sizes.
+		- SHA 256 uses 256 bit words.
+		- SHA 512 uses 512 bit words. 
+	- SHA-3 (Secure Hash Family): hash function based on the Keccak algorithms. Which is based on SHA-2 but works very different but is not part of the .net framework.
+
++ Hashed Message Authentication Code (HMAC):
+	- a method that combines one way hash function with a secret cryptographic key you get a HMAC.
+	- used to verify the integrity and authenticity of a message.
+
+
+
+
+	

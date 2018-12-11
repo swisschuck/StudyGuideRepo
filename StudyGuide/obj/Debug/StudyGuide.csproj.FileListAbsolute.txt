@@ -9,3 +9,6 @@ C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe
 C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.pdb
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.exe
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.pdb
+C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csprojResolveAssemblyReference.cache
+C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\Newtonsoft.Json.dll
+C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\Newtonsoft.Json.xml
