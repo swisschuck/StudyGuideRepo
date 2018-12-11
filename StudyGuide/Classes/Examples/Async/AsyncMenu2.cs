@@ -39,74 +39,79 @@ namespace StudyGuide.Classes.Examples.Async
             Console.Clear();
             printAsyncMenu();
 
-            switch (Console.ReadLine())
+            do
             {
-                case "1":
-                    RunASimpleTask();
-                    break;
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        RunASimpleTask();
+                        break;
 
-                case "2":
-                    RunClosureExample();
-                    break;
+                    case "2":
+                        RunClosureExample();
+                        break;
 
-                case "3":
-                    RunFacadeVsCodeTaskExample();
-                    break;
+                    case "3":
+                        RunFacadeVsCodeTaskExample();
+                        break;
 
-                case "4":
-                    RunWaitForTasksToComplete();
-                    break;
+                    case "4":
+                        RunWaitForTasksToComplete();
+                        break;
 
-                case "5":
-                    RunWaitForTasksToComplete2();
-                    break;
+                    case "5":
+                        RunWaitForTasksToComplete2();
+                        break;
 
-                case "6":
-                    RunWaitForTasksToComplete3();
-                    break;
+                    case "6":
+                        RunWaitForTasksToComplete3();
+                        break;
 
-                case "7":
-                    RunWaitForTasksToCompleteOneByOne();
-                    break;
+                    case "7":
+                        RunWaitForTasksToCompleteOneByOne();
+                        break;
 
-                case "8":
-                    RunContinueWith();
-                    return;
+                    case "8":
+                        RunContinueWith();
+                        return;
 
-                case "9":
-                    RunTaskExceptionHandling();
-                    return;
+                    case "9":
+                        RunTaskExceptionHandling();
+                        return;
 
-                case "10":
-                    RunTaskExceptionHandling2();
-                    return;
+                    case "10":
+                        RunTaskExceptionHandling2();
+                        return;
 
-                case "11":
-                    RunTaskExceptionHandling3();
-                    return;
+                    case "11":
+                        RunTaskExceptionHandling3();
+                        return;
 
-                case "12":
-                    RunMultiTaskExceptionHandling();
-                    return;
+                    case "12":
+                        RunMultiTaskExceptionHandling();
+                        return;
 
-                case "13":
-                    RunCancellingTasks();
-                    return;
+                    case "13":
+                        RunCancellingTasks();
+                        return;
 
-                case "14":
-                    return;
+                    case "14":
+                        return;
 
-                case "0":
-                    // go back to previous menu
-                    return;
+                    case "0":
+                        // go back to previous menu
+                        return;
 
-                default:
-                    return;
+                    default:
+                        return;
 
+                }
+                Console.WriteLine(string.Empty);
+                printAsyncMenu();
             }
-            Console.WriteLine(string.Empty);
-            printAsyncMenu();
-            Console.ReadLine();
+            while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+
+
         }
         #endregion public methods
 
