@@ -55,5 +55,12 @@ Hashing Numbers
 	  to safeguard passwords in storage.
 	- refers to adding random data to the input of a hash function to guarantee a unique output, the hash, even when the inputs are the same
 
++ Password Based Key Derivation Functions (PBKDF2)
+	- is part of the Public Key Cryptographic Standards (PKC5 #5 Version 2.0) and Internet Engineering Task Force (RFC 2898) Specification
+	- are key derivation functions with a sliding computational cost, aimed to reduce the vulnerability of encrypted keys to brute force attacks
+	- a good default is 50,000 iterations.
+	- you need to balance the number of iterations with acceptable performance.
+	- its good practice to double the number of iterations every 2 years.
+
 
 	

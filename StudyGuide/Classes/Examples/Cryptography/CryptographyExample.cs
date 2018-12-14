@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Diagnostics;
 
 namespace StudyGuide.Classes.Examples.Cryptography
 {
@@ -16,6 +17,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
         private int _defaultRandomNumberLength = 50;
         private const int _keySize = 32;
         private const int _saltLength = 32;
+        private const int _passwordBasedKeyDerivationFunctionIterations = 50000;
 
         #endregion fields
 
@@ -180,10 +182,41 @@ namespace StudyGuide.Classes.Examples.Cryptography
             }
         }
 
+        public static void HashUsingPasswordBasedKeyDerivationFunction(string passwordToBeHashed, int numberOfIterations)
+        {
+            Stopwatch SW = new Stopwatch();
+
+            SW.Start();
+
+            byte[] hashedPassword = GetPasswordBasedKeyDerivationFunction(Encoding.UTF8.GetBytes(passwordToBeHashed), GenerateSalt(), numberOfIterations);
+
+
+            SW.Stop();
+
+            Console.WriteLine();
+            Console.WriteLine(String.Format("password to hash: {0}", passwordToBeHashed));
+            Console.WriteLine(String.Format("hashed password: {0}", Convert.ToBase64String(hashedPassword)));
+            Console.WriteLine(String.Format("with {0} iterations, it took {1} seconds to hash.", 
+                                            numberOfIterations, 
+                                            (decimal)SW.ElapsedMilliseconds / 1000)
+                                            );
+        }
+
+
+
         #endregion public methods
 
 
         #region private methods
+
+        private static byte[] GetPasswordBasedKeyDerivationFunction(byte[] toBeHashed, byte[] salt, int numberOfIterations)
+        {
+            using (Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(toBeHashed, salt, numberOfIterations))
+            {
+                return rfc2898.GetBytes(32);
+            }
+        }
+
         #endregion private methods
     }
 }

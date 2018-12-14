@@ -1,6 +1,7 @@
 ﻿using StudyGuide.Database.JSON;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -14,6 +15,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
 
         const string _originalMessage = "Original Message To Hash";
         const string _originalMessage2 = "This is another message to Hash";
+        const string _tempPassword = "V3ryC0mpl3xP455word";
 
         #endregion fields
 
@@ -74,6 +76,10 @@ namespace StudyGuide.Classes.Examples.Cryptography
                         StoringPasswordsUsingSaltedHashes();
                         break;
 
+                    case "9":
+                        RunPasswordBasedKeyDerivationFunction();
+                        break;
+
                     case "0":
                         // go back to previous menu
                         return;
@@ -93,6 +99,23 @@ namespace StudyGuide.Classes.Examples.Cryptography
 
         #region private methods
 
+        private void RunPasswordBasedKeyDerivationFunction()
+        {
+            Console.WriteLine("Password Based Key Derivation Functions started");
+
+
+            CryptographyExample.HashUsingPasswordBasedKeyDerivationFunction(_tempPassword, 100);
+            CryptographyExample.HashUsingPasswordBasedKeyDerivationFunction(_tempPassword, 1000);
+            CryptographyExample.HashUsingPasswordBasedKeyDerivationFunction(_tempPassword, 10000);
+            CryptographyExample.HashUsingPasswordBasedKeyDerivationFunction(_tempPassword, 50000);
+            CryptographyExample.HashUsingPasswordBasedKeyDerivationFunction(_tempPassword, 100000);
+            CryptographyExample.HashUsingPasswordBasedKeyDerivationFunction(_tempPassword, 200000);
+            CryptographyExample.HashUsingPasswordBasedKeyDerivationFunction(_tempPassword, 500000);
+
+
+            Console.WriteLine("Password Based Key Derivation Functions ended");
+        }
+
         private void StoringPasswordsUsingSaltedHashes()
         {
             // using salted hashes
@@ -106,11 +129,15 @@ namespace StudyGuide.Classes.Examples.Cryptography
             Console.WriteLine("please enter the user name");
             U.UserName = Console.ReadLine().Trim();
 
-            Console.WriteLine("please enter the password");
-            U.Password = Console.ReadLine().Trim();
+            //Console.WriteLine("please enter the password");
+            //U.Password = Console.ReadLine().Trim();
+
+            byte[] salt = CryptographyExample.GenerateSalt();
+            byte[] saltedHash = CryptographyExample.HashPasswordWithSalt(Encoding.UTF8.GetBytes(_tempPassword), salt);
+            U.Password = Convert.ToBase64String(saltedHash);
 
             JSONDataBase JsonDB = new JSONDataBase();
-            JsonDB.DeleteUser(U);
+            JsonDB.AddUser(U);
 
 
             Console.WriteLine("Encrypting Passwords ended");
@@ -248,6 +275,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
             Console.WriteLine("6) SHA-2 (512) Algorithm");
             Console.WriteLine("7) Hashed Message Authentication Code");
             Console.WriteLine("8) Storing Passwords Using Salted Hashes");
+            Console.WriteLine("9) Password Based Key Derivation Functions");
             Console.WriteLine("0) Back Home");
         }
 
