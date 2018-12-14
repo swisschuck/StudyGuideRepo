@@ -15,6 +15,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
         private int? _randomNumberLength;
         private int _defaultRandomNumberLength = 50;
         private const int _keySize = 32;
+        private const int _saltLength = 32;
 
         #endregion fields
 
@@ -135,6 +136,47 @@ namespace StudyGuide.Classes.Examples.Cryptography
             using (SHA512 sha512 = SHA512.Create())
             {
                 return sha512.ComputeHash(toBeHashedByteArray);
+            }
+        }
+
+        public static byte[] GenerateSalt()
+        {
+            using (RNGCryptoServiceProvider RNGCSP = new RNGCryptoServiceProvider())
+            {
+                byte[] randomNumber = new byte[_saltLength];
+                RNGCSP.GetBytes(randomNumber);
+
+                return randomNumber;
+            }
+        }
+
+        public static byte[] CombineByteArrays(byte[] firstByteArray, byte[] secondByteArray)
+        {
+            byte[] returnValue = new byte[firstByteArray.Length + secondByteArray.Length];
+
+            // Buffer.BlockCopy = Copies a specified number of bytes from a source array starting at a particular 
+            //                    offset to a destination array starting at a particular offset.
+
+            // Buffer.ClockCopy parameters
+            // src - (Array) The source buffer
+            // srcOffset - (int32) The zero-based byte offset into src
+            // dst - (Array) The destination buffer.
+            // dstOffset - (int32) The zero-based byte offset into dst.
+            // count - (int32) The number of bytes to copy.
+
+            Buffer.BlockCopy(firstByteArray, 0, returnValue, 0, firstByteArray.Length);
+
+            Buffer.BlockCopy(secondByteArray, 0, returnValue, firstByteArray.Length, secondByteArray.Length);
+
+            return returnValue;
+        }
+
+
+        public static byte[] HashPasswordWithSalt(byte[] toBeHashed, byte[] salt)
+        {
+            using (SHA256 SHA256 = SHA256.Create())
+            {
+                return SHA256.ComputeHash(CombineByteArrays(toBeHashed, salt));
             }
         }
 

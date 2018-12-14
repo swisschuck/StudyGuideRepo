@@ -50,7 +50,10 @@ Hashing Numbers
 	- a method that combines one way hash function with a secret cryptographic key you get a HMAC.
 	- used to verify the integrity and authenticity of a message.
 
-
++ Hashed Salt:
+	- In cryptography, a salt is random data that is used as an additional input to a one-way function that "hashes" data, a password or passphrase. Salts are used 
+	  to safeguard passwords in storage.
+	- refers to adding random data to the input of a hash function to guarantee a unique output, the hash, even when the inputs are the same
 
 
 	

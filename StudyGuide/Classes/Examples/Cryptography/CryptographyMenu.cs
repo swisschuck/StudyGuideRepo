@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudyGuide.Database.JSON;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -70,7 +71,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
                         break;
 
                     case "8":
-                        RunEncryptingPasswordsExample();
+                        StoringPasswordsUsingSaltedHashes();
                         break;
 
                     case "0":
@@ -92,8 +93,10 @@ namespace StudyGuide.Classes.Examples.Cryptography
 
         #region private methods
 
-        private void RunEncryptingPasswordsExample()
+        private void StoringPasswordsUsingSaltedHashes()
         {
+            // using salted hashes
+
             Console.WriteLine("Encrypting Passwords started");
 
             Console.WriteLine(string.Empty);
@@ -105,6 +108,9 @@ namespace StudyGuide.Classes.Examples.Cryptography
 
             Console.WriteLine("please enter the password");
             U.Password = Console.ReadLine().Trim();
+
+            JSONDataBase JsonDB = new JSONDataBase();
+            JsonDB.DeleteUser(U);
 
 
             Console.WriteLine("Encrypting Passwords ended");
@@ -241,7 +247,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
             Console.WriteLine("5) SHA-2 (256) Algorithm");
             Console.WriteLine("6) SHA-2 (512) Algorithm");
             Console.WriteLine("7) Hashed Message Authentication Code");
-            Console.WriteLine("8) Encrypting Passwords");
+            Console.WriteLine("8) Storing Passwords Using Salted Hashes");
             Console.WriteLine("0) Back Home");
         }
 
