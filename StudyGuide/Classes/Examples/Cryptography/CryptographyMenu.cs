@@ -80,6 +80,18 @@ namespace StudyGuide.Classes.Examples.Cryptography
                         RunPasswordBasedKeyDerivationFunction();
                         break;
 
+                    case "10":
+                        RunEncryptionUsingDES();
+                        break;
+
+                    case "11":
+                        RunEncryptionUsingTripleDES();
+                        break;
+
+                    case "12":
+                        RunEncryptionUsingAES();
+                        break;
+
                     case "0":
                         // go back to previous menu
                         return;
@@ -98,6 +110,90 @@ namespace StudyGuide.Classes.Examples.Cryptography
 
 
         #region private methods
+
+        private void RunEncryptionUsingAES()
+        {
+            Console.WriteLine("Encryption Using AES started");
+            Console.WriteLine();
+
+            CryptographyExample cryptographyExample = new CryptographyExample();
+
+            // here we are creating a key that is 32 bytes in length or 256 bits, which is the max size of an AES key
+            byte[] key = cryptographyExample.GenerateRandomNumber(32);
+
+            // AES using a 16 byte Initialization Vector
+            byte[] initializationVector = cryptographyExample.GenerateRandomNumber(16);
+            const string originalMessage = "Text To Encrypt";
+
+            Console.WriteLine(String.Format("Message before encryption: {0}", originalMessage));
+
+            byte[] encryptedMessage = cryptographyExample.EncryptUsingAES(Encoding.UTF8.GetBytes(originalMessage), key, initializationVector);
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedMessage)));
+
+            byte[] decryptedMessage = cryptographyExample.DecryptUsingAES(encryptedMessage, key, initializationVector);
+            Console.WriteLine(String.Format("Message after decryption: {0}", Encoding.UTF8.GetString(decryptedMessage)));
+
+            Console.WriteLine();
+            Console.WriteLine("Encryption Using AES ended");
+        }
+
+        private void RunEncryptionUsingTripleDES()
+        {
+            Console.WriteLine("Encryption Using Triple DES started");
+            Console.WriteLine();
+
+            CryptographyExample cryptographyExample = new CryptographyExample(8);
+
+            // we are using 24 bytes to make use of the tripple key variants of triple DES
+            // 24 bytes represents three 64 bit keys or three 8 byte keys
+            // under the covers our data will be encrypted with key1, then with key2, then with key3
+            byte[] key = cryptographyExample.GenerateRandomNumber(24);
+
+
+            // we could just send in 16 bytes and it will still work fine, however this means that
+            // under the covers our data will get encrypted using the first key, then encrypted again using the 2nd key, then once more
+            // using the first key again.
+            //byte[] key = cryptographyExample.GenerateRandomNumber(16); 
+
+
+            byte[] initializationVector = cryptographyExample.GenerateRandomNumber(8);
+            const string originalMessage = "Text To Encrypt";
+
+            Console.WriteLine(String.Format("Message before encryption: {0}", originalMessage));
+
+            byte[] encryptedMessage = cryptographyExample.EncryptUsingTripleDES(Encoding.UTF8.GetBytes(originalMessage), key, initializationVector);
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedMessage)));
+
+            byte[] decryptedMessage = cryptographyExample.DecryptUsingTripleDES(encryptedMessage, key, initializationVector);
+            Console.WriteLine(String.Format("Message after decryption: {0}", Encoding.UTF8.GetString(decryptedMessage)));
+
+            Console.WriteLine();
+            Console.WriteLine("Encryption Using Triple DES ended");
+        }
+
+        private void RunEncryptionUsingDES()
+        {
+            Console.WriteLine("Encryption Using DES started");
+            Console.WriteLine();
+
+            CryptographyExample cryptographyExample = new CryptographyExample(8);
+
+            byte[] key = cryptographyExample.GenerateRandomNumber();
+            byte[] initializationVector = cryptographyExample.GenerateRandomNumber();
+            const string originalMessage = "Text To Encrypt";
+
+            Console.WriteLine(String.Format("Message before encryption: {0}", originalMessage));
+
+            byte[] encryptedMessage = cryptographyExample.EncryptUsingDES(Encoding.UTF8.GetBytes(originalMessage), key, initializationVector);
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedMessage)));
+
+            byte[] decryptedMessage = cryptographyExample.DecryptUsingDES(encryptedMessage, key, initializationVector);
+            Console.WriteLine(String.Format("Message after decryption: {0}", Encoding.UTF8.GetString(decryptedMessage)));
+
+            Console.WriteLine();
+            Console.WriteLine("Encryption Using DES ended");
+        }
+
 
         private void RunPasswordBasedKeyDerivationFunction()
         {
@@ -250,7 +346,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
 
         private void RunSimpleRandomNumbersExample()
         {
-            Console.WriteLine("Generating Simple Random Numbers");
+            Console.WriteLine("Generating Simple Random Numbers started");
 
             Random randomObject = new Random(250);
 
@@ -276,6 +372,9 @@ namespace StudyGuide.Classes.Examples.Cryptography
             Console.WriteLine("7) Hashed Message Authentication Code");
             Console.WriteLine("8) Storing Passwords Using Salted Hashes");
             Console.WriteLine("9) Password Based Key Derivation Functions");
+            Console.WriteLine("10) Encryption Using DES");
+            Console.WriteLine("11) Encryption Using Triple DES");
+            Console.WriteLine("12) Encryption Using AES");
             Console.WriteLine("0) Back Home");
         }
 

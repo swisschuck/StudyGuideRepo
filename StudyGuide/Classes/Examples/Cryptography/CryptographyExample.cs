@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Diagnostics;
+using System.IO;
 
 namespace StudyGuide.Classes.Examples.Cryptography
 {
@@ -72,6 +73,16 @@ namespace StudyGuide.Classes.Examples.Cryptography
             using (var randomNumberGenerator = new RNGCryptoServiceProvider())
             {
                 byte[] randomNumber = new byte[_randomNumberLength.HasValue ? (int)_randomNumberLength : _defaultRandomNumberLength];
+                randomNumberGenerator.GetBytes(randomNumber);
+                return randomNumber;
+            }
+        }
+
+        public byte[] GenerateRandomNumber(int randomNumberLength)
+        {
+            using (var randomNumberGenerator = new RNGCryptoServiceProvider())
+            {
+                byte[] randomNumber = new byte[randomNumberLength];
                 randomNumberGenerator.GetBytes(randomNumber);
                 return randomNumber;
             }
@@ -196,10 +207,153 @@ namespace StudyGuide.Classes.Examples.Cryptography
             Console.WriteLine();
             Console.WriteLine(String.Format("password to hash: {0}", passwordToBeHashed));
             Console.WriteLine(String.Format("hashed password: {0}", Convert.ToBase64String(hashedPassword)));
-            Console.WriteLine(String.Format("with {0} iterations, it took {1} seconds to hash.", 
-                                            numberOfIterations, 
+            Console.WriteLine(String.Format("with {0} iterations, it took {1} seconds to hash.",
+                                            numberOfIterations,
                                             (decimal)SW.ElapsedMilliseconds / 1000)
                                             );
+        }
+
+        public byte[] EncryptUsingDES(byte[] dataToEncrypt, byte[] key, byte[] initializationVector)
+        {
+            using (DESCryptoServiceProvider desCryptoServiceProvider = new DESCryptoServiceProvider())
+            {
+                desCryptoServiceProvider.Mode = CipherMode.CBC; // CBC = Cypher Block Chaining
+                desCryptoServiceProvider.Padding = PaddingMode.PKCS7;
+
+                desCryptoServiceProvider.Key = key;
+                desCryptoServiceProvider.IV = initializationVector;
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                                                                 desCryptoServiceProvider.CreateEncryptor(),
+                                                                 CryptoStreamMode.Write);
+                    cryptoStream.Write(dataToEncrypt, 0, dataToEncrypt.Length);
+                    cryptoStream.FlushFinalBlock();
+
+                    return memoryStream.ToArray();
+                }
+            }
+        }
+
+
+        public byte[] DecryptUsingDES(byte[] dataToDecrypt, byte[] key, byte[] initializationVector)
+        {
+            using (DESCryptoServiceProvider desCryptoServiceProvider = new DESCryptoServiceProvider())
+            {
+                desCryptoServiceProvider.Mode = CipherMode.CBC; // CBC = Cypher Block Chaining
+                desCryptoServiceProvider.Padding = PaddingMode.PKCS7;
+
+                desCryptoServiceProvider.Key = key;
+                desCryptoServiceProvider.IV = initializationVector;
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                                                                 desCryptoServiceProvider.CreateDecryptor(),
+                                                                 CryptoStreamMode.Write);
+                    cryptoStream.Write(dataToDecrypt, 0, dataToDecrypt.Length);
+                    cryptoStream.FlushFinalBlock();
+
+                    return memoryStream.ToArray();
+                }
+            }
+        }
+
+
+        public byte[] EncryptUsingTripleDES(byte[] dataToEncrypt, byte[] key, byte[] initializationVector)
+        {
+            using (TripleDESCryptoServiceProvider tripleDesCryptoServiceProvider = new TripleDESCryptoServiceProvider())
+            {
+                tripleDesCryptoServiceProvider.Mode = CipherMode.CBC; // CBC = Cypher Block Chaining
+                tripleDesCryptoServiceProvider.Padding = PaddingMode.PKCS7;
+
+                tripleDesCryptoServiceProvider.Key = key;
+                tripleDesCryptoServiceProvider.IV = initializationVector;
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                                                                 tripleDesCryptoServiceProvider.CreateEncryptor(),
+                                                                 CryptoStreamMode.Write);
+                    cryptoStream.Write(dataToEncrypt, 0, dataToEncrypt.Length);
+                    cryptoStream.FlushFinalBlock();
+
+                    return memoryStream.ToArray();
+                }
+            }
+        }
+
+
+        public byte[] DecryptUsingTripleDES(byte[] dataToDecrypt, byte[] key, byte[] initializationVector)
+        {
+            using (TripleDESCryptoServiceProvider tripleDesCryptoServiceProvider = new TripleDESCryptoServiceProvider())
+            {
+                tripleDesCryptoServiceProvider.Mode = CipherMode.CBC; // CBC = Cypher Block Chaining
+                tripleDesCryptoServiceProvider.Padding = PaddingMode.PKCS7;
+
+                tripleDesCryptoServiceProvider.Key = key;
+                tripleDesCryptoServiceProvider.IV = initializationVector;
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                                                                 tripleDesCryptoServiceProvider.CreateDecryptor(),
+                                                                 CryptoStreamMode.Write);
+                    cryptoStream.Write(dataToDecrypt, 0, dataToDecrypt.Length);
+                    cryptoStream.FlushFinalBlock();
+
+                    return memoryStream.ToArray();
+                }
+            }
+        }
+
+
+        public byte[] EncryptUsingAES(byte[] dataToEncrypt, byte[] key, byte[] initializationVector)
+        {
+            using (AesCryptoServiceProvider aesCryptoServiceProvider = new AesCryptoServiceProvider())
+            {
+                aesCryptoServiceProvider.Mode = CipherMode.CBC; // CBC = Cypher Block Chaining
+                aesCryptoServiceProvider.Padding = PaddingMode.PKCS7;
+
+                aesCryptoServiceProvider.Key = key;
+                aesCryptoServiceProvider.IV = initializationVector;
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                                                                 aesCryptoServiceProvider.CreateEncryptor(),
+                                                                 CryptoStreamMode.Write);
+                    cryptoStream.Write(dataToEncrypt, 0, dataToEncrypt.Length);
+                    cryptoStream.FlushFinalBlock();
+
+                    return memoryStream.ToArray();
+                }
+            }
+        }
+
+
+        public byte[] DecryptUsingAES(byte[] dataToDecrypt, byte[] key, byte[] initializationVector)
+        {
+            using (AesCryptoServiceProvider aesCryptoServiceProvider = new AesCryptoServiceProvider())
+            {
+                aesCryptoServiceProvider.Mode = CipherMode.CBC; // CBC = Cypher Block Chaining
+                aesCryptoServiceProvider.Padding = PaddingMode.PKCS7;
+
+                aesCryptoServiceProvider.Key = key;
+                aesCryptoServiceProvider.IV = initializationVector;
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                                                                 aesCryptoServiceProvider.CreateDecryptor(),
+                                                                 CryptoStreamMode.Write);
+                    cryptoStream.Write(dataToDecrypt, 0, dataToDecrypt.Length);
+                    cryptoStream.FlushFinalBlock();
+
+                    return memoryStream.ToArray();
+                }
+            }
         }
 
 
