@@ -92,6 +92,16 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Database\JSON\Users.json" />
+    <None Include="Notes\HelpfulSlides\Cryptography\1-practical-cryptography-dotnet-m1-slides.pdf" />
+    <None Include="Notes\HelpfulSlides\Cryptography\10-practical-cryptography-dotnet-m10-slides.pdf" />
+    <None Include="Notes\HelpfulSlides\Cryptography\2-practical-cryptography-dotnet-m2-slides.pdf" />
+    <None Include="Notes\HelpfulSlides\Cryptography\3-practical-cryptography-dotnet-m3-slides.pdf" />
+    <None Include="Notes\HelpfulSlides\Cryptography\4-practical-cryptography-dotnet-m4-slides.pdf" />
+    <None Include="Notes\HelpfulSlides\Cryptography\5-practical-cryptography-dotnet-m5-slides.pdf" />
+    <None Include="Notes\HelpfulSlides\Cryptography\6-practical-cryptography-dotnet-m6-slides.pdf" />
+    <None Include="Notes\HelpfulSlides\Cryptography\7-practical-cryptography-dotnet-m7-slides.pdf" />
+    <None Include="Notes\HelpfulSlides\Cryptography\8-practical-cryptography-dotnet-m8-slides.pdf" />
+    <None Include="Notes\HelpfulSlides\Cryptography\9-practical-cryptography-dotnet-m9-slides.pdf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

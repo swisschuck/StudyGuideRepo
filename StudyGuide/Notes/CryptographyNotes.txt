@@ -62,5 +62,68 @@ Hashing Numbers
 	- you need to balance the number of iterations with acceptable performance.
 	- its good practice to double the number of iterations every 2 years.
 
++ Symmetric Encryption
+	- is a two way encryption operation that used the same key to encrypt and decrypt the message.
+	- Pros
+		- Extremely Secure
+		- Relatively fast
+	- Cons
+		- Key Sharing can be tricky
+		- lots of damage can be done if the key is compromised
+
+	- Data Encryption Standard (DES) was developed in the early 1970's at IBM
+		- Triple DES - after DES was cracked through some who gives a shit competition, triple DES was created. Triple DES involves applying DES
+		  three times with 2 or 3 different keys. Its secure but its a bit slow.
+		- DES is a block cipher that transforms plaintext into cyphertext.
+		- DES uses a block size of 64 bits.
+		- DES uses a 64 bit key bit only 56 bits are used by the the algorithm.
+		- DES supports different modes of operation in .NET.
+		- DES uses a key schedule for encryption, the generates subkeys for each of the 16 rounds.
+
+	- Advanced Encryption Standard (AES) was adopted by NIST in 2001.
+		- It was selected by yet another who gives a shit competition meant to replace DES.
+		- AES is based on the Rijndael cipher.
+		- uses 128 bit block size and 128, 192, or 256 bit keys.
+		- based on a design known as substitution - permutation network
+			- S-Box performs substitutions
+			- P-Box performs bit shuffling to transpose bits across S-Box inputs
+		- 10 rounds of repetition for 128-bit keys
+		- 12 rounds of repetition for 192-bit keys
+		- 14 rounds of repetition for 256-bit keys
+		- Every key is expanded so a seperate sub-key can be utilized for every round
+		- has yet to be compromised by brute force attacks
+
+	- Initialization Vector:
+		- used with AES, DES, and Triple DES.
+		- is an arbitrary number that can be used along with a secret key for data encryption. 
+		  This number, also called a nonce, is employed only one time in any session.
+		- prevents repetition in data encryption, making it more difficult for a hacker using a dictionary attack to find patterns and break a cipher.
+
++ Asymmetric Encryption
+	- is any cryptographic system that uses pairs of keys: 
+		- public keys which may be disseminated widely
+		- private keys which are known only to the owner. 
+	  This accomplishes two functions: 
+		- authentication, where the public key verifies that a holder of the paired private key sent the message.
+		- encryption, where only the paired private key holder can decrypt the message encrypted with the public key.
+
+	- Pros:
+		- Sender and receiver dont need to share keys prior to message sending.
+		- The Sender only needs the recipients public key.
+
+	- Cons:
+		- Asymmetric encryption is slow compared to symmetric encryption.
+		- you can only encrypt data that is smaller than the size of the key.
+
+	- RSA (Rivest, Shamir, and Adelman - the inventors of the technique)
+		- was developed by RSA Security LLC
+		- is the standard for industrial strength encryption.
+		- is commonly used to encrypt symmetric encryption keys.
+		- uses 1024, 2048, and 4096 bit keys
+		- public and private keys are based on prime numbers
+
+
+
+
 
 	
