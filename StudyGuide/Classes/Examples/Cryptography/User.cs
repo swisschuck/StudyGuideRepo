@@ -32,6 +32,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
             set { _password = value; }
         }
 
+        [JsonIgnore]
         public bool CrudFailed
         {
             get { return _crudFailed; }

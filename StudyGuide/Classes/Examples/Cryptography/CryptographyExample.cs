@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Diagnostics;
 
 namespace StudyGuide.Classes.Examples.Cryptography
 {
@@ -15,6 +16,8 @@ namespace StudyGuide.Classes.Examples.Cryptography
         private int? _randomNumberLength;
         private int _defaultRandomNumberLength = 50;
         private const int _keySize = 32;
+        private const int _saltLength = 32;
+        private const int _passwordBasedKeyDerivationFunctionIterations = 50000;
 
         #endregion fields
 
@@ -138,10 +141,82 @@ namespace StudyGuide.Classes.Examples.Cryptography
             }
         }
 
+        public static byte[] GenerateSalt()
+        {
+            using (RNGCryptoServiceProvider RNGCSP = new RNGCryptoServiceProvider())
+            {
+                byte[] randomNumber = new byte[_saltLength];
+                RNGCSP.GetBytes(randomNumber);
+
+                return randomNumber;
+            }
+        }
+
+        public static byte[] CombineByteArrays(byte[] firstByteArray, byte[] secondByteArray)
+        {
+            byte[] returnValue = new byte[firstByteArray.Length + secondByteArray.Length];
+
+            // Buffer.BlockCopy = Copies a specified number of bytes from a source array starting at a particular 
+            //                    offset to a destination array starting at a particular offset.
+
+            // Buffer.ClockCopy parameters
+            // src - (Array) The source buffer
+            // srcOffset - (int32) The zero-based byte offset into src
+            // dst - (Array) The destination buffer.
+            // dstOffset - (int32) The zero-based byte offset into dst.
+            // count - (int32) The number of bytes to copy.
+
+            Buffer.BlockCopy(firstByteArray, 0, returnValue, 0, firstByteArray.Length);
+
+            Buffer.BlockCopy(secondByteArray, 0, returnValue, firstByteArray.Length, secondByteArray.Length);
+
+            return returnValue;
+        }
+
+
+        public static byte[] HashPasswordWithSalt(byte[] toBeHashed, byte[] salt)
+        {
+            using (SHA256 SHA256 = SHA256.Create())
+            {
+                return SHA256.ComputeHash(CombineByteArrays(toBeHashed, salt));
+            }
+        }
+
+        public static void HashUsingPasswordBasedKeyDerivationFunction(string passwordToBeHashed, int numberOfIterations)
+        {
+            Stopwatch SW = new Stopwatch();
+
+            SW.Start();
+
+            byte[] hashedPassword = GetPasswordBasedKeyDerivationFunction(Encoding.UTF8.GetBytes(passwordToBeHashed), GenerateSalt(), numberOfIterations);
+
+
+            SW.Stop();
+
+            Console.WriteLine();
+            Console.WriteLine(String.Format("password to hash: {0}", passwordToBeHashed));
+            Console.WriteLine(String.Format("hashed password: {0}", Convert.ToBase64String(hashedPassword)));
+            Console.WriteLine(String.Format("with {0} iterations, it took {1} seconds to hash.", 
+                                            numberOfIterations, 
+                                            (decimal)SW.ElapsedMilliseconds / 1000)
+                                            );
+        }
+
+
+
         #endregion public methods
 
 
         #region private methods
+
+        private static byte[] GetPasswordBasedKeyDerivationFunction(byte[] toBeHashed, byte[] salt, int numberOfIterations)
+        {
+            using (Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(toBeHashed, salt, numberOfIterations))
+            {
+                return rfc2898.GetBytes(32);
+            }
+        }
+
         #endregion private methods
     }
 }
