@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Diagnostics;
 using System.IO;
+using StudyGuide.Database.JSON;
 
 namespace StudyGuide.Classes.Examples.Cryptography
 {
@@ -19,6 +20,10 @@ namespace StudyGuide.Classes.Examples.Cryptography
         private const int _keySize = 32;
         private const int _saltLength = 32;
         private const int _passwordBasedKeyDerivationFunctionIterations = 50000;
+        private RSAParameters _publicKey;
+        private RSAParameters _privateKey;
+        private JSONDataBase _jsonDataBaseInstance;
+        private const string _cspContainerName = "MyCSPContainer";
 
         #endregion fields
 
@@ -357,6 +362,143 @@ namespace StudyGuide.Classes.Examples.Cryptography
         }
 
 
+        public void AssignNewRSAKey(bool storeKeysInDB = false)
+        {
+            // here we are saying we want to use a 2048 bit key
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048))
+            {
+                RSA.PersistKeyInCsp = false;
+                _publicKey = RSA.ExportParameters(false);
+                _privateKey = RSA.ExportParameters(true);
+
+                if (storeKeysInDB)
+                {
+                    RSAKeys rsaKeys = new RSAKeys();
+                    rsaKeys.RsaPrivateKey = RSA.ToXmlString(true); // true gets the private key
+                    rsaKeys.RsaPublicKey = RSA.ToXmlString(false);  // false gets the public key
+
+                    _jsonDataBaseInstance = new JSONDataBase();
+                    _jsonDataBaseInstance.AddRSAKey(rsaKeys);
+                }
+            }
+        }
+
+        public byte[] EncryptDataUsingRSA(byte[] dataToEncrypt, bool getKeyFromDataBase = false)
+        {
+            byte[] cipherBytes;
+
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048))
+            {
+                RSA.PersistKeyInCsp = false;
+
+                if (getKeyFromDataBase)
+                {
+                    RSAKeys rsaKeys = _jsonDataBaseInstance.GetRSAKeys();
+                    RSA.FromXmlString(rsaKeys.RsaPublicKey);
+                }
+                else
+                {
+                    RSA.ImportParameters(_publicKey);
+                }
+
+                cipherBytes = RSA.Encrypt(dataToEncrypt, true);
+            }
+
+            return cipherBytes;
+        }
+
+
+        public byte[] DecryptDataUsingRSA(byte[] dataToEncrypt, bool getKeyFromDataBase = false)
+        {
+            byte[] dataToSendBack;
+
+            // using a 2048 bit key
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048))
+            {
+                RSA.PersistKeyInCsp = false; // is set to false because we are not using the key container
+
+                if (getKeyFromDataBase)
+                {
+                    RSAKeys rsaKeys = _jsonDataBaseInstance.GetRSAKeys();
+                    RSA.FromXmlString(rsaKeys.RsaPrivateKey);
+                }
+                else
+                {
+                    RSA.ImportParameters(_privateKey);
+                }
+
+                dataToSendBack = RSA.Decrypt(dataToEncrypt, true); // setting true here adds a padding scheme as an extra protection for our data
+            }
+
+            return dataToSendBack;
+        }
+
+
+        public void AssignNewRSAKeyAndStoreInCSP()
+        {
+            CspParameters cspParameters = new CspParameters(1);
+            cspParameters.KeyContainerName = _cspContainerName;
+            cspParameters.Flags = CspProviderFlags.UseMachineKeyStore;
+            cspParameters.ProviderName = "Microsoft Strong Cryptographic Provider";
+
+            RSACryptoServiceProvider rSACryptoServiceProvider = new RSACryptoServiceProvider(cspParameters)
+            {
+                PersistKeyInCsp = true
+            };
+
+        }
+
+
+        public void DeleteRSPkeyStoredInCSP()
+        {
+            CspParameters cspParameters = new CspParameters
+            {
+                KeyContainerName = _cspContainerName
+            };
+
+            RSACryptoServiceProvider rSACryptoServiceProvider = new RSACryptoServiceProvider(cspParameters)
+            {
+                PersistKeyInCsp = false
+            };
+
+            rSACryptoServiceProvider.Clear();
+        }
+
+
+        public byte[] EncryptDataUsingRSAStoredinCSP(byte[] dataToEncrypt)
+        {
+            byte[] cipherBytes;
+
+            CspParameters cspParameters = new CspParameters
+            {
+                KeyContainerName = _cspContainerName
+            };
+
+            using (RSACryptoServiceProvider rSACryptoServiceProvider = new RSACryptoServiceProvider(2048, cspParameters))
+            {
+                cipherBytes = rSACryptoServiceProvider.Encrypt(dataToEncrypt, false);
+            }
+
+            return cipherBytes;
+        }
+
+
+        public byte[] DecryptDataUsingRSAStoredinCSP(byte[] dataToEncrypt, bool getKeyFromDataBase = false)
+        {
+            byte[] dataToSendBack;
+
+            CspParameters cspParameters = new CspParameters
+            {
+                KeyContainerName = _cspContainerName
+            };
+
+            using (RSACryptoServiceProvider rSACryptoServiceProvider = new RSACryptoServiceProvider(2048, cspParameters))
+            {
+                dataToSendBack = rSACryptoServiceProvider.Decrypt(dataToEncrypt, false);
+            }
+
+            return dataToSendBack;
+        }
 
         #endregion public methods
 

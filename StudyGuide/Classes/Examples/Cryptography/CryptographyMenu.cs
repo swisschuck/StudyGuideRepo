@@ -92,6 +92,18 @@ namespace StudyGuide.Classes.Examples.Cryptography
                         RunEncryptionUsingAES();
                         break;
 
+                    case "13":
+                        RunRsaWithRsaParameterKey();
+                        break;
+
+                    case "14":
+                        RunRsaWithRsaParameterKeyFromDB();
+                        break;
+
+                    case "15":
+                        RunRsaWithRsaParameterKeyFromCSP();
+                        break;
+
                     case "0":
                         // go back to previous menu
                         return;
@@ -110,6 +122,83 @@ namespace StudyGuide.Classes.Examples.Cryptography
 
 
         #region private methods
+
+        private static void RunRsaWithRsaParameterKeyFromCSP()
+        {
+            // CSP = Configuration Service Provider or Windows Key Container
+            // these can be stores as either:
+            //  1) User-level key containers (C:\Users\<user_name>\AppData\Roaming\Microsoft\Crypto\RSA). 
+            //     These are only accessable by the user as they are stored in the users profile
+            //  2) machine-level key container (C:\Users\All Users\Application Data\Microsoft\Crypto\RSA)
+            //     These are stored on a global level that all users on the machine can access
+
+            Console.WriteLine("Encryption Using RSA with Parameter key from CSP started");
+            Console.WriteLine();
+
+            CryptographyExample cryptographyExample = new CryptographyExample();
+
+            const string originalMessage = "Some Text to Encrypt";
+            Console.WriteLine(String.Format("Message before encryption: {0}", originalMessage));
+
+            cryptographyExample.AssignNewRSAKeyAndStoreInCSP();
+
+            byte[] encryptedMessage = cryptographyExample.EncryptDataUsingRSAStoredinCSP(Encoding.UTF8.GetBytes(originalMessage));
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedMessage)));
+
+            byte[] decryptedMessage = cryptographyExample.DecryptDataUsingRSAStoredinCSP(encryptedMessage);
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(decryptedMessage), true));
+
+            cryptographyExample.DeleteRSPkeyStoredInCSP();
+
+            Console.WriteLine();
+            Console.WriteLine("Encryption Using RSA with Parameter key from CSP ended");
+        }
+
+        private static void RunRsaWithRsaParameterKeyFromDB()
+        {
+            Console.WriteLine("Encryption Using RSA with Parameter key from DB started");
+            Console.WriteLine();
+
+            CryptographyExample cryptographyExample = new CryptographyExample();
+
+            const string originalMessage = "Some Text to Encrypt";
+            Console.WriteLine(String.Format("Message before encryption: {0}", originalMessage));
+
+            cryptographyExample.AssignNewRSAKey(true);
+
+            byte[] encryptedMessage = cryptographyExample.EncryptDataUsingRSA(Encoding.UTF8.GetBytes(originalMessage), true);
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedMessage)));
+
+            byte[] decryptedMessage = cryptographyExample.DecryptDataUsingRSA(encryptedMessage);
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(decryptedMessage), true));
+
+
+            Console.WriteLine();
+            Console.WriteLine("Encryption Using RSA with Parameter key from DB ended");
+        }
+
+        private static void RunRsaWithRsaParameterKey()
+        {
+            Console.WriteLine("Encryption Using RSA with Parameter key started");
+            Console.WriteLine();
+
+            CryptographyExample cryptographyExample = new CryptographyExample();
+
+            const string originalMessage = "Some Text to Encrypt";
+            Console.WriteLine(String.Format("Message before encryption: {0}", originalMessage));
+
+            cryptographyExample.AssignNewRSAKey();
+
+            byte[] encryptedMessage = cryptographyExample.EncryptDataUsingRSA(Encoding.UTF8.GetBytes(originalMessage));
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedMessage)));
+
+            byte[] decryptedMessage = cryptographyExample.DecryptDataUsingRSA(encryptedMessage);
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(decryptedMessage)));
+
+
+            Console.WriteLine();
+            Console.WriteLine("Encryption Using RSA with Parameter key ended");
+        }
 
         private void RunEncryptionUsingAES()
         {
@@ -375,6 +464,9 @@ namespace StudyGuide.Classes.Examples.Cryptography
             Console.WriteLine("10) Encryption Using DES");
             Console.WriteLine("11) Encryption Using Triple DES");
             Console.WriteLine("12) Encryption Using AES");
+            Console.WriteLine("13) Encryption Using RSA with Parameter key");
+            Console.WriteLine("14) Encryption Using RSA with Parameter key from DB");
+            Console.WriteLine("15) Encryption Using RSA with Parameter key from CSP");
             Console.WriteLine("0) Back Home");
         }
 
