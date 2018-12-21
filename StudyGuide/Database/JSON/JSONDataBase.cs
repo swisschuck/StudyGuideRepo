@@ -16,6 +16,9 @@ namespace StudyGuide.Database.JSON
         #region fields
 
         private string _userJsonFilePath = @"C:\Repos\StudyGuideRepo\StudyGuide\Database\JSON\Users.json";
+        private string _rsaKeysJsonFilePath = @"C:\Repos\StudyGuideRepo\StudyGuide\Database\JSON\RSAKeys.json";
+        private string _rsaPrivateKeyXMLPath = @"C:\Repos\StudyGuideRepo\StudyGuide\Database\JSON\RSA_PrivateKey.xml";
+        private string _rsaPublicKeyXMLPath = @"C:\Repos\StudyGuideRepo\StudyGuide\Database\JSON\RSA_PublicKey.xml";
 
         #endregion fields
 
@@ -220,6 +223,88 @@ namespace StudyGuide.Database.JSON
             return statusToReturn;
         }
 
+
+        public RSAKeys GetRSAKeys()
+        {
+            RSAKeys rsaKeysToReturn = new RSAKeys();
+
+            try
+            {
+                string privateKeyString = CheckForFile(_rsaPrivateKeyXMLPath);
+                string publicKeyString = CheckForFile(_rsaPublicKeyXMLPath);
+
+                if (String.IsNullOrEmpty(privateKeyString) || String.IsNullOrEmpty(publicKeyString))
+                {
+                    return null;
+                }
+
+                rsaKeysToReturn.RsaPrivateKey = privateKeyString;
+                rsaKeysToReturn.RsaPublicKey = publicKeyString;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return rsaKeysToReturn;
+        }
+
+        public bool AddRSAKey(RSAKeys keysToAdd)
+        {
+            bool statusToReturn = false;
+
+            try
+            {
+                string privateKeyString = CheckForFile(_rsaPrivateKeyXMLPath);
+                string publicKeyString = CheckForFile(_rsaPublicKeyXMLPath);
+
+                if (String.IsNullOrEmpty(privateKeyString) || String.IsNullOrEmpty(publicKeyString))
+                {
+                    return statusToReturn;
+                }
+
+                File.WriteAllText(_rsaPrivateKeyXMLPath, keysToAdd.RsaPrivateKey);
+                File.WriteAllText(_rsaPublicKeyXMLPath, keysToAdd.RsaPublicKey);
+
+                statusToReturn = true;
+            }
+            catch (Exception ex)
+            {
+                return statusToReturn;
+            }
+
+            return statusToReturn;
+        }
+
+        public bool DeleteRSAKey(RSAKeys keysToDelete)
+        {
+            bool statusToReturn = false;
+            const string defaultXMLValues = "<RSAKeyValue></RSAKeyValue>";
+
+            try
+            {
+                string privateKeyString = CheckForFile(_rsaPrivateKeyXMLPath);
+                string publicKeyString = CheckForFile(_rsaPublicKeyXMLPath);
+
+                if (String.IsNullOrEmpty(privateKeyString) || String.IsNullOrEmpty(publicKeyString))
+                {
+                    return statusToReturn;
+                }
+
+                File.WriteAllText(_rsaPrivateKeyXMLPath, defaultXMLValues);
+                File.WriteAllText(_rsaPublicKeyXMLPath, defaultXMLValues);
+
+                statusToReturn = true;
+            }
+            catch (Exception ex)
+            {
+                return statusToReturn;
+            }
+
+            return statusToReturn;
+        }
+
         #endregion public methods
 
 
@@ -232,14 +317,14 @@ namespace StudyGuide.Database.JSON
                 return null;
             }
 
-            string jsonString = File.ReadAllText(filePath);
+            string fileContents = File.ReadAllText(filePath);
 
-            if (String.IsNullOrEmpty(jsonString))
+            if (String.IsNullOrEmpty(fileContents))
             {
                 return null;
             }
 
-            return jsonString;
+            return fileContents;
         }
         #endregion private methods
     }

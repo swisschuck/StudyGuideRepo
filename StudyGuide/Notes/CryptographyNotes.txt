@@ -63,6 +63,7 @@ Hashing Numbers
 	- its good practice to double the number of iterations every 2 years.
 
 + Symmetric Encryption
+==========================
 	- is a two way encryption operation that used the same key to encrypt and decrypt the message.
 	- Pros
 		- Extremely Secure
@@ -100,6 +101,7 @@ Hashing Numbers
 		- prevents repetition in data encryption, making it more difficult for a hacker using a dictionary attack to find patterns and break a cipher.
 
 + Asymmetric Encryption
+==========================
 	- is any cryptographic system that uses pairs of keys: 
 		- public keys which may be disseminated widely
 		- private keys which are known only to the owner. 

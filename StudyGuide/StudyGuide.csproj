@@ -65,6 +65,7 @@
     <Compile Include="Classes\Examples\Async\StockData.cs" />
     <Compile Include="Classes\Examples\Cryptography\CryptographyExample.cs" />
     <Compile Include="Classes\Examples\Cryptography\CryptographyMenu.cs" />
+    <Compile Include="Classes\Examples\Cryptography\RSAKeys.cs" />
     <Compile Include="Classes\Examples\Cryptography\User.cs" />
     <Compile Include="Classes\Examples\Delegates\EventsAndDelegates.cs" />
     <Compile Include="Classes\Examples\GeneralExampleClass.cs" />
@@ -91,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Database\JSON\RSAKeys.json" />
     <None Include="Database\JSON\Users.json" />
     <None Include="Notes\HelpfulSlides\Cryptography\1-practical-cryptography-dotnet-m1-slides.pdf" />
     <None Include="Notes\HelpfulSlides\Cryptography\10-practical-cryptography-dotnet-m10-slides.pdf" />
@@ -105,6 +107,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\JSON\RSA_PrivateKey.xml" />
+    <Content Include="Database\JSON\RSA_PublicKey.xml" />
     <Content Include="Media\Music\GetoBoys-Still instrumental.wav" />
     <Content Include="Notes\AsyncProgrammingNotes.txt" />
     <Content Include="Notes\CryptographyNotes.txt" />
