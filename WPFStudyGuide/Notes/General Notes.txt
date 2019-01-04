@@ -1,0 +1,23 @@
+﻿WPF
+==========================
++ Stands for Windows Presentation Foundation
++ Is part of .NET 3.0 or greater
++ shipped with Vista
++ Redistributable for XP and Windows 2003
++ High Level Design
+	- Presentation Framework (.NET)
+	- Presentation Core (.NET)
+	- Composition Engine or MIL (Unmanaged)
+	- DirectX (Unmanaged)
+
++ Xaml (Extensable markup language)
+	- WPF was designed to be Xaml friendly but they dont need one another to function.
+	- xaml uses a UI tree of objects that contains Controls and primitives
+
++ Controls
+	- Are split into two groups/namespaces:
+		- Normal Controls: found in the System.Windows.Controls namespace (Button, Checkbox, Radio Button)
+		- Primative Controls: found in the System.Windows.Controls.Primatives (ButtonBase, Toggle Button, Repeat Button) and are not meant to be used by themselves,
+		  but rather to be used with other controls.
+
++ MainWindow.xaml - is the principal or first window that is created for you.

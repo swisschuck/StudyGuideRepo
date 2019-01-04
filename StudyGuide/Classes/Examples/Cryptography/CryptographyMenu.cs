@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,10 @@ namespace StudyGuide.Classes.Examples.Cryptography
         const string _originalMessage = "Original Message To Hash";
         const string _originalMessage2 = "This is another message to Hash";
         const string _tempPassword = "V3ryC0mpl3xP455word";
+        const string _hybridMessage = "This is a message to encrypt with hybrid";
+        const string _signatureMessage = "This is a message to encrypt with a digital signature";
+        const string _hybridWithSignatureMessage = "This is a message to encrypt using hybrid encryption and a digital signature";
+        const string _secureStringToStore = "my secure string";
 
         #endregion fields
 
@@ -104,6 +109,26 @@ namespace StudyGuide.Classes.Examples.Cryptography
                         RunRsaWithRsaParameterKeyFromCSP();
                         break;
 
+                    case "16":
+                        RunHybridEncryption();
+                        break;
+
+                    case "17":
+                        RunHybridEncryptionWithIntegrityCheck();
+                        break;
+
+                    case "18":
+                        RunDigitalSignature();
+                        break;
+
+                    case "19":
+                        RunHybridEncryptionWithDigitalSignature();
+                        break;
+
+                    case "20":
+                        RunSecureString();
+                        break;
+
                     case "0":
                         // go back to previous menu
                         return;
@@ -123,10 +148,160 @@ namespace StudyGuide.Classes.Examples.Cryptography
 
         #region private methods
 
+        private static void RunSecureString()
+        {
+            Console.WriteLine("Secure String started");
+            Console.WriteLine();
+
+
+            Console.WriteLine(String.Format("string before securing string: {0}", _secureStringToStore));
+            SecureStringExample SSE = new SecureStringExample();
+
+            SecureString SS = SSE.ToSecureString(_secureStringToStore.ToCharArray());
+
+            char[] charArray = SSE.CharacterData(SS);
+
+            for (int index = 0; index < charArray.Length; index++)
+            {
+                Console.WriteLine(String.Format("character {0}: {1}", index.ToString(), charArray[index]));
+            }
+
+            string unsecure = SSE.ConvertToUnsecureString(SS);
+            Console.WriteLine(String.Format("unsecure string: {0}", unsecure));
+
+            Console.WriteLine();
+            Console.WriteLine("Secure String  ended");
+        }
+
+
+        private static void RunHybridEncryptionWithDigitalSignature()
+        {
+            Console.WriteLine("Hybrid Encryption With Digital Signature started");
+            Console.WriteLine();
+
+            Console.WriteLine(String.Format("Message before encryption: {0}", _hybridWithSignatureMessage));
+
+            HybridEncryption HP = new HybridEncryption();
+
+            RsaWithRsaParameterKey rsaParams = new RsaWithRsaParameterKey();
+            rsaParams.AssignNewKeys();
+
+            DigitalSignatures DS = new DigitalSignatures();
+            DS.AssignNewKey();
+
+            try
+            {
+                EncryptedPacket encryptedBlock = HP.EncryptDataWithSignature(Encoding.UTF8.GetBytes(_hybridWithSignatureMessage), rsaParams, DS);
+                Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedBlock.EncryptedData)));
+
+                byte[] decryptedData = HP.DecryptDataWithSignature(encryptedBlock, rsaParams, DS);
+                Console.WriteLine(String.Format("Message after decryption: {0}", Encoding.UTF8.GetString(decryptedData)));
+
+            }
+            catch (CryptographicException CE)
+            {
+                Console.WriteLine(String.Format("Hybrid Encryption With Digital Signature failed, Error: {0}", CE.Message));
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Hybrid Encryption With Digital Signature ended");
+        }
+
+
+        private static void RunDigitalSignature()
+        {
+            Console.WriteLine("Digital Signatures started");
+            Console.WriteLine();
+
+            Console.WriteLine(String.Format("Message before encryption: {0}", _signatureMessage));
+            byte[] messageToSign = Encoding.UTF8.GetBytes(_signatureMessage);
+            byte[] hashedDocument;
+
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                hashedDocument = sha256.ComputeHash(messageToSign);
+            }
+
+            DigitalSignatures DS = new DigitalSignatures();
+            DS.AssignNewKey();
+
+            byte[] signature = DS.SignData(hashedDocument);
+
+            Console.WriteLine(String.Format("Digital Signature: {0}", Encoding.UTF8.GetString(signature)));
+
+            bool isSignatureVerified = DS.VerifySignature(hashedDocument, signature);
+
+            Console.WriteLine(String.Format("Verify Signature Results: {0}", isSignatureVerified.ToString()));
+
+            Console.WriteLine();
+            Console.WriteLine("Digital Signatures ended");
+        }
+
+        private static void RunHybridEncryptionWithIntegrityCheck()
+        {
+            Console.WriteLine("Hybrid Encryption With Integrity Check started");
+            Console.WriteLine();
+
+            Console.WriteLine(String.Format("Message before encryption: {0}", _hybridMessage));
+
+            // generate our private and public keys
+            RsaWithRsaParameterKey rsaParams = new RsaWithRsaParameterKey();
+            rsaParams.AssignNewKeys();
+
+            try
+            {
+                HybridEncryption HE = new HybridEncryption();
+
+                // encrypt the data 
+                EncryptedPacket encryptedBlock = HE.EncryptDataWithIntegrity(Encoding.UTF8.GetBytes(_hybridMessage), rsaParams);
+                Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedBlock.EncryptedData)));
+
+                // decrypt the data
+                // we can put a break point here, alter the encrypted data of the packet before we pass it into the DecryptDataWithIntegrity() method, which will
+                // then do the compare of the HMAC hashes, fail and get caught in this try/catch
+                byte[] decryptedData = HE.DecryptDataWithIntegrity(encryptedBlock, rsaParams);
+                Console.WriteLine(String.Format("Message after decryption: {0}", Encoding.UTF8.GetString(decryptedData)));
+            }
+            catch (CryptographicException CE)
+            {
+                Console.WriteLine("Hybrid Encryption With Integrity failed, Error: " + CE.Message);
+            }
+
+
+            Console.WriteLine();
+            Console.WriteLine("Hybrid Encryption With Integrity Check ended");
+        }
+
+        private static void RunHybridEncryption()
+        {
+            Console.WriteLine("Hybrid Encryption started");
+            Console.WriteLine();
+
+            Console.WriteLine(String.Format("Message before encryption: {0}", _hybridMessage));
+
+            // generate our private and public keys
+            RsaWithRsaParameterKey rsaParams = new RsaWithRsaParameterKey();
+            rsaParams.AssignNewKeys();
+
+
+            HybridEncryption HE = new HybridEncryption();
+
+            // encrypt the data 
+            EncryptedPacket encryptedBlock = HE.EncryptData(Encoding.UTF8.GetBytes(_hybridMessage), rsaParams);
+            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedBlock.EncryptedData)));
+
+
+            byte[] decryptedData = HE.DecryptData(encryptedBlock, rsaParams);
+            Console.WriteLine(String.Format("Message after decryption: {0}", Encoding.UTF8.GetString(decryptedData)));
+
+            Console.WriteLine();
+            Console.WriteLine("Hybrid Encryption ended");
+        }
+
         private static void RunRsaWithRsaParameterKeyFromCSP()
         {
             // CSP = Configuration Service Provider or Windows Key Container
-            // these can be stores as either:
+            // these can be stored as either:
             //  1) User-level key containers (C:\Users\<user_name>\AppData\Roaming\Microsoft\Crypto\RSA). 
             //     These are only accessable by the user as they are stored in the users profile
             //  2) machine-level key container (C:\Users\All Users\Application Data\Microsoft\Crypto\RSA)
@@ -146,7 +321,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
             Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(encryptedMessage)));
 
             byte[] decryptedMessage = cryptographyExample.DecryptDataUsingRSAStoredinCSP(encryptedMessage);
-            Console.WriteLine(String.Format("Message after encryption: {0}", Encoding.UTF8.GetString(decryptedMessage), true));
+            Console.WriteLine(String.Format("Message after decryption: {0}", Encoding.UTF8.GetString(decryptedMessage), true));
 
             cryptographyExample.DeleteRSPkeyStoredInCSP();
 
@@ -467,6 +642,11 @@ namespace StudyGuide.Classes.Examples.Cryptography
             Console.WriteLine("13) Encryption Using RSA with Parameter key");
             Console.WriteLine("14) Encryption Using RSA with Parameter key from DB");
             Console.WriteLine("15) Encryption Using RSA with Parameter key from CSP");
+            Console.WriteLine("16) Hybrid Encryption");
+            Console.WriteLine("17) Hybrid Encryption with Integrity check");
+            Console.WriteLine("18) Digital Signatures");
+            Console.WriteLine("19) Hybrid Encryption with Digital Signatures");
+            Console.WriteLine("20) Secure String");
             Console.WriteLine("0) Back Home");
         }
 

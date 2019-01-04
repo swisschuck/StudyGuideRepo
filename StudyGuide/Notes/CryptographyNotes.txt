@@ -125,7 +125,68 @@ Hashing Numbers
 		- public and private keys are based on prime numbers
 
 
++ Hybrid Encryption
+==========================
+	- Uses the best of both worlds (Symmetric & Asymmetric), using the fast encryption of AES with the safer key created by RSA.
+	- Symmetric keys are encrypted with asymmetric encryption such as RSA.
+	- Steps broken down:
+		- Sender generates AES session key (256 bit/32 byte).
+		- Sender generates Initialization Vector (128 bit).
+		- Sender encrypts message using AES with session key and IV.
+		- Sender encrypts session key with RSA using receivers public key.
+		- Sender then stores the encrypted data, encrypted session key, and the IV, then sends to receiver.
+		- Receiver then decrypts the session key using RSA and their private key.
+		- Receiver then decrypts message using decrypted key and IV.
+
+	- Integrity Checks
+		- Used to guard against data tempering or corruption.
+		- Easier ways include using standard hashing like MD5, SHA1, or SHA2.
 
 
++ Digital Signatures
+==========================
+	- is used to claim authenticity of a message
+	- digital signatures give both authentication and non-repudiation
+	- based on asymmetric cryptography
+	- they consist of:
+		- Public and Private key generation using RSA
+		- Signing algorithm using private key
+		- Signature verification algorithm using the public key
 
-	
+	- high level process:
+		- Sender encrypts their data
+		- Sender takes a hash of her data
+		- Sender signs the data with her private signing key
+		- Sender sends data, hash and signature to Receiver
+		- Receiver calculates hash of encrypted data
+		- Receiver verifies the digital signature using the public key
+
+	- needs 3 main .net classes to work
+		- RSACrypteServiceProvider: needed to manage our encryption keys
+		- RSAPKCS1SignatureFormatter: 
+		- RSAPKCS1SignatureDeFormatter:
+
+
++ Secure String
+==========================
+	- System.String is not a secure solution and has the following problems:
+		- leaves several copies in memory
+		- Not Encrypted
+		- Not Mutable, old copied in memory
+		- No effectice way to clear out memory
+
+	- SecureString is stored in encrypted memory
+		- they are only unencrypted when they are accessed
+		- garbage collection will not move the SecureString around in memory
+		- implements IDisposable which will allow you to zero out the value from memory
+		- can be locked down as read only
+
+	- Data Protection API (DPAPI)
+		- is a set of function calls that provide OS level data protection services to use for system processes or Operating system level protection
+		- Provides confidentiality using encryption
+		- is a password based data protection service, using the users login credential
+		- are a part of the Crypt32.dll library
+		- it does not store your data for you, it only encrypts it, so applications that make use of this must implement their own storage methods of the actual
+		  encrypted data.
+		- Generates a master key that is protected by the users password, which is stored in the users profile.
+		- Master keys have an expiration date
