@@ -1,4 +1,4 @@
-﻿WPF
+﻿WPF - General
 ==========================
 + Stands for Windows Presentation Foundation
 + Is part of .NET 3.0 or greater
@@ -21,3 +21,8 @@
 		  but rather to be used with other controls.
 
 + MainWindow.xaml - is the principal or first window that is created for you.
+
+Layouts * Panels
+=====================
++ Grids
+	- Are composed of rows and columns, which are created via Row and Column definitions

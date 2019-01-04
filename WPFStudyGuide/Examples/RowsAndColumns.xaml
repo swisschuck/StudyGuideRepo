@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="WPFStudyGuide.Examples.RowsAndColumns"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        
+        <!-- 1st Row -->
+        <Rectangle Fill="Red" Grid.Row="0" />
+        <Rectangle Fill="Blue" Grid.Row="0" Grid.Column="1"/>
+        <Label Content="Red Grid.Row = 0 Column 1 by default &#10; single *" FontSize="24" Grid.Row="0"/>
+        <Label Content="Blue Grid.Row = 0 Grid.Column = 1 &#10; single *" FontSize="24" Grid.Row="0" Grid.Column="1" Foreground="White"/>
+
+        <!-- 2nd Row -->
+        <Rectangle Fill="Purple" Grid.Row="1"/>
+        <Rectangle Fill="Orange" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Purple Grid.Row = 1 &#10; single *" FontSize="24" Grid.Row="1" Grid.ColumnSpan="2" Foreground="White"/>
+        <Label Content="Orange Grid.Row = 1 Grid.Column = 1 &#10; single *" FontSize="24" Grid.Row="1" Grid.Column="1"/>
+
+        <!-- 3rd Row -->
+        <Rectangle Fill="Aqua" Grid.Row="2" />
+        <Rectangle Fill="Green" Grid.Row="2" Grid.Column="1"/>
+        <Label Content="Aqua Grid.Row = 2 &#10; double *" FontSize="24" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Label Content="Green Grid.Row = 2 Grid.Column = 1 &#10; double *" FontSize="24" Grid.Row="2" Grid.Column="1" Foreground="White"/>
+
+        <!-- 4th Row -->
+        <Rectangle Fill="Yellow" Grid.Row="3" Grid.Column="0"/>
+        <Rectangle Fill="Fuchsia" Grid.Row="3" Grid.Column="1"/>
+        <Label Content="Yellow Grid.Row = 3 &#10; double *" FontSize="24" Grid.Row="3" Grid.ColumnSpan="2"/>
+        <Label Content="Fuchsia Grid.Row = 3 Grid.Column = 1 &#10; double *" FontSize="24" Grid.Row="3" Grid.Column="1" Foreground="White"/>
+
+        <!-- 5th Row -->
+        <Rectangle Fill="Brown" Grid.Row="4" />
+        <Rectangle Fill="Gray" Grid.Row="4" Grid.Column="1"/>
+        <Label Content="Brown Grid.Row = 4 &#10; Auto *" FontSize="24" Grid.Row="4" Grid.ColumnSpan="2" Foreground="White"/>
+        <Label Content="Gray Grid.Row = 4 Grid.Column = 1 &#10; Auto *" FontSize="24" Grid.Row="4" Grid.Column="1"/>
+        
+        <!-- 6th Row -->
+        <Rectangle Fill="Black" Grid.Row="5"/>
+        <Rectangle Fill="Silver" Grid.Row="5" Grid.Column="1"/>
+        <Label Content="Black Grid.Row = 5 &#10; single *" FontSize="24" Grid.Row="5" Grid.ColumnSpan="2" Foreground="White"/>
+        <Label Content="Silver Grid.Row = 5 Grid.Column = 1 &#10; single *" FontSize="24" Grid.Row="5" Grid.Column="1"/>
+
+    </Grid>
+</UserControl>
