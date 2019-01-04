@@ -125,7 +125,44 @@ Hashing Numbers
 		- public and private keys are based on prime numbers
 
 
++ Hybrid Encryption
+==========================
+	- Uses the best of both worlds (Symmetric & Asymmetric), using the fast encryption of AES with the safer key created by RSA.
+	- Symmetric keys are encrypted with asymmetric encryption such as RSA.
+	- Steps broken down:
+		- Sender generates AES session key (256 bit/32 byte).
+		- Sender generates Initialization Vector (128 bit).
+		- Sender encrypts message using AES with session key and IV.
+		- Sender encrypts session key with RSA using receivers public key.
+		- Sender then stores the encrypted data, encrypted session key, and the IV, then sends to receiver.
+		- Receiver then decrypts the session key using RSA and their private key.
+		- Receiver then decrypts message using decrypted key and IV.
+
+	- Integrity Checks
+		- Used to guard against data tempering or corruption.
+		- Easier ways include using standard hashing like MD5, SHA1, or SHA2.
 
 
++ Digital Signatures
+==========================
+	- is used to claim authenticity of a message
+	- digital signatures give both authentication and non-repudiation
+	- based on asymmetric cryptography
+	- they consist of:
+		- Public and Private key generation using RSA
+		- Signing algorithm using private key
+		- Signature verification algorithm using the public key
 
+	- high level process:
+		- Sender encrypts their data
+		- Sender takes a hash of her data
+		- Sender signs the data with her private signing key
+		- Sender sends data, hash and signature to Receiver
+		- Receiver calculates hash of encrypted data
+		- Receiver verifies the digital signature using the public key
+
+	- needs 3 main .net classes to work
+		- RSACrypteServiceProvider: needed to manage our encryption keys
+		- RSAPKCS1SignatureFormatter: 
+		- RSAPKCS1SignatureDeFormatter:
 	
