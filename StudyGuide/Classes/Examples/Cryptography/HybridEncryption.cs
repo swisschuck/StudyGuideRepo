@@ -123,6 +123,70 @@ namespace StudyGuide.Classes.Examples.Cryptography
         }
 
 
+        #region Hybrid with Signature
+
+        public EncryptedPacket EncryptDataWithSignature(byte[] originalMessage, RsaWithRsaParameterKey rsaParams, DigitalSignatures DS)
+        {
+            // Sender generates AES session key
+            byte[] sessionKey = _cryptographyExample.GenerateRandomNumber(32);
+
+            // Sender generates Initialization Vector 
+            byte[] initializationVector = _cryptographyExample.GenerateRandomNumber(16);
+
+            // Sender stores that IV in the packet object
+            EncryptedPacket EP = new EncryptedPacket
+            {
+                IV = initializationVector
+            };
+
+            // Sender encrypts data using AES
+            EP.EncryptedData = _cryptographyExample.EncryptUsingAES(originalMessage, sessionKey, EP.IV);
+
+            //Sender encrypts the session key with RSA
+            EP.EncryptedSessionKey = rsaParams.EncryptData(sessionKey);
+
+            // Sender generates hash mac using our session key
+            using (HMACSHA256 hmac = new HMACSHA256(sessionKey))
+            {
+                EP.Hmac = hmac.ComputeHash(EP.EncryptedData);
+            }
+
+            //Sender signs the message with a digital signature
+            EP.Signature = DS.SignData(EP.Hmac);
+
+            return EP;
+        }
+
+        public byte[] DecryptDataWithSignature(EncryptedPacket EP, RsaWithRsaParameterKey rsaParams, DigitalSignatures DS)
+        {
+            // Receiver decrypts AES session key with RSA
+            byte[] decryptedSessionKey = rsaParams.DecryptData(EP.EncryptedSessionKey);
+
+
+            // Receiver compares 
+            using (HMACSHA256 hmac = new HMACSHA256(decryptedSessionKey))
+            {
+                byte[] hmacToCheck = hmac.ComputeHash(EP.EncryptedData);
+
+                if (!CompareHashes(EP.Hmac, hmacToCheck))
+                {
+                    throw new CryptographicException("HMAC for decryption does not match encrypted packet HMAC");
+                }
+
+                if (!DS.VerifySignature(EP.Hmac, EP.Signature))
+                {
+                    throw new CryptographicException("Digital Signature cannot be verified");
+                }
+            }
+
+            // Receiver decrypts the data wuth AES using the decrypted session key
+            byte[] decryptedData = _cryptographyExample.DecryptUsingAES(EP.EncryptedData, decryptedSessionKey, EP.IV);
+
+            return decryptedData;
+        }
+
+        #endregion Hybrid with Signature
+
         #endregion public methods
 
 

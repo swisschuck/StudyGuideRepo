@@ -70,6 +70,7 @@
     <Compile Include="Classes\Examples\Cryptography\HybridEncryption.cs" />
     <Compile Include="Classes\Examples\Cryptography\RSAKeys.cs" />
     <Compile Include="Classes\Examples\Cryptography\RsaWithRsaParameterKey.cs" />
+    <Compile Include="Classes\Examples\Cryptography\SecureStringExample.cs" />
     <Compile Include="Classes\Examples\Cryptography\User.cs" />
     <Compile Include="Classes\Examples\Delegates\EventsAndDelegates.cs" />
     <Compile Include="Classes\Examples\GeneralExampleClass.cs" />

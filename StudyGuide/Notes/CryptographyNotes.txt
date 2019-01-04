@@ -165,4 +165,28 @@ Hashing Numbers
 		- RSACrypteServiceProvider: needed to manage our encryption keys
 		- RSAPKCS1SignatureFormatter: 
 		- RSAPKCS1SignatureDeFormatter:
-	
+
+
++ Secure String
+==========================
+	- System.String is not a secure solution and has the following problems:
+		- leaves several copies in memory
+		- Not Encrypted
+		- Not Mutable, old copied in memory
+		- No effectice way to clear out memory
+
+	- SecureString is stored in encrypted memory
+		- they are only unencrypted when they are accessed
+		- garbage collection will not move the SecureString around in memory
+		- implements IDisposable which will allow you to zero out the value from memory
+		- can be locked down as read only
+
+	- Data Protection API (DPAPI)
+		- is a set of function calls that provide OS level data protection services to use for system processes or Operating system level protection
+		- Provides confidentiality using encryption
+		- is a password based data protection service, using the users login credential
+		- are a part of the Crypt32.dll library
+		- it does not store your data for you, it only encrypts it, so applications that make use of this must implement their own storage methods of the actual
+		  encrypted data.
+		- Generates a master key that is protected by the users password, which is stored in the users profile.
+		- Master keys have an expiration date

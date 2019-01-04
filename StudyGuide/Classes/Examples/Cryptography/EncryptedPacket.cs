@@ -18,6 +18,7 @@ namespace StudyGuide.Classes.Examples.Cryptography
         public byte[] EncryptedData;
         public byte[] IV;
         public byte[] Hmac; // Hash MAC or Hashed Message Authentication Code
+        public byte[] Signature;
 
         #endregion properties
 
