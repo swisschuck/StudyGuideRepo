@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="WPFStudyGuide.Examples.Basics.DockPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <!-- The DockPanel makes it easy to dock content in all four directions (top, bottom, left and right). 
+         This makes it a great choice in many situations, where you want to divide the window into specific areas, 
+         especially because by default, the last element inside the DockPanel, unless this feature is specifically 
+         disabled, will automatically fill the rest of the space (center). -->
+    <DockPanel>
+        <Button Height="25" Background="Red" DockPanel.Dock="Top" Content="Dock Top"/>
+        <Button Width="25" Background="Blue" DockPanel.Dock="Left" Content="Dock Left"/>
+        <Button Width="25" Background="Yellow" DockPanel.Dock="Right" Content="Dock Right"/>
+        <Button Height="25" Background="Orange" DockPanel.Dock="Bottom" Content="Dock Right"/>
+        <Button Background="Purple" Content="No Dock Defined"/>
+    </DockPanel>
+</UserControl>
