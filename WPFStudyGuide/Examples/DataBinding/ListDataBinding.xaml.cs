@@ -12,17 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFStudyGuide.Classes;
 
-namespace WPFStudyGuide.Examples
+namespace WPFStudyGuide.Examples.DataBinding
 {
     /// <summary>
-    /// Interaction logic for RowsAndColumns.xaml
+    /// Interaction logic for ListDataBinding.xaml
     /// </summary>
-    public partial class RowsAndColumns : UserControl
+    public partial class ListDataBinding : UserControl
     {
-        public RowsAndColumns()
+        public ListDataBinding()
         {
             InitializeComponent();
+            DataContext = Employee.GetEmployees();
         }
     }
 }

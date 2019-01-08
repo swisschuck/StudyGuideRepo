@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Repos\StudyGuideRepo\WPFStudyGuide\App.xaml
-3-1326302099
+14-1605090875
 
-11-793811993
+24-112554558
 12-1401562060
-Examples\RowsAndColumns.xaml;Examples\StackPanel.xaml;MainWindow.xaml;
+Examples\Async\AsyncDemo.xaml;Examples\Basics\Canvas.xaml;Examples\Basics\ControlsAndEvents.xaml;Examples\Basics\DockPanel.xaml;Examples\Basics\RowsAndColumns.xaml;Examples\Basics\StackPanel.xaml;Examples\Basics\WrapPanel.xaml;Examples\DataBinding\DataConversion.xaml;Examples\DataBinding\ElementDataBinding.xaml;Examples\DataBinding\INPCBinding.xaml;Examples\DataBinding\ListDataBinding.xaml;Examples\DataBinding\OneWayBinding.xaml;Examples\DataBinding\TwoWayBinding.xaml;MainWindow.xaml;
 
 False
 

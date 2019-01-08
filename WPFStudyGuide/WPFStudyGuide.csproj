@@ -53,11 +53,55 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Examples\RowsAndColumns.xaml">
+    <Page Include="Examples\Async\AsyncDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Examples\StackPanel.xaml">
+    <Page Include="Examples\Basics\Canvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Basics\ControlsAndEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Basics\DockPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Basics\RowsAndColumns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Basics\StackPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Basics\WrapPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\DataBinding\DataConversion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\DataBinding\ElementDataBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\DataBinding\INPCBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\DataBinding\ListDataBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\DataBinding\OneWayBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\DataBinding\TwoWayBinding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,11 +113,46 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Examples\RowsAndColumns.xaml.cs">
+    <Compile Include="Classes\DateConverter.cs" />
+    <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Examples\Async\AsyncDemo.xaml.cs">
+      <DependentUpon>AsyncDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Basics\Canvas.xaml.cs">
+      <DependentUpon>Canvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Basics\ControlsAndEvents.xaml.cs">
+      <DependentUpon>ControlsAndEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Basics\DockPanel.xaml.cs">
+      <DependentUpon>DockPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Basics\RowsAndColumns.xaml.cs">
       <DependentUpon>RowsAndColumns.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Examples\StackPanel.xaml.cs">
+    <Compile Include="Examples\Basics\StackPanel.xaml.cs">
       <DependentUpon>StackPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Basics\WrapPanel.xaml.cs">
+      <DependentUpon>WrapPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\DataBinding\DataConversion.xaml.cs">
+      <DependentUpon>DataConversion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\DataBinding\ElementDataBinding.xaml.cs">
+      <DependentUpon>ElementDataBinding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\DataBinding\INPCBinding.xaml.cs">
+      <DependentUpon>INPCBinding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\DataBinding\ListDataBinding.xaml.cs">
+      <DependentUpon>ListDataBinding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\DataBinding\OneWayBinding.xaml.cs">
+      <DependentUpon>OneWayBinding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\DataBinding\TwoWayBinding.xaml.cs">
+      <DependentUpon>TwoWayBinding.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -109,6 +188,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Notes\General Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Examples\AdvancedControls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

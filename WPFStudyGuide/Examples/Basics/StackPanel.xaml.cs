@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFStudyGuide.Examples
+namespace WPFStudyGuide.Examples.Basics
 {
     /// <summary>
     /// Interaction logic for StackPanel.xaml

@@ -26,3 +26,17 @@ Layouts * Panels
 =====================
 + Grids
 	- Are composed of rows and columns, which are created via Row and Column definitions
+
+
+
+Data Binding Types
+==============================
+	+ One Way Binding - Data is bound from its source to its target.
+	+ Two Way Binding - User is able to modify the data through the UI and have that updated in the source.
+	+ INotifyPropertyChanged (INPC) - facilitaes updating the view when the underlying data changes.
+	+ Element Binding - Binding to another element on the page instead of the source.
+	+ Data Context - is a representation of the source itself.
+	+ List Binding - 
+	+ Data Templates - 
+	+ Data Conversion - 
+	+ Data Validation - 
