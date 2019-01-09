@@ -33,6 +33,16 @@ namespace WPFStudyGuide.Services.Customers
             return taskToReturn;
         }
 
+        public Task<List<SimpleCustomer>> GetSimpleCustomersAsync()
+        {
+            Task<List<SimpleCustomer>> taskToReturn = Task.Run(() =>
+            {
+                return new List<SimpleCustomer>();
+            });
+
+            return taskToReturn;
+        }
+
         public Task<Customer> GetCustomerAsync(Guid id)
         {
             Task<Customer> taskToReturn = Task.Run(() =>
@@ -61,6 +71,13 @@ namespace WPFStudyGuide.Services.Customers
 
 
         #region private methods
+
+        private List<SimpleCustomer> GetSimpleCustomersMocked()
+        {
+            List<SimpleCustomer> customersToSendBack = new List<SimpleCustomer>();
+
+            return customersToSendBack;
+        }
         #endregion private methods
     }
 }

@@ -21,7 +21,7 @@ namespace WPFStudyGuide.ViewModels
 
         #region properties
 
-        public ObservableCollection<Customer> Customers { get; set; }
+        public ObservableCollection<SimpleCustomer> Customers { get; set; }
 
         #endregion properties
 
@@ -34,7 +34,7 @@ namespace WPFStudyGuide.ViewModels
                 return;
             }
 
-            Customers = new ObservableCollection<Customer>(_customerService.GetCustomersAsync().Result);
+            Customers = new ObservableCollection<SimpleCustomer>(_customerService.GetSimpleCustomersAsync().Result);
         }
 
         #endregion constructors

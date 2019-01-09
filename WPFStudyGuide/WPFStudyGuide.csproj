@@ -61,6 +61,7 @@
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\ProductOption.cs" />
     <Compile Include="Classes\ProductSize.cs" />
+    <Compile Include="Classes\SimpleCustomer.cs" />
     <Compile Include="Converters\MyDateConverter.cs" />
     <Compile Include="Services\Customers\CustomerService.cs" />
     <Compile Include="Services\Customers\ICustomerService.cs" />
