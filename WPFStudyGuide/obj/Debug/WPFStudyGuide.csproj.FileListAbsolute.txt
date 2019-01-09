@@ -66,7 +66,6 @@ C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Examples\Styles\BasicStyles.g.cs
 C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\bin\Debug\WPFStudyGuide.exe.config
 C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\bin\Debug\WPFStudyGuide.exe
 C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\bin\Debug\WPFStudyGuide.pdb
-C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csprojAssemblyReference.cache
 C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\obj\Debug\Examples\AdvancedControls\ContextMenu.baml
 C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\obj\Debug\Examples\AdvancedControls\Menu.baml
 C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\obj\Debug\Examples\AdvancedControls\StatusBar.baml

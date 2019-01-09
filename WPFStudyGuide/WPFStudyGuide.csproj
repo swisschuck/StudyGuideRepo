@@ -61,6 +61,7 @@
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\ProductOption.cs" />
     <Compile Include="Classes\ProductSize.cs" />
+    <Compile Include="Converters\MyDateConverter.cs" />
     <Compile Include="Services\Customers\CustomerService.cs" />
     <Compile Include="Services\Customers\ICustomerService.cs" />
     <Compile Include="ViewModels\CustomerListViewModel.cs" />
@@ -180,7 +181,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\Candidate .cs" />
-    <Compile Include="Classes\DateConverter.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Enums\PartyAffiliation.cs" />
     <Compile Include="Examples\AdvancedControls\ContextMenu.xaml.cs">
