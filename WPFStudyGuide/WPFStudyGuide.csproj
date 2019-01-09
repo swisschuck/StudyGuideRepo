@@ -53,6 +53,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Examples\AdvancedControls\ContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\AdvancedControls\DataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\AdvancedControls\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\AdvancedControls\StatusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\AdvancedControls\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\AdvancedControls\TreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Animations\Animations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Animations\Animations2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Animations\Animations3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Animations\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Animations\Shapes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Examples\Async\AsyncDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +149,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Examples\Styles\BasicStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examples\Templates\BasicTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,8 +165,43 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Candidate .cs" />
     <Compile Include="Classes\DateConverter.cs" />
     <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Enums\PartyAffiliation.cs" />
+    <Compile Include="Examples\AdvancedControls\ContextMenu.xaml.cs">
+      <DependentUpon>ContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\AdvancedControls\DataGrid.xaml.cs">
+      <DependentUpon>DataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\AdvancedControls\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\AdvancedControls\StatusBar.xaml.cs">
+      <DependentUpon>StatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\AdvancedControls\TabControl.xaml.cs">
+      <DependentUpon>TabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\AdvancedControls\TreeView.xaml.cs">
+      <DependentUpon>TreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Animations\Animations.xaml.cs">
+      <DependentUpon>Animations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Animations\Animations2.xaml.cs">
+      <DependentUpon>Animations2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Animations\Animations3.xaml.cs">
+      <DependentUpon>Animations3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Animations\Brushes.xaml.cs">
+      <DependentUpon>Brushes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Animations\Shapes.xaml.cs">
+      <DependentUpon>Shapes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Examples\Async\AsyncDemo.xaml.cs">
       <DependentUpon>AsyncDemo.xaml</DependentUpon>
     </Compile>
@@ -154,6 +241,12 @@
     <Compile Include="Examples\DataBinding\TwoWayBinding.xaml.cs">
       <DependentUpon>TwoWayBinding.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Examples\Styles\BasicStyles.xaml.cs">
+      <DependentUpon>BasicStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Templates\BasicTemplates.xaml.cs">
+      <DependentUpon>BasicTemplates.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -189,9 +282,7 @@
   <ItemGroup>
     <Resource Include="Notes\General Notes.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Examples\AdvancedControls\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
