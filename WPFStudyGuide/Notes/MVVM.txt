@@ -8,6 +8,7 @@
 + Validation
 	-INotifyDataErrorInfo/IDataErrorInfo
 
+
 View Responsibilites
 ==========================
 + Structial definition of what the user sees on the screen
@@ -23,6 +24,7 @@ View Model Responsibilites
 	- Navigation logic
 	- State transformation logic
 
+
 Client Services Responsibilites
 ===============================
 + Shared functionality or data access
@@ -32,3 +34,15 @@ Client Services Responsibilites
 	- Service access
 	- Client environment
 + Can act as data caching container
+
+
+View-ViewModel Instantiation
+===============================
++ View-First - View is constructed first
+			 - ViewModel gets constructed and attached to DataContext via the view
+
+
+ViewModel-First
+===============================
++ ViewModel is constructed first
++ View is constructed as a consequence of ViewModel being added to the UI
