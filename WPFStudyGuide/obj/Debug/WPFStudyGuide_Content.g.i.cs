@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("notes/general%20notes.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("notes/mvvm.txt")]
 
 
