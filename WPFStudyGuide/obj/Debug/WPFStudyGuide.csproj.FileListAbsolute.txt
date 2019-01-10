@@ -132,3 +132,7 @@ C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.exe
 C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.pdb
 C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\CustomerListView.g.cs
 C:\repos\StudyGuide\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\CustomerListView.baml
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Examples\Templates\BasicTemplates.baml
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Examples\Templates\BasicTemplates.g.cs
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\CustomerListView.g.cs
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\CustomerListView.baml

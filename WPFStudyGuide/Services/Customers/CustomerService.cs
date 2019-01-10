@@ -37,7 +37,7 @@ namespace WPFStudyGuide.Services.Customers
         {
             Task<List<SimpleCustomer>> taskToReturn = Task.Run(() =>
             {
-                return new List<SimpleCustomer>();
+                return GetSimpleCustomersMocked();
             });
 
             return taskToReturn;
@@ -75,6 +75,20 @@ namespace WPFStudyGuide.Services.Customers
         private List<SimpleCustomer> GetSimpleCustomersMocked()
         {
             List<SimpleCustomer> customersToSendBack = new List<SimpleCustomer>();
+
+            for (int index = 0; index < 21; index++)
+            {
+                SimpleCustomer customer = new SimpleCustomer();
+                customer.Id = new Guid();
+                customer.FirstName = String.Format("FirstName{0}", index);
+                customer.LastName = String.Format("LastName{0}", index);
+                customer.Phone = String.Format("555-555-55{0}", index < 10 ? index + index : index);
+                customer.State = "Colorado";
+                customer.Street = String.Format("{0} fake street", index < 10 ? index + index : index);
+                customer.Zip = "80001";
+                customer.StoreId = new Guid();
+                customersToSendBack.Add(customer);
+            }
 
             return customersToSendBack;
         }

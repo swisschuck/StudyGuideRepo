@@ -29,11 +29,13 @@ namespace WPFStudyGuide.ViewModels
         #region constructors
         public CustomerListViewModel()
         {
+            // if we are in design mode just return and do nothing so we dont cause problems
             if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
             {
                 return;
             }
 
+            // the .Result property on the task forces it to be syncronous
             Customers = new ObservableCollection<SimpleCustomer>(_customerService.GetSimpleCustomersAsync().Result);
         }
 

@@ -4,24 +4,35 @@
         xmlns:Views="clr-namespace:WPFStudyGuide.Views" x:Class="WPFStudyGuide.MainWindow"
         Title="WPF Study Guide" Height="500" Width="500">
     <Grid>
-        <Menu>
-            <MenuItem Header="File">
-                <MenuItem Header="New..." />
-                <MenuItem Header="Open..." />
-                <Separator/>
-                <MenuItem Header="Add">
-                    <MenuItem Header="New Window" />
-                    <MenuItem Header="New Project" />
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="1" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>-->
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="New..." />
+                    <MenuItem Header="Open..." />
+                    <Separator/>
+                    <MenuItem Header="Add">
+                        <MenuItem Header="New Window" />
+                        <MenuItem Header="New Project" />
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Save AS You Go" IsCheckable="True"/>
                 </MenuItem>
-                <Separator/>
-                <MenuItem Header="Save AS You Go" IsCheckable="True"/>
-            </MenuItem>
-            <MenuItem Header="Edit">
-                <MenuItem Header="Cut" />
-                <MenuItem Header="Copy" />
-                <MenuItem Header="Paste" />
-            </MenuItem>
-            <Views:CustomerListView/>
-        </Menu>
+                <MenuItem Header="Edit">
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <!--<Views:CustomerListView Grid.Row="1"/>-->
+
     </Grid>
+
 </Window>
