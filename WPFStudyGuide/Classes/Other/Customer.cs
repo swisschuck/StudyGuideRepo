@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPFStudyGuide.Classes
+namespace WPFStudyGuide.Classes.Other
 {
     public class Customer
     {

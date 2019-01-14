@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Repos\StudyGuideRepo\WPFStudyGuide\App.xaml
 28-592618901
 
-48-1478985784
+48560786183
 12-1401562060
 Examples\AdvancedControls\ContextMenu.xaml;Examples\AdvancedControls\DataGrid.xaml;Examples\AdvancedControls\Menu.xaml;Examples\AdvancedControls\StatusBar.xaml;Examples\AdvancedControls\TabControl.xaml;Examples\AdvancedControls\TreeView.xaml;Examples\Animations\Animations.xaml;Examples\Animations\Animations2.xaml;Examples\Animations\Animations3.xaml;Examples\Animations\Brushes.xaml;Examples\Animations\Shapes.xaml;Examples\Async\AsyncDemo.xaml;Examples\Basics\Canvas.xaml;Examples\Basics\ControlsAndEvents.xaml;Examples\Basics\DockPanel.xaml;Examples\Basics\RowsAndColumns.xaml;Examples\Basics\StackPanel.xaml;Examples\Basics\WrapPanel.xaml;Examples\DataBinding\DataConversion.xaml;Examples\DataBinding\ElementDataBinding.xaml;Examples\DataBinding\INPCBinding.xaml;Examples\DataBinding\ListDataBinding.xaml;Examples\DataBinding\OneWayBinding.xaml;Examples\DataBinding\TwoWayBinding.xaml;Examples\Styles\BasicStyles.xaml;Examples\Templates\BasicTemplates.xaml;MainWindow.xaml;Views\CustomerListView.xaml;
 
-False
+True
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WPFStudyGuide.Classes;
+using WPFStudyGuide.Classes.Other;
 
 namespace WPFStudyGuide.Services.Customers
 {

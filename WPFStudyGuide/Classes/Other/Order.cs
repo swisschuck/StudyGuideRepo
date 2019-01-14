@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPFStudyGuide.Classes
+namespace WPFStudyGuide.Classes.Other
 {
     public class Order
     {
@@ -26,7 +26,7 @@ namespace WPFStudyGuide.Classes
         public string DeliveryState { get; set; }
         public string DeliveryZip { get; set; }
 
-        //public Customer Customer { get; set; }
+        public Customer Customer { get; set; }
         public List<OrderItem> OrderItems { get; set; }
         public OrderStatus Status { get; set; }
     }

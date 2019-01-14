@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WPFStudyGuide.Classes;
+using WPFStudyGuide.Classes.Other;
 
 namespace WPFStudyGuide.Services.Customers
 {
@@ -82,9 +83,11 @@ namespace WPFStudyGuide.Services.Customers
                 customer.Id = new Guid();
                 customer.FirstName = String.Format("FirstName{0}", index);
                 customer.LastName = String.Format("LastName{0}", index);
+                customer.Email = String.Format("test{0}@fake.com", index);
                 customer.Phone = String.Format("555-555-55{0}", index < 10 ? index + index : index);
                 customer.State = "Colorado";
                 customer.Street = String.Format("{0} fake street", index < 10 ? index + index : index);
+                customer.City = "Denver";
                 customer.Zip = "80001";
                 customer.StoreId = new Guid();
                 customersToSendBack.Add(customer);

@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPFStudyGuide.Classes
+namespace WPFStudyGuide.Classes.Other
 {
-    public class ProductSize
+    public class ProductOption
     {
         public int Id { get; set; }
         public string Type { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
-        public decimal? PremiumPrice { get; set; }
-        public decimal? ToppingPrice { get; set; }
-        public bool? IsGlutenFree { get; set; }
+        public int Factor { get; set; }
+        public bool IsPizzaOption { get; set; }
+        public bool IsSaladOption { get; set; }
     }
 }

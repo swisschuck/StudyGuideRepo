@@ -7,9 +7,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPFStudyGuide.Classes
+namespace WPFStudyGuide.Classes.Other
 {
-    public class Employee : INotifyPropertyChanged
+    public class Employee
     {
         #region fields
 
@@ -109,6 +109,7 @@ namespace WPFStudyGuide.Classes
                 PropertyChanged(this, new PropertyChangedEventArgs(caller));
             }
         }
+
         #endregion private methods
     }
 }
