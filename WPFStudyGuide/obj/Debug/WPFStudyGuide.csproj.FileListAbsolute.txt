@@ -1,7 +1,6 @@
 C:\Repos\StudyGuideRepo\WPFStudyGuide\bin\Debug\WPFStudyGuide.exe.config
 C:\Repos\StudyGuideRepo\WPFStudyGuide\bin\Debug\WPFStudyGuide.exe
 C:\Repos\StudyGuideRepo\WPFStudyGuide\bin\Debug\WPFStudyGuide.pdb
-C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csprojResolveAssemblyReference.cache
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\MainWindow.baml
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\MainWindow.g.cs
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\App.g.cs
@@ -136,3 +135,5 @@ C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Examples\Templates\BasicTemplate
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Examples\Templates\BasicTemplates.g.cs
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\CustomerListView.g.cs
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\CustomerListView.baml
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csprojAssemblyReference.cache
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csproj.CoreCompileInputs.cache
