@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using WPFStudyGuide.Classes;
 using WPFStudyGuide.Services.Customers;
 
-namespace WPFStudyGuide.ViewModels
+namespace WPFStudyGuide.ViewModels.Other
 {
-    public class CustomerListViewModel
+    public class ViewFirstExampleViewModel
     {
         #region fields
 
@@ -27,7 +27,7 @@ namespace WPFStudyGuide.ViewModels
 
 
         #region constructors
-        public CustomerListViewModel()
+        public ViewFirstExampleViewModel()
         {
             // if we are in design mode just return and do nothing so we dont cause problems
             if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))

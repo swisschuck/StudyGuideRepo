@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFStudyGuide.Classes;
+using WPFStudyGuide.Classes.Other;
 
 namespace WPFStudyGuide.Examples.DataBinding
 {

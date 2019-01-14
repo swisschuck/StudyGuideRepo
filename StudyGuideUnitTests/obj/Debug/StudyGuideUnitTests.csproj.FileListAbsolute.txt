@@ -5,14 +5,6 @@ C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuideUnitTe
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.pdb
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuideUnitTests\bin\Debug\StudyGuide.exe
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuideUnitTests\bin\Debug\StudyGuide.pdb
-C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuideUnitTests.dll
-C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuideUnitTests.pdb
-C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuide.exe
-C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\Newtonsoft.Json.dll
-C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuide.pdb
-C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\Newtonsoft.Json.xml
-C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.dll
-C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.pdb
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuideUnitTests.dll
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuideUnitTests.pdb
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
@@ -26,8 +18,16 @@ C:\repos\StudyGuide\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitT
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.csproj.CopyComplete
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.dll
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.pdb
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuideUnitTests.dll
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuideUnitTests.pdb
 C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuide.exe
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\Newtonsoft.Json.dll
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuide.pdb
 C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\StudyGuide.exe.config
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\Newtonsoft.Json.xml
 C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.csprojAssemblyReference.cache
 C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.csproj.CoreCompileInputs.cache
 C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.csproj.CopyComplete
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.dll
+C:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.pdb
