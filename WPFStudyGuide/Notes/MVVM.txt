@@ -1,0 +1,50 @@
+﻿Model Responsibilites
+==========================
++ Contain the client data
++ Expose relationships between model objects
++ computed properties
++ Raise change notifications
+	- INotifyPropertyChanged.PropertyChanged
++ Validation
+	-INotifyDataErrorInfo/IDataErrorInfo
+
+
+View Responsibilites
+==========================
++ Structial definition of what the user sees on the screen
++ Goal - should not contain code behind
++ Reality - sometimes need some code behind
+
+
+View Model Responsibilites
+==========================
++ Expose data to the view for presentation and manipulation
++ Encapsulate interaction logic
+	- Calls to business/data layer/service
+	- Navigation logic
+	- State transformation logic
+
+
+Client Services Responsibilites
+===============================
++ Shared functionality or data access
++ Consumed by one or more ViewModels
++ Decouples ViewModels from external dependencies
+	- Data Storage
+	- Service access
+	- Client environment
++ Can act as data caching container
+
+
+View-ViewModel Instantiation
+===============================
++ View-First - View is constructed first
+			 - ViewModel gets constructed and attached to DataContext via the view
+
+
+View-First Construction
+===============================
++ ViewModel is constructed first
++ View is constructed as a consequence of ViewModel being added to the UI
++ One way to accomplish this is by declaring the view model in the "constructor" of the view the views resources or data context nested elements.
++ Another way is to set the context in the views code behind C# constructor
