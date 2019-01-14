@@ -4,13 +4,6 @@ C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\bin\D
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Debug\StudyGuide.exe
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Debug\StudyGuide.pdb
 C:\Users\Owner\Documents\Visual Studio 2013\Projects\StudyGuide\StudyGuide\obj\Debug\StudyGuide.csprojResolveAssemblyReference.cache
-C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe
-C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\Newtonsoft.Json.dll
-C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe.config
-C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.pdb
-C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\Newtonsoft.Json.xml
-C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.exe
-C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.pdb
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe.config
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.pdb
@@ -20,5 +13,12 @@ C:\repos\StudyGuide\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CoreCo
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CopyComplete
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.exe
 C:\repos\StudyGuide\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.pdb
+C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe.config
+C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe
+C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.pdb
+C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\Newtonsoft.Json.dll
+C:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\Newtonsoft.Json.xml
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CoreCompileInputs.cache
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CopyComplete
+C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.exe
+C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.pdb

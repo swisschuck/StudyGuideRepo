@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFStudyGuide.Views
+namespace WPFStudyGuide.Views.Other
 {
     /// <summary>
-    /// Interaction logic for CustomerListView.xaml
+    /// Interaction logic for ViewFirstExampleView.xaml
     /// </summary>
-    public partial class CustomerListView : UserControl
+    public partial class ViewFirstExampleView : UserControl
     {
-        public CustomerListView()
+        public ViewFirstExampleView()
         {
             InitializeComponent();
         }

@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFStudyGuide.Classes;
-using WPFStudyGuide.Classes.Other;
 
-namespace WPFStudyGuide.Examples.DataBinding
+namespace WPFStudyGuide.Views.Other
 {
     /// <summary>
-    /// Interaction logic for ListDataBinding.xaml
+    /// Interaction logic for ViewModelLocaterExampleView.xaml
     /// </summary>
-    public partial class ListDataBinding : UserControl
+    public partial class ViewModelLocaterExampleView : UserControl
     {
-        public ListDataBinding()
+        public ViewModelLocaterExampleView()
         {
             InitializeComponent();
-            DataContext = Employee.GetEmployees();
         }
     }
 }
