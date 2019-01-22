@@ -26,6 +26,15 @@ namespace WPFStudyGuide.Classes
         public string State { get; set; }
         public string Zip { get; set; }
 
+
+        public string FullAddress
+        {
+            get
+            {
+                return $"{Street}, {City}, {State}, {Zip}";
+            }
+        }
+
         #endregion properties
 
 

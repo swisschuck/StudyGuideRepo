@@ -138,3 +138,6 @@ C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csproj.GenerateRes
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csproj.CoreCompileInputs.cache
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.exe
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.pdb
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csprojAssemblyReference.cache
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\ViewModelFirstExampleView.g.cs
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\ViewModelFirstExampleView.baml

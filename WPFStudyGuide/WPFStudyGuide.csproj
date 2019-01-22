@@ -70,9 +70,13 @@
     <Compile Include="Services\Customers\CustomerService.cs" />
     <Compile Include="Services\Customers\ICustomerService.cs" />
     <Compile Include="ViewModels\Other\ViewFirstExampleViewModel.cs" />
+    <Compile Include="ViewModels\Other\ViewModelFirstExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewModelLocaterExampleViewModel.cs" />
     <Compile Include="Views\Other\ViewFirstExampleView.xaml.cs">
       <DependentUpon>ViewFirstExampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Other\ViewModelFirstExampleView.xaml.cs">
+      <DependentUpon>ViewModelFirstExampleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Other\ViewModelLocaterExampleView.xaml.cs">
       <DependentUpon>ViewModelLocaterExampleView.xaml</DependentUpon>
@@ -272,6 +276,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Other\ViewFirstExampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Other\ViewModelFirstExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
