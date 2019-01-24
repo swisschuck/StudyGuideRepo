@@ -1,0 +1,8 @@
+C:\Repos\StudyGuideRepo\StudyGuideUtilities\bin\Debug\netstandard2.0\StudyGuideUtilities.deps.json
+C:\Repos\StudyGuideRepo\StudyGuideUtilities\bin\Debug\netstandard2.0\StudyGuideUtilities.dll
+C:\Repos\StudyGuideRepo\StudyGuideUtilities\bin\Debug\netstandard2.0\StudyGuideUtilities.pdb
+C:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideUtilities.csproj.CoreCompileInputs.cache
+C:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideUtilities.AssemblyInfoInputs.cache
+C:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideUtilities.AssemblyInfo.cs
+C:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideUtilities.dll
+C:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideUtilities.pdb

@@ -25,7 +25,7 @@ namespace WPFStudyGuide.Examples.AdvancedControls
         public DataGrid()
         {
             InitializeComponent();
-            myDataGrid.ItemsSource = Candidate.GetCandidates();
+            myDataGrid.ItemsSource = CandidateExample.GetCandidates();
         }
     }
 }

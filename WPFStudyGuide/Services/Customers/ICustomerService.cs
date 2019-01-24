@@ -10,11 +10,11 @@ namespace WPFStudyGuide.Services.Customers
 {
     interface ICustomerService
     {
-        Task<List<Customer>> GetCustomersAsync();
+        Task<List<SimpleCustomer>> GetCustomersAsync();
         Task<List<SimpleCustomer>> GetSimpleCustomersAsync();
-        Task<Customer> GetCustomerAsync(Guid id);
-        Task<Customer> AddCustomerAsync(Customer customer);
-        Task<Customer> UpdateCustomerAsync(Customer customer);
+        Task<SimpleCustomer> GetCustomerAsync(Guid id);
+        Task<SimpleCustomer> AddCustomerAsync(SimpleCustomer customer);
+        Task<SimpleCustomer> UpdateCustomerAsync(SimpleCustomer customer);
         Task<bool> DeleteCustomerAsync(Guid customerId);
     }
 }

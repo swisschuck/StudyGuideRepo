@@ -24,7 +24,7 @@ namespace WPFStudyGuide.Examples.DataBinding
     {
         #region fields
 
-        private Employee employee;
+        private EmployeeExample employee;
         #endregion fields
 
 
@@ -37,7 +37,7 @@ namespace WPFStudyGuide.Examples.DataBinding
         {
             InitializeComponent();
 
-            employee = new Employee()
+            employee = new EmployeeExample()
             {
                 Name = "Bobbie",
                 Title = "QA",

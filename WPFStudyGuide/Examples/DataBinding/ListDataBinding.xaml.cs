@@ -25,7 +25,7 @@ namespace WPFStudyGuide.Examples.DataBinding
         public ListDataBinding()
         {
             InitializeComponent();
-            DataContext = Employee.GetEmployees();
+            DataContext = EmployeeExample.GetEmployees();
         }
     }
 }

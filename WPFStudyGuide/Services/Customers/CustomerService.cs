@@ -24,11 +24,11 @@ namespace WPFStudyGuide.Services.Customers
 
         #region public methods
 
-        public Task<List<Customer>> GetCustomersAsync()
+        public Task<List<SimpleCustomer>> GetCustomersAsync()
         {
-            Task<List<Customer>> taskToReturn = Task.Run(() =>
+            Task<List<SimpleCustomer>> taskToReturn = Task.Run(() =>
             {
-                return new List<Customer>();
+                return new List<SimpleCustomer>();
             });
 
             return taskToReturn;
@@ -44,24 +44,24 @@ namespace WPFStudyGuide.Services.Customers
             return taskToReturn;
         }
 
-        public Task<Customer> GetCustomerAsync(Guid id)
+        public Task<SimpleCustomer> GetCustomerAsync(Guid id)
         {
-            Task<Customer> taskToReturn = Task.Run(() =>
+            Task<SimpleCustomer> taskToReturn = Task.Run(() =>
             {
-                return new Customer();
+                return new SimpleCustomer();
             });
 
             return taskToReturn;
         }
 
-        public async Task<Customer> AddCustomerAsync(Customer customer)
+        public async Task<SimpleCustomer> AddCustomerAsync(SimpleCustomer customer)
         {
-            return new Customer();
+            return new SimpleCustomer();
         }
 
-        public async Task<Customer> UpdateCustomerAsync(Customer customer)
+        public async Task<SimpleCustomer> UpdateCustomerAsync(SimpleCustomer customer)
         {
-            return new Customer();
+            return new SimpleCustomer();
         }
 
         public async Task<bool> DeleteCustomerAsync(Guid customerId)

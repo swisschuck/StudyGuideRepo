@@ -25,7 +25,7 @@ namespace WPFStudyGuide.Examples.DataBinding
         public DataConversion()
         {
             InitializeComponent();
-            Employee employee = new Employee()
+            EmployeeExample employee = new EmployeeExample()
             {
                 Name = "Bob",
                 Title = "Developer",
