@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>StudyGuideIcon48.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -119,6 +122,7 @@
     <Content Include="Notes\CryptographyNotes.txt" />
     <Content Include="Notes\GeneralCSharpNotes.txt" />
     <Content Include="Notes\GenericsNotes.txt" />
+    <Content Include="StudyGuideIcon48.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Media\Docs\" />

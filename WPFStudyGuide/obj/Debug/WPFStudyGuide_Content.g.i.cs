@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("notes/mvvm.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("studyguideicon48.ico")]
 
 
