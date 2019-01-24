@@ -53,17 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\Other\Candidate.cs" />
-    <Compile Include="Classes\Other\Customer.cs" />
-    <Compile Include="Classes\Other\Employee.cs" />
+    <Compile Include="Classes\Other\CandidateExample.cs" />
+    <Compile Include="Classes\Other\EmployeeExample.cs" />
     <Compile Include="Classes\Other\MyMvvmBehaviors.cs" />
-    <Compile Include="Classes\Other\Order.cs" />
-    <Compile Include="Classes\Other\OrderItem.cs" />
-    <Compile Include="Classes\Other\OrderItemOption.cs" />
-    <Compile Include="Classes\Other\OrderStatus.cs" />
-    <Compile Include="Classes\Other\Product.cs" />
-    <Compile Include="Classes\Other\ProductOption.cs" />
-    <Compile Include="Classes\Other\ProductSize.cs" />
     <Compile Include="Classes\Other\ViewModelLocator.cs" />
     <Compile Include="Classes\SimpleCustomer.cs" />
     <Compile Include="Commands\Other\MyFirstRelayCommand.cs" />

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace WPFStudyGuide.Classes.Other
 {
-    public class Employee
+    public class EmployeeExample
     {
         #region fields
 
@@ -62,7 +62,7 @@ namespace WPFStudyGuide.Classes.Other
 
         #region constructors
 
-        public Employee()
+        public EmployeeExample()
         {
 
         }
@@ -72,9 +72,9 @@ namespace WPFStudyGuide.Classes.Other
 
         #region public methods
 
-        public static Employee GetEmployee()
+        public static EmployeeExample GetEmployee()
         {
-            Employee employee = new Employee()
+            EmployeeExample employee = new EmployeeExample()
             {
                 Name = "Bob",
                 Title = "Developer"
@@ -84,15 +84,15 @@ namespace WPFStudyGuide.Classes.Other
         }
 
 
-        public static ObservableCollection<Employee> GetEmployees()
+        public static ObservableCollection<EmployeeExample> GetEmployees()
         {
-            ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+            ObservableCollection<EmployeeExample> employees = new ObservableCollection<EmployeeExample>();
 
-            employees.Add(new Employee() { Name = "Sue", Title = "CEO", YearsOfService = "2 years", Address = "123 fake street" });
-            employees.Add(new Employee() { Name = "Cole", Title = "QA", YearsOfService = "1 years", Address = "500 fake street" });
-            employees.Add(new Employee() { Name = "Frank", Title = "PO", YearsOfService = "5 years", Address = "420 fake dr" });
-            employees.Add(new Employee() { Name = "Harry", Title = "Janitor", YearsOfService = "3 years", Address = "600 not real drive" });
-            employees.Add(new Employee() { Name = "Kristin", Title = "SM", YearsOfService = "4 years", Address = "800 fake street" });
+            employees.Add(new EmployeeExample() { Name = "Sue", Title = "CEO", YearsOfService = "2 years", Address = "123 fake street" });
+            employees.Add(new EmployeeExample() { Name = "Cole", Title = "QA", YearsOfService = "1 years", Address = "500 fake street" });
+            employees.Add(new EmployeeExample() { Name = "Frank", Title = "PO", YearsOfService = "5 years", Address = "420 fake dr" });
+            employees.Add(new EmployeeExample() { Name = "Harry", Title = "Janitor", YearsOfService = "3 years", Address = "600 not real drive" });
+            employees.Add(new EmployeeExample() { Name = "Kristin", Title = "SM", YearsOfService = "4 years", Address = "800 fake street" });
 
             return employees;
         }

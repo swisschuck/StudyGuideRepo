@@ -26,7 +26,7 @@ namespace WPFStudyGuide.Examples.DataBinding
         {
             InitializeComponent();
             // this is just one of many ways to bind data to the view (one way binding)
-            DataContext = Employee.GetEmployee();
+            DataContext = EmployeeExample.GetEmployee();
         }
     }
 }

@@ -76,6 +76,8 @@ namespace WPFStudyGuide.ViewModels
 
             switch (destination)
             {
+                #region Examples
+
                 case CommandParameters.LoadCommandsExample:
                     _commandsExampleViewModel = new CommandsExampleViewModel();
                     CurrentViewModel = _commandsExampleViewModel;
@@ -105,6 +107,8 @@ namespace WPFStudyGuide.ViewModels
                     _viewModelLocaterExampleViewModel = new ViewModelLocaterExampleViewModel();
                     CurrentViewModel = _viewModelLocaterExampleViewModel;
                     break;
+
+                #endregion Examples
             }
         }
 
