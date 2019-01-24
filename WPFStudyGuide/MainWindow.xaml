@@ -1,38 +1,68 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Views="clr-namespace:WPFStudyGuide.Views" x:Class="WPFStudyGuide.MainWindow"
-        Title="WPF Study Guide" Height="500" Width="500">
-    <Grid>
-        <!--<Grid.RowDefinitions>
-            <RowDefinition Height="1" />
-            <RowDefinition Height="Auto" />
+        xmlns:views="clr-namespace:WPFStudyGuide.Views"
+        xmlns:otherViews="clr-namespace:WPFStudyGuide.Views.Other" 
+        x:Class="WPFStudyGuide.MainWindow"
+        xmlns:viewModels="clr-namespace:WPFStudyGuide.ViewModels"
+        xmlns:otherViewModels="clr-namespace:WPFStudyGuide.ViewModels.Other"
+        xmlns:constants="clr-namespace:WPFStudyGuide.Constants"
+        Style="{StaticResource MainWindowStyle}">
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <!--if when switching view only the namespace appears, its more than likely missing from this declaration-->
+        <DataTemplate DataType="{x:Type otherViewModels:CommandsExampleViewModel}">
+            <otherViews:CommandsExampleView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type otherViewModels:AttachedPropertiesExampleViewModel}">
+            <otherViews:AttachedPropertiesExampleView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type otherViewModels:PropertyChangeNotificationsExampleViewModel}">
+            <otherViews:PropertyChangeNotificationsExampleView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type otherViewModels:ViewFirstExampleViewModel}">
+            <otherViews:ViewFirstExampleView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type otherViewModels:ViewModelFirstExampleViewModel}">
+            <otherViews:ViewModelFirstExampleView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type otherViewModels:ViewModelLocaterExampleViewModel}">
+            <otherViews:ViewModelLocaterExampleView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid Style="{StaticResource MainShellGridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>-->
-        <DockPanel>
-            <Menu DockPanel.Dock="Top">
-                <MenuItem Header="File">
-                    <MenuItem Header="New..." />
-                    <MenuItem Header="Open..." />
-                    <Separator/>
-                    <MenuItem Header="Add">
-                        <MenuItem Header="New Window" />
-                        <MenuItem Header="New Project" />
-                    </MenuItem>
-                    <Separator/>
-                    <MenuItem Header="Save AS You Go" IsCheckable="True"/>
-                </MenuItem>
-                <MenuItem Header="Edit">
-                    <MenuItem Header="Cut" />
-                    <MenuItem Header="Copy" />
-                    <MenuItem Header="Paste" />
-                </MenuItem>
-            </Menu>
-        </DockPanel>
-        <!--<Views:CustomerListView Grid.Row="1"/>-->
+        <Menu Grid.Row="0" Style="{StaticResource BaseMenuStyle}">
+            <MenuItem Header="Just For Fun" Style="{StaticResource BaseMenuItemStyle}">
+                <MenuItem Header="Fun with Shapes" Style="{StaticResource BaseMenuItemStyle}" />
+                <MenuItem Header="Fun with Animations" Style="{StaticResource BaseMenuItemStyle}" />
+            </MenuItem>
+            <MenuItem Header="Examples" Style="{StaticResource BaseMenuItemStyle}">
+                <MenuItem Header="Commands Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}" 
+                          CommandParameter="{x:Static constants:CommandParameters.LoadCommandsExample}"/>
+                
+                <MenuItem Header="Attached Properties Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}" 
+                          CommandParameter="{x:Static constants:CommandParameters.LoadAttachedPropertiesExample}"/>
+                
+                <MenuItem Header="Property Changed Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}"
+                          CommandParameter="{x:Static constants:CommandParameters.LoadPropertyChangedExample}"/>
+                
+                <MenuItem Header="View First Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}"
+                          CommandParameter="{x:Static constants:CommandParameters.LoadViewFirstExample}"/>
 
+                <MenuItem Header="View Model First Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}"
+                          CommandParameter="{x:Static constants:CommandParameters.LoadViewModelFirstExample}"/>
+
+                <MenuItem Header="Model Locator Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}"
+                          CommandParameter="{x:Static constants:CommandParameters.LoadModelLocaterExample}"/>
+            </MenuItem>
+        </Menu>
+        <ContentControl Name="UserControlPlaceHolder" Style="{StaticResource BaseContentControlPlaceHolderStyle}" Content="{Binding CurrentViewModel}" />
     </Grid>
 
 </Window>

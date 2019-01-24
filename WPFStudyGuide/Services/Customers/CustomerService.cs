@@ -77,16 +77,16 @@ namespace WPFStudyGuide.Services.Customers
         {
             List<SimpleCustomer> customersToSendBack = new List<SimpleCustomer>();
 
-            for (int index = 0; index < 21; index++)
+            for (int index = 0; index < 20; index++)
             {
                 SimpleCustomer customer = new SimpleCustomer();
-                customer.Id = new Guid();
+                customer.Id = Guid.NewGuid();
                 customer.FirstName = String.Format("FirstName{0}", index);
                 customer.LastName = String.Format("LastName{0}", index);
                 customer.Email = String.Format("test{0}@fake.com", index);
-                customer.Phone = String.Format("555-555-55{0}", index < 10 ? index + index : index);
+                customer.Phone = String.Format("555-555-55{0}", index < 10 ? String.Concat(index, index) : index.ToString());
                 customer.State = "Colorado";
-                customer.Street = String.Format("{0} fake street", index < 10 ? index + index : index);
+                customer.Street = String.Format("{0} fake street", index < 10 ? String.Concat(index, index) : index.ToString());
                 customer.City = "Denver";
                 customer.Zip = "80001";
                 customer.StoreId = new Guid();

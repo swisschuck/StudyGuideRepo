@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPFStudyGuide.Styles">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+
+            <!--#region InsertViewNameHere-->
+            <!--#endregion InsertViewNameHere -->
+
+        </ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

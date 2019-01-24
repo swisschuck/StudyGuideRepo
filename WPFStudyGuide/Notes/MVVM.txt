@@ -48,3 +48,48 @@ View-First Construction
 + View is constructed as a consequence of ViewModel being added to the UI
 + One way to accomplish this is by declaring the view model in the "constructor" of the view the views resources or data context nested elements.
 + Another way is to set the context in the views code behind C# constructor
+
+
+View-Model First Contruction
+===============================
++ Makes use of implicit templates
++ The View has no idea about the content being bound to it, we use our data types to tell an element on the view to bind to
+
+
+Commands
+===============================
++ Based on a classic Command design pattern.
++ Composed of two main actors:
+	- Invoker: is whatever piece of code that wants to cause some logic to be executed (typically a UI element in the view).
+	- Receiver: is the logic that is intended to be executed when the invoker fires (typically a method in the view model or in some service).
+
++ In between these to actors you have an abstraction layer that makes it so that the invoker and receiver dont have to explicitly know about one another.
+  This is typically done through a delegate command implementation. WPF has a build in ICommand interface that was meant to be used for this but its not great so
+  many people either create their own or use a popular MVVM framework to handle it. They are typically named delegate command or relay command.
+
++ The main take away is that the Relay/Delegate Command provides a decoupled way to call from the view to the view model. It also supports enabling and disabling the
+  control through the interface.
+
+
+Attached Properties
+===============================
++ Form the basis for behaviors.
++ Can be used for grid layout, tooltip behaviors, and text formatting.
++ Behaviors can be defined directly with Attached Properties or with Blend SDK.
++ Blend SDK is the preffered way
+	- uses attached properties itself to attach Blend SDK-based behaviors to elements.
++ Behaviors can form a communication bridge between the View and the ViewModel.
+	- Events/property changes in the View trigger commands or method calls into the ViewModel.
+	- Behaviors in the View can listen for events/property changes from the ViewModel and modify the UI accordingly.
+
+
+
+Property Change Notifications
+===============================
++ Are needed to trigger bindings to refresh as properties change
++ There are two options for this:
+	- DependencyProperties
+	- INotifyPropertyChanged (INPC)
+
++ for ViewModels and Models INotifyPropertyChanged is the better choice.
++ Are the best way to keep your view and view models in sync.

@@ -11,6 +11,28 @@
         <viewModels:ViewFirstExampleViewModel />
     </UserControl.DataContext>
     <Grid>
+
+        <TextBlock Text="{Binding ViewHeaderTitle}" Style="{StaticResource BaseHeaderTitle}" />
+        
+        <!--here we can simply let the view take care of the column headers or we can... -->
         <DataGrid ItemsSource="{Binding Customers}" />
+
+        <!--CanUserAddRows - will remove the extra row at the bottom of the grid
+        IsReadOnly - will do the same
+        AutoGenerateColumns - will remove the auto generated extra column at the far right -->
+        <DataGrid x:Name="customerDataGrid"
+                  AutoGenerateColumns="False"
+                  EnableRowVirtualization="True"
+                  ItemsSource="{Binding Customers}"
+                  RowDetailsVisibilityMode="VisibleWhenSelected"
+                  CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Last Name" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="phoneColumn" Binding="{Binding Phone}" Header="Phone" Width="SizeToCells" />
+                <DataGridTextColumn x:Name="emailColumn" Binding="{Binding Email}" Header="Email" Width="SizeToCells" />
+                <DataGridTextColumn x:Name="addressColumn" Binding="{Binding FullAddress}" Header="Address" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

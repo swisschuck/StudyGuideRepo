@@ -22,3 +22,4 @@ C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CoreCompileInputs
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CopyComplete
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.exe
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.pdb
+C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csprojAssemblyReference.cache
