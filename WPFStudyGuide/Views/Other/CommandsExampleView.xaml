@@ -16,18 +16,23 @@
     </UserControl.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <!--first row-->
+        <TextBlock Text="{Binding ViewHeaderTitle}" Style="{StaticResource BaseHeaderTitle}" />
+
+        <!--second row-->
         <DataGrid x:Name="customerDataGrid"
                   AutoGenerateColumns="False"
                   EnableRowVirtualization="True"
                   ItemsSource="{Binding Customers}"
                   RowDetailsVisibilityMode="VisibleWhenSelected"
-                  SelectedItem="{Binding SelectedCustomer}">
+                  SelectedItem="{Binding SelectedCustomer}"
+                  Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Last Name" Width="SizeToHeader" />
@@ -40,11 +45,11 @@
                 <DataGridTextColumn x:Name="fullAddressColumn" Binding="{Binding Email}" Header="Full Address" Width="SizeToCells" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
-        
-        <!--second row-->
-        <TextBlock Grid.Row="1" Text="{Binding ErrorMessage}" Foreground="Red" />
 
         <!--third row-->
-        <Button Grid.Row="2" Content="Delete" Command="{Binding DeleteCommand}" IsEnabled="{Binding IsDeleteEnabled}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" />
+        <TextBlock Grid.Row="2" Text="{Binding ErrorMessage}" Foreground="Red" />
+
+        <!--forth row-->
+        <Button Grid.Row="3" Content="Delete" Command="{Binding DeleteCommand}" IsEnabled="{Binding IsDeleteEnabled}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" />
     </Grid>
 </UserControl>

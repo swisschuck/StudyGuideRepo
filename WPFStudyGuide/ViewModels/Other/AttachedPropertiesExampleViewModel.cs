@@ -6,7 +6,7 @@ using WPFStudyGuide.Services.Customers;
 
 namespace WPFStudyGuide.ViewModels.Other
 {
-    public class AttachedPropertiesExampleViewModel
+    public class AttachedPropertiesExampleViewModel : BaseViewModel
     {
         #region fields
 
@@ -46,7 +46,7 @@ namespace WPFStudyGuide.ViewModels.Other
 
         public AttachedPropertiesExampleViewModel()
         {
-
+            ViewHeaderTitle = "Attached Properties Example";
   
             DeleteCommand = new MyFirstRelayCommand(OnDeleteClicked, IsDeleteEnabled);
             // so with the MyMvvmBehaviors that we defined in the View, we dont have to call the load method here it will be called using Attached Properties

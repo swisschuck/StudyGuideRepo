@@ -10,7 +10,7 @@ using WPFStudyGuide.Services.Customers;
 
 namespace WPFStudyGuide.ViewModels.Other
 {
-    public class ViewModelFirstExampleViewModel
+    public class ViewModelFirstExampleViewModel : BaseViewModel
     {
         #region fields
 
@@ -35,6 +35,8 @@ namespace WPFStudyGuide.ViewModels.Other
             {
                 return;
             }
+
+            ViewHeaderTitle = "View Model First Example";
 
             // the .Result property on the task forces it to be syncronous
             Customers = new ObservableCollection<SimpleCustomer>(_customerService.GetSimpleCustomersAsync().Result);

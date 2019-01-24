@@ -8,6 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <TextBlock Text="{Binding ViewHeaderTitle}" Style="{StaticResource BaseHeaderTitle}" />
+        
         <!--with the ViewModelLocator we build this view is no longer coupled with a specific view model-->
         <DataGrid ItemsSource="{Binding Customers}" />
     </Grid>

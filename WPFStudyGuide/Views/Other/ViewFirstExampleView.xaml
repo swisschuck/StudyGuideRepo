@@ -11,6 +11,9 @@
         <viewModels:ViewFirstExampleViewModel />
     </UserControl.DataContext>
     <Grid>
+
+        <TextBlock Text="{Binding ViewHeaderTitle}" Style="{StaticResource BaseHeaderTitle}" />
+        
         <!--here we can simply let the view take care of the column headers or we can... -->
         <DataGrid ItemsSource="{Binding Customers}" />
 

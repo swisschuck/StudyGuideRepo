@@ -27,8 +27,9 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
+        <TextBlock Text="{Binding ViewHeaderTitle}" Style="{StaticResource BaseHeaderTitle}" />
         
-        <!--first row-->
         <DataGrid x:Name="customerDataGrid"
                   AutoGenerateColumns="False"
                   EnableRowVirtualization="True"
@@ -44,7 +45,6 @@
             </DataGrid.Columns>
         </DataGrid>
         
-        <!--second row-->
         <!--here we are making an implicit template for the list box--> 
         <ListBox Grid.Row="1" ItemsSource="{Binding Customers}"/>
     </Grid>

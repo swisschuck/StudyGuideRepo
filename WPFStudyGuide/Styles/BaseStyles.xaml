@@ -1,0 +1,160 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPFStudyGuide.Styles">
+
+
+    <!--#region Windows -->
+    
+    <Style x:Key="MainWindowStyle" TargetType="Window">
+        <Setter Property="Height" Value="800" />
+        <Setter Property="Width" Value="1000" />
+        <Setter Property="Title" Value="WPF Study Guide" />
+    </Style>
+
+
+    <!--#endregion Windows -->
+    
+    
+    <!--#region Grids -->
+
+    <Style x:Key="MainShellGridStyle" TargetType="Grid">
+    </Style>
+
+    <Style x:Key="BaseDataGridStyle" TargetType="DataGrid">
+        <Setter Property="AlternatingRowBackground" Value="LightBlue" />
+        <Setter Property="AlternationCount" Value="2" />
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="IsReadOnly" Value="False" />
+    </Style>
+
+    <!--#endregion Grids -->
+
+
+    <!--#region Menus -->
+
+    <Style x:Key="BaseMenuStyle" TargetType="Menu">
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <Style x:Key="BaseMenuItemStyle" TargetType="MenuItem">
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="Foreground" Value="White" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True" >
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Background" Value="White" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--#endregion Menus -->
+
+
+    <!--#region ContentControls -->
+
+    <Style x:Key="BaseContentControlPlaceHolderStyle" TargetType="ContentControl">
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Margin" Value="0,25,0,0" />
+    </Style>
+
+    <!--#endregion ContentControls -->
+
+
+    <!--#region TextBlocks -->
+
+    <Style x:Key="BaseHeaderTitle" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="FontFamily" Value="{StaticResource MainApplicationFont}" />
+    </Style>
+    
+
+    <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="FontFamily" Value="{StaticResource MainApplicationFont}" />
+    </Style>
+
+    <Style x:Key="BaseTextBlockErrorStyle" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="FontFamily" Value="{StaticResource MainApplicationFont}" />
+        <Setter Property="Foreground" Value="Red" />
+    </Style>
+
+    <!--#endregion TextBlocks -->
+
+
+    <!--#region TextBoxes -->
+
+    <Style x:Key="BaseTextBoxStyle" TargetType="TextBox">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontFamily" Value="{StaticResource MainApplicationFont}" />
+    </Style>
+
+    <!--#endregion TextBoxes -->
+
+
+    <!--#region ComboBox -->
+
+    <Style x:Key="BaseComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontFamily" Value="{StaticResource MainApplicationFont}" />
+        <Setter Property="SelectedIndex" Value="0" />
+    </Style>
+
+
+    <!--#endregion ComboBox -->
+
+
+    <!--#region Calendar -->
+
+    <Style x:Key="BaseCalendarStyle" TargetType="Calendar">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontFamily" Value="{StaticResource MainApplicationFont}" />
+    </Style>
+
+
+    <!--#endregion Calendar -->
+
+
+    <!--#region Buttons -->
+
+    <Style x:Key="BaseButtonStyle" TargetType="Button">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontFamily" Value="{StaticResource MainApplicationFont}" />
+    </Style>
+
+    <!--#endregion Buttons -->
+
+
+    <!--#region InsertHere -->
+    <!--#endregion InsertHere -->
+
+
+    <!--#region InsertHere -->
+    <!--#endregion InsertHere -->
+
+
+    <!--#region InsertHere -->
+    <!--#endregion InsertHere -->
+
+
+    <!--#region InsertHere -->
+    <!--#endregion InsertHere -->
+</ResourceDictionary>

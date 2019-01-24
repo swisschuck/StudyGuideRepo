@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using WPFStudyGuide.Classes;
 using WPFStudyGuide.Commands.Other;
+using WPFStudyGuide.Helpers;
 using WPFStudyGuide.Services.Customers;
 
 namespace WPFStudyGuide.ViewModels.Other
 {
-    public class CommandsExampleViewModel
+    public class CommandsExampleViewModel : BaseViewModel
     {
         #region fields
 
@@ -56,6 +57,7 @@ namespace WPFStudyGuide.ViewModels.Other
                 return;
             }
 
+            ViewHeaderTitle = "Commands Example";
             // the .Result property on the task forces it to be syncronous
             Customers = new ObservableCollection<SimpleCustomer>(_customerService.GetSimpleCustomersAsync().Result);
             DeleteCommand = new MyFirstRelayCommand(OnDeleteClicked, IsDeleteEnabled);

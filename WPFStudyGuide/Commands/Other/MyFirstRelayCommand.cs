@@ -80,4 +80,53 @@ namespace WPFStudyGuide.Commands.Other
         #region private methods
         #endregion private methods
     }
+
+    public class MyFirstRelayCommand<T> : ICommand
+    {
+        Action<T> _TargetExecuteMethodDelegate;
+        Func<T, bool> _TargetCanExecuteMethodDelegate;
+        public event EventHandler CanExecuteChanged = delegate { };
+
+        public MyFirstRelayCommand(Action<T> methodToExecute)
+        {
+            _TargetExecuteMethodDelegate = methodToExecute;
+        }
+
+        public MyFirstRelayCommand(Action<T> methodToExecute, Func<T, bool> canExecuteMethod)
+        {
+            _TargetExecuteMethodDelegate = methodToExecute;
+            _TargetCanExecuteMethodDelegate = canExecuteMethod;
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            CanExecuteChanged(this, EventArgs.Empty);
+        }
+
+        #region ICommand Members
+
+        bool ICommand.CanExecute(object parameter)
+        {
+            if (_TargetCanExecuteMethodDelegate != null)
+            {
+                T tparm = (T)parameter;
+                return _TargetCanExecuteMethodDelegate(tparm);
+            }
+            if (_TargetExecuteMethodDelegate != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        void ICommand.Execute(object parameter)
+        {
+            if (_TargetExecuteMethodDelegate != null)
+            {
+                _TargetExecuteMethodDelegate((T)parameter);
+            }
+        }
+
+        #endregion ICommand Members
+    }
 }

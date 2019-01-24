@@ -67,10 +67,14 @@
     <Compile Include="Classes\Other\ViewModelLocator.cs" />
     <Compile Include="Classes\SimpleCustomer.cs" />
     <Compile Include="Commands\Other\MyFirstRelayCommand.cs" />
+    <Compile Include="Constants\CommandParameters.cs" />
     <Compile Include="Converters\MyDateConverter.cs" />
     <Compile Include="Enums\Other\PartyAffiliation.cs" />
+    <Compile Include="Helpers\ParsingHelpers.cs" />
     <Compile Include="Services\Customers\CustomerService.cs" />
     <Compile Include="Services\Customers\ICustomerService.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Other\AttachedPropertiesExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\CommandsExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\PropertyChangeNotificationsExampleViewModel.cs" />
@@ -289,6 +293,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Styles\BaseStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\FontStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ViewStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Other\AttachedPropertiesExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

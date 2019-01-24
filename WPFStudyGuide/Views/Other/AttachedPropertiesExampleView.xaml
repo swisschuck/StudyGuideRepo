@@ -17,12 +17,16 @@
     </UserControl.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <!--first row-->
+        <TextBlock Text="{Binding ViewHeaderTitle}" Style="{StaticResource BaseHeaderTitle}" />
+
+        <!--second row-->
         <DataGrid x:Name="customerDataGrid"
                   AutoGenerateColumns="False"
                   EnableRowVirtualization="True"
@@ -42,10 +46,10 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <!--second row-->
+        <!--third row-->
         <TextBlock Grid.Row="1" Text="{Binding ErrorMessage}" Foreground="Red" />
 
-        <!--third row-->
+        <!--forth row-->
         <Button Grid.Row="2" Content="Delete" Command="{Binding DeleteCommand}" IsEnabled="{Binding IsDeleteEnabled}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" />
         
     </Grid>

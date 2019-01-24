@@ -6,7 +6,7 @@ using WPFStudyGuide.Services.Customers;
 
 namespace WPFStudyGuide.ViewModels.Other
 {
-    public class PropertyChangeNotificationsExampleViewModel : INotifyPropertyChanged
+    public class PropertyChangeNotificationsExampleViewModel : BaseViewModel, INotifyPropertyChanged
     {
         #region fields
 
@@ -87,6 +87,8 @@ namespace WPFStudyGuide.ViewModels.Other
             {
                 return;
             }
+
+            ViewHeaderTitle = "Property Change Notifications Example";
 
             Customers = new ObservableCollection<SimpleCustomer>(await _customerService.GetSimpleCustomersAsync());
         }
