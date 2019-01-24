@@ -1,29 +1,22 @@
-﻿<UserControl x:Class="WPFStudyGuide.Views.Other.ViewModelFirstExampleView"
+﻿<UserControl x:Class="WPFStudyGuide.Views.Other.CommandsExampleView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFStudyGuide.Views.Other"
              xmlns:viewModels="clr-namespace:WPFStudyGuide.ViewModels.Other"
-             xmlns:data="clr-namespace:WPFStudyGuide.Classes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
-        <viewModels:ViewFirstExampleViewModel />
+        <viewModels:CommandsExampleViewModel />
     </UserControl.DataContext>
-    <UserControl.Resources>
-        <DataTemplate DataType="{x:Type data:SimpleCustomer}">
-            <Border BorderBrush="Black" BorderThickness="1">
-                <StackPanel Width="300">
-                    <TextBlock Text="{Binding FirstName}" />
-                    <TextBlock Text="{Binding LastName}" />
-                    <TextBlock Text="{Binding Phone}" />
-                </StackPanel>
-            </Border>
-        </DataTemplate>
-    </UserControl.Resources>
+    <UserControl.InputBindings>
+        <!--here we can setup the view to listen to keyboard commands such as the letter D being pressed-->
+        <KeyBinding Key="D" Modifiers="Ctrl" Command="{Binding DeleteCommand}" />
+    </UserControl.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -34,18 +27,24 @@
                   EnableRowVirtualization="True"
                   ItemsSource="{Binding Customers}"
                   RowDetailsVisibilityMode="VisibleWhenSelected"
-                  CanUserAddRows="False">
+                  SelectedItem="{Binding SelectedCustomer}">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Last Name" Width="SizeToHeader" />
                 <DataGridTextColumn x:Name="phoneColumn" Binding="{Binding Phone}" Header="Phone" Width="SizeToCells" />
                 <DataGridTextColumn x:Name="emailColumn" Binding="{Binding Email}" Header="Email" Width="SizeToCells" />
-                <DataGridTextColumn x:Name="addressColumn" Binding="{Binding FullAddress}" Header="Address" Width="*" />
+                <DataGridTextColumn x:Name="streetColumn" Binding="{Binding Street}" Header="Street" Width="SizeToCells" />
+                <DataGridTextColumn x:Name="cityColumn" Binding="{Binding City}" Header="City" Width="SizeToCells" />
+                <DataGridTextColumn x:Name="stateColumn" Binding="{Binding State}" Header="State" Width="SizeToCells" />
+                <DataGridTextColumn x:Name="zipColumn" Binding="{Binding Zip}" Header="Zip" Width="SizeToCells" />
+                <DataGridTextColumn x:Name="fullAddressColumn" Binding="{Binding Email}" Header="Full Address" Width="SizeToCells" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
         
         <!--second row-->
-        <!--here we are making an implicit template for the list box--> 
-        <ListBox Grid.Row="1" ItemsSource="{Binding Customers}"/>
+        <TextBlock Grid.Row="1" Text="{Binding ErrorMessage}" Foreground="Red" />
+
+        <!--third row-->
+        <Button Grid.Row="2" Content="Delete" Command="{Binding DeleteCommand}" IsEnabled="{Binding IsDeleteEnabled}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" />
     </Grid>
 </UserControl>

@@ -165,8 +165,10 @@ namespace StudyGuide.Classes.Examples
 
         #endregion constructors
 
+
         #region public methods
         #endregion public methods
+
 
         #region private methods
         #endregion private methods

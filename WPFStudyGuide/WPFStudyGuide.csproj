@@ -56,6 +56,7 @@
     <Compile Include="Classes\Other\Candidate.cs" />
     <Compile Include="Classes\Other\Customer.cs" />
     <Compile Include="Classes\Other\Employee.cs" />
+    <Compile Include="Classes\Other\MyMvvmBehaviors.cs" />
     <Compile Include="Classes\Other\Order.cs" />
     <Compile Include="Classes\Other\OrderItem.cs" />
     <Compile Include="Classes\Other\OrderItemOption.cs" />
@@ -65,13 +66,26 @@
     <Compile Include="Classes\Other\ProductSize.cs" />
     <Compile Include="Classes\Other\ViewModelLocator.cs" />
     <Compile Include="Classes\SimpleCustomer.cs" />
+    <Compile Include="Commands\Other\MyFirstRelayCommand.cs" />
     <Compile Include="Converters\MyDateConverter.cs" />
     <Compile Include="Enums\Other\PartyAffiliation.cs" />
     <Compile Include="Services\Customers\CustomerService.cs" />
     <Compile Include="Services\Customers\ICustomerService.cs" />
+    <Compile Include="ViewModels\Other\AttachedPropertiesExampleViewModel.cs" />
+    <Compile Include="ViewModels\Other\CommandsExampleViewModel.cs" />
+    <Compile Include="ViewModels\Other\PropertyChangeNotificationsExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewFirstExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewModelFirstExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewModelLocaterExampleViewModel.cs" />
+    <Compile Include="Views\Other\AttachedPropertiesExampleView.xaml.cs">
+      <DependentUpon>AttachedPropertiesExampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Other\CommandsExampleView.xaml.cs">
+      <DependentUpon>CommandsExampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Other\PropertyChangeNotificationsExampleView.xaml.cs">
+      <DependentUpon>PropertyChangeNotificationsExampleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Other\ViewFirstExampleView.xaml.cs">
       <DependentUpon>ViewFirstExampleView.xaml</DependentUpon>
     </Compile>
@@ -275,6 +289,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Other\AttachedPropertiesExampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Other\CommandsExampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Other\PropertyChangeNotificationsExampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Other\ViewFirstExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
