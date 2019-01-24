@@ -12,7 +12,7 @@
         <viewModels:MainWindowViewModel/>
     </Window.DataContext>
     <Window.Resources>
-        <!--if when switching view only the namespace appears, its more than likely missing from this declaration-->
+        <!--if when switching views only the namespace appears, its more than likely missing from this declaration-->
         <DataTemplate DataType="{x:Type otherViewModels:CommandsExampleViewModel}">
             <otherViews:CommandsExampleView/>
         </DataTemplate>
