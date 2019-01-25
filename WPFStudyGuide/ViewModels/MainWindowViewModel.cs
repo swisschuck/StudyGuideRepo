@@ -20,6 +20,7 @@ namespace WPFStudyGuide.ViewModels
         private ViewFirstExampleViewModel _viewFirstExampleViewModel;
         private ViewModelFirstExampleViewModel _viewModelFirstExampleViewModel;
         private ViewModelLocaterExampleViewModel _viewModelLocaterExampleViewModel;
+        private ParentAndChildViewsExampleViewModel _parentAndChildViewsExampleViewModel;
 
         #endregion fields
 
@@ -108,7 +109,12 @@ namespace WPFStudyGuide.ViewModels
                     CurrentViewModel = _viewModelLocaterExampleViewModel;
                     break;
 
-                #endregion Examples
+                case CommandParameters.LoadParentAndChildViewsExample:
+                    _parentAndChildViewsExampleViewModel = new ParentAndChildViewsExampleViewModel();
+                    CurrentViewModel = _parentAndChildViewsExampleViewModel;
+                    break;
+
+                    #endregion Examples
             }
         }
 

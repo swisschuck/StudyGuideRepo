@@ -31,6 +31,9 @@
         <DataTemplate DataType="{x:Type otherViewModels:ViewModelLocaterExampleViewModel}">
             <otherViews:ViewModelLocaterExampleView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type otherViewModels:ParentAndChildViewsExampleViewModel}">
+            <otherViews:ParentAndChildViewsExampleView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid Style="{StaticResource MainShellGridStyle}">
         <Grid.RowDefinitions>
@@ -60,6 +63,9 @@
 
                 <MenuItem Header="Model Locator Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}"
                           CommandParameter="{x:Static constants:CommandParameters.LoadModelLocaterExample}"/>
+                
+                <MenuItem Header="Parent and Child View Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}"
+                          CommandParameter="{x:Static constants:CommandParameters.LoadParentAndChildViewsExample}"/>
             </MenuItem>
         </Menu>
         <ContentControl Name="UserControlPlaceHolder" Style="{StaticResource BaseContentControlPlaceHolderStyle}" Content="{Binding CurrentViewModel}" />

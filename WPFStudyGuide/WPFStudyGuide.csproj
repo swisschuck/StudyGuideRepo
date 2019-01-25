@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>StudyGuideIcon48.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -69,6 +72,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Other\AttachedPropertiesExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\CommandsExampleViewModel.cs" />
+    <Compile Include="ViewModels\Other\ParentAndChildViewsExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\PropertyChangeNotificationsExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewFirstExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewModelFirstExampleViewModel.cs" />
@@ -78,6 +82,9 @@
     </Compile>
     <Compile Include="Views\Other\CommandsExampleView.xaml.cs">
       <DependentUpon>CommandsExampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Other\ParentAndChildViewsExampleView.xaml.cs">
+      <DependentUpon>ParentAndChildViewsExampleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Other\PropertyChangeNotificationsExampleView.xaml.cs">
       <DependentUpon>PropertyChangeNotificationsExampleView.xaml</DependentUpon>
@@ -305,6 +312,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Other\ParentAndChildViewsExampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Other\PropertyChangeNotificationsExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -358,6 +369,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Notes\MVVM.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StudyGuideIcon48.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
