@@ -16,6 +16,7 @@ namespace WPFStudyGuide.Constants
         public const string LoadViewFirstExample = "LoadViewFirstExample";
         public const string LoadViewModelFirstExample = "LoadViewModelFirstExample";
         public const string LoadModelLocaterExample = "LoadModelLocaterExample";
+        public const string LoadParentAndChildViewsExample = "LoadParentAndChildViewsExample";
 
         #endregion Main Window Commands
     }

@@ -72,6 +72,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Other\AttachedPropertiesExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\CommandsExampleViewModel.cs" />
+    <Compile Include="ViewModels\Other\ParentAndChildViewsExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\PropertyChangeNotificationsExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewFirstExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewModelFirstExampleViewModel.cs" />
@@ -81,6 +82,9 @@
     </Compile>
     <Compile Include="Views\Other\CommandsExampleView.xaml.cs">
       <DependentUpon>CommandsExampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Other\ParentAndChildViewsExampleView.xaml.cs">
+      <DependentUpon>ParentAndChildViewsExampleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Other\PropertyChangeNotificationsExampleView.xaml.cs">
       <DependentUpon>PropertyChangeNotificationsExampleView.xaml</DependentUpon>
@@ -305,6 +309,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Other\CommandsExampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Other\ParentAndChildViewsExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
