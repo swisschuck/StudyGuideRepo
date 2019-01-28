@@ -37,6 +37,9 @@
         <DataTemplate DataType="{x:Type otherViewModels:PlaceOrderViewModel}">
             <otherViews:PlaceOrderView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type otherViewModels:AddEditCustomerViewModel}">
+            <otherViews:AddEditCustomerView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid Style="{StaticResource MainShellGridStyle}">
         <Grid.RowDefinitions>

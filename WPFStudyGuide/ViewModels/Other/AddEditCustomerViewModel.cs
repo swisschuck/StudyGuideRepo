@@ -12,7 +12,7 @@ namespace WPFStudyGuide.ViewModels.Other
         #region fields
 
         private bool _editMode;
-        private SimpleCustomer _customerToEdit;
+        private SimpleCustomer _customerToEdit = null;
 
         #endregion fields
 
@@ -39,7 +39,7 @@ namespace WPFStudyGuide.ViewModels.Other
 
         public AddEditCustomerViewModel()
         {
-
+            ViewHeaderTitle = "Add/Edit Customer";
         }
 
         #endregion constructors
