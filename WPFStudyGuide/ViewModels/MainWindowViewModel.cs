@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPFStudyGuide.Classes.Other;
 using WPFStudyGuide.Commands.Other;
 using WPFStudyGuide.Constants;
 using WPFStudyGuide.ViewModels.Other;
@@ -14,13 +15,15 @@ namespace WPFStudyGuide.ViewModels
         #region fields
 
         private BaseViewModel _currentViewModel;
-        private CommandsExampleViewModel _commandsExampleViewModel;
-        private AttachedPropertiesExampleViewModel _attachedPropertiesExampleViewModel;
-        private PropertyChangeNotificationsExampleViewModel _propertyChangeNotificationsExampleViewModel;
-        private ViewFirstExampleViewModel _viewFirstExampleViewModel;
-        private ViewModelFirstExampleViewModel _viewModelFirstExampleViewModel;
-        private ViewModelLocaterExampleViewModel _viewModelLocaterExampleViewModel;
-        private ParentAndChildViewsExampleViewModel _parentAndChildViewsExampleViewModel;
+        private CommandsExampleViewModel _commandsExampleViewModel = new CommandsExampleViewModel();
+        private AttachedPropertiesExampleViewModel _attachedPropertiesExampleViewModel = new AttachedPropertiesExampleViewModel();
+        private PropertyChangeNotificationsExampleViewModel _propertyChangeNotificationsExampleViewModel = new PropertyChangeNotificationsExampleViewModel();
+        private ViewFirstExampleViewModel _viewFirstExampleViewModel = new ViewFirstExampleViewModel();
+        private ViewModelFirstExampleViewModel _viewModelFirstExampleViewModel = new ViewModelFirstExampleViewModel();
+        private ViewModelLocaterExampleViewModel _viewModelLocaterExampleViewModel = new ViewModelLocaterExampleViewModel();
+        private ParentAndChildViewsExampleViewModel _parentAndChildViewsExampleViewModel = new ParentAndChildViewsExampleViewModel();
+        private PlaceOrderViewModel _placeOrderViewModel = new PlaceOrderViewModel();
+        private AddEditCustomerViewModel _addEditCustomerViewModel = new AddEditCustomerViewModel();
 
         #endregion fields
 
@@ -55,6 +58,9 @@ namespace WPFStudyGuide.ViewModels
         {
             //CurrentViewModel = _initialViewModel;
             NavigationCommand = new MyFirstRelayCommand<string>(OnNavigationClicked);
+            _parentAndChildViewsExampleViewModel.PlaceOrderRequested += NavigateToOrder;
+            _parentAndChildViewsExampleViewModel.AddCustomerRequested += NavigateToAddCustomer;
+            _parentAndChildViewsExampleViewModel.EditCustomerRequested += NavigateToEditCustomer;
         }
 
         #endregion constructors
@@ -80,42 +86,56 @@ namespace WPFStudyGuide.ViewModels
                 #region Examples
 
                 case CommandParameters.LoadCommandsExample:
-                    _commandsExampleViewModel = new CommandsExampleViewModel();
                     CurrentViewModel = _commandsExampleViewModel;
                     break;
 
                 case CommandParameters.LoadAttachedPropertiesExample:
-                    _attachedPropertiesExampleViewModel = new AttachedPropertiesExampleViewModel();
                     CurrentViewModel = _attachedPropertiesExampleViewModel;
                     break;
 
                 case CommandParameters.LoadPropertyChangedExample:
-                    _propertyChangeNotificationsExampleViewModel = new PropertyChangeNotificationsExampleViewModel();
                     CurrentViewModel = _propertyChangeNotificationsExampleViewModel;
                     break;
 
                 case CommandParameters.LoadViewFirstExample:
-                    _viewFirstExampleViewModel = new ViewFirstExampleViewModel();
                     CurrentViewModel = _viewFirstExampleViewModel;
                     break;
 
                 case CommandParameters.LoadViewModelFirstExample:
-                    _viewModelFirstExampleViewModel = new ViewModelFirstExampleViewModel();
                     CurrentViewModel = _viewModelFirstExampleViewModel;
                     break;
 
                 case CommandParameters.LoadModelLocaterExample:
-                    _viewModelLocaterExampleViewModel = new ViewModelLocaterExampleViewModel();
                     CurrentViewModel = _viewModelLocaterExampleViewModel;
                     break;
 
                 case CommandParameters.LoadParentAndChildViewsExample:
-                    _parentAndChildViewsExampleViewModel = new ParentAndChildViewsExampleViewModel();
                     CurrentViewModel = _parentAndChildViewsExampleViewModel;
                     break;
 
                     #endregion Examples
             }
+        }
+
+
+        private void NavigateToOrder(Guid customerId)
+        {
+            _placeOrderViewModel.CustomerId = customerId;
+            CurrentViewModel = _placeOrderViewModel;
+        }
+
+        private void NavigateToAddCustomer(SimpleCustomer customerToAdd)
+        {
+            _addEditCustomerViewModel.EditMode = false;
+            _addEditCustomerViewModel.SetCustomer(customerToAdd);
+            CurrentViewModel = _addEditCustomerViewModel;
+        }
+
+        private void NavigateToEditCustomer(SimpleCustomer customerToEdit)
+        {
+            _addEditCustomerViewModel.EditMode = true;
+            _addEditCustomerViewModel.SetCustomer(customerToEdit);
+            CurrentViewModel = _addEditCustomerViewModel;
         }
 
         #endregion private methods

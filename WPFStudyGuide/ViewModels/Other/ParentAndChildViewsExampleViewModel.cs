@@ -5,7 +5,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WPFStudyGuide.Classes;
+using WPFStudyGuide.Classes.Other;
+using WPFStudyGuide.Commands.Other;
 using WPFStudyGuide.Services.Customers;
 
 namespace WPFStudyGuide.ViewModels.Other
@@ -14,14 +15,47 @@ namespace WPFStudyGuide.ViewModels.Other
     {
         #region fields
 
-        private ICustomerService _customerService = new CustomerService();
+        private ICustomerService _customerService = new CustomerServiceJSON();
+        private ObservableCollection<SimpleCustomer> _customers;
 
         #endregion fields
 
 
         #region properties
 
-        public ObservableCollection<SimpleCustomer> Customers { get; set; }
+        public event Action<Guid> PlaceOrderRequested = delegate { };
+        public event Action<SimpleCustomer> AddCustomerRequested = delegate { };
+        public event Action<SimpleCustomer> EditCustomerRequested = delegate { };
+
+        public MyFirstRelayCommand<SimpleCustomer> PlaceOrderCommand
+        {
+            get;
+            private set;
+        }
+
+        public MyFirstRelayCommand AddCustomerCommand
+        {
+            get;
+            private set;
+        }
+
+        public MyFirstRelayCommand<SimpleCustomer> EditCustomerCommand
+        {
+            get;
+            private set;
+        }
+
+        public ObservableCollection<SimpleCustomer> Customers
+        {
+            get
+            {
+                return _customers;
+            }
+            set
+            {
+                SetProperty(ref _customers, value);
+            }
+        }
 
         #endregion properties
 
@@ -37,19 +71,46 @@ namespace WPFStudyGuide.ViewModels.Other
             }
 
             ViewHeaderTitle = "Parent and Child view example";
-
-            // the .Result property on the task forces it to be syncronous
-            Customers = new ObservableCollection<SimpleCustomer>(_customerService.GetSimpleCustomersAsync().Result);
+            PlaceOrderCommand = new MyFirstRelayCommand<SimpleCustomer>(OnPlaceOrder);
+            AddCustomerCommand = new MyFirstRelayCommand(OnAddCustomer);
+            EditCustomerCommand = new MyFirstRelayCommand<SimpleCustomer>(OnEditCustomer);
         }
 
         #endregion constructors
 
 
         #region public methods
+
+        public async void LoadCustomers()
+        {
+            // the view is calling this method via the interactivity:Interaction.Triggers, you will need the System.Windows.Interactivity sdk
+            // from nuget (can normally be obtained from loading the solution in Visual Studio Blend).
+            Customers = new ObservableCollection<SimpleCustomer>(await _customerService.GetCustomersAsync(true));
+        }
+
         #endregion public methods
 
 
         #region private methods
+
+        private void OnPlaceOrder(SimpleCustomer customer)
+        {
+            // in order to load up the place order child view we need to communicate with the MainWindow view so we can replace this view with
+            // the view we want. There are many ways to do this but we are going to raise an event in the child that the parent can handle.
+            PlaceOrderRequested(customer.Id);
+        }
+
+        private void OnAddCustomer()
+        {
+            AddCustomerRequested(new SimpleCustomer { Id = Guid.NewGuid() });
+        }
+
+
+        private void OnEditCustomer(SimpleCustomer customerToEdit)
+        {
+            EditCustomerRequested(customerToEdit);
+        }
+
         #endregion private methods
     }
 }

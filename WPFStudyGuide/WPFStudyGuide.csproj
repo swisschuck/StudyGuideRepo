@@ -37,8 +37,14 @@
     <ApplicationIcon>StudyGuideIcon48.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,24 +65,29 @@
     <Compile Include="Classes\Other\CandidateExample.cs" />
     <Compile Include="Classes\Other\EmployeeExample.cs" />
     <Compile Include="Classes\Other\MyMvvmBehaviors.cs" />
+    <Compile Include="Classes\Other\SimpleCustomer.cs" />
     <Compile Include="Classes\Other\ViewModelLocator.cs" />
-    <Compile Include="Classes\SimpleCustomer.cs" />
     <Compile Include="Commands\Other\MyFirstRelayCommand.cs" />
     <Compile Include="Constants\CommandParameters.cs" />
     <Compile Include="Converters\MyDateConverter.cs" />
     <Compile Include="Enums\Other\PartyAffiliation.cs" />
     <Compile Include="Helpers\ParsingHelpers.cs" />
-    <Compile Include="Services\Customers\CustomerService.cs" />
+    <Compile Include="Services\Customers\CustomerServiceJSON.cs" />
     <Compile Include="Services\Customers\ICustomerService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Other\AddEditCustomerViewModel.cs" />
     <Compile Include="ViewModels\Other\AttachedPropertiesExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\CommandsExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ParentAndChildViewsExampleViewModel.cs" />
+    <Compile Include="ViewModels\Other\PlaceOrderViewModel.cs" />
     <Compile Include="ViewModels\Other\PropertyChangeNotificationsExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewFirstExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewModelFirstExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewModelLocaterExampleViewModel.cs" />
+    <Compile Include="Views\Other\AddEditCustomerView.xaml.cs">
+      <DependentUpon>AddEditCustomerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Other\AttachedPropertiesExampleView.xaml.cs">
       <DependentUpon>AttachedPropertiesExampleView.xaml</DependentUpon>
     </Compile>
@@ -85,6 +96,9 @@
     </Compile>
     <Compile Include="Views\Other\ParentAndChildViewsExampleView.xaml.cs">
       <DependentUpon>ParentAndChildViewsExampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Other\PlaceOrderView.xaml.cs">
+      <DependentUpon>PlaceOrderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Other\PropertyChangeNotificationsExampleView.xaml.cs">
       <DependentUpon>PropertyChangeNotificationsExampleView.xaml</DependentUpon>
@@ -304,6 +318,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Other\AddEditCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Other\AttachedPropertiesExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -313,6 +331,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Other\ParentAndChildViewsExampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Other\PlaceOrderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -352,6 +374,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="DataBase\JSON\CustomersMockDB.json" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
