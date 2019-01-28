@@ -8,7 +8,7 @@ using WPFStudyGuide.Classes.Other;
 
 namespace WPFStudyGuide.Services.Customers
 {
-    public class CustomerService : ICustomerService
+    public class CustomerServiceJSON : ICustomerService
     {
         #region fields
         #endregion fields
@@ -24,26 +24,6 @@ namespace WPFStudyGuide.Services.Customers
 
         #region public methods
 
-        public Task<List<SimpleCustomer>> GetCustomersAsync()
-        {
-            Task<List<SimpleCustomer>> taskToReturn = Task.Run(() =>
-            {
-                return new List<SimpleCustomer>();
-            });
-
-            return taskToReturn;
-        }
-
-        public Task<List<SimpleCustomer>> GetSimpleCustomersAsync()
-        {
-            Task<List<SimpleCustomer>> taskToReturn = Task.Run(() =>
-            {
-                return GetSimpleCustomersMocked();
-            });
-
-            return taskToReturn;
-        }
-
         public Task<SimpleCustomer> GetCustomerAsync(Guid id)
         {
             Task<SimpleCustomer> taskToReturn = Task.Run(() =>
@@ -53,6 +33,21 @@ namespace WPFStudyGuide.Services.Customers
 
             return taskToReturn;
         }
+
+        public Task<List<SimpleCustomer>> GetCustomersAsync(bool getMockedData = false)
+        {
+            Task<List<SimpleCustomer>> taskToReturn = Task.Run(() =>
+            {
+                if (getMockedData)
+                {
+                    return GetSimpleCustomersMocked();
+                }
+                return new List<SimpleCustomer>();
+            });
+
+            return taskToReturn;
+        }
+
 
         public async Task<SimpleCustomer> AddCustomerAsync(SimpleCustomer customer)
         {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using WPFStudyGuide.Classes;
+using WPFStudyGuide.Classes.Other;
 using WPFStudyGuide.Commands.Other;
 using WPFStudyGuide.Services.Customers;
 
@@ -10,7 +10,7 @@ namespace WPFStudyGuide.ViewModels.Other
     {
         #region fields
 
-        private ICustomerService _customerService = new CustomerService();
+        private ICustomerService _customerService = new CustomerServiceJSON();
         private SimpleCustomer _selectedCustomer;
         private ObservableCollection<SimpleCustomer> _customers;
 
@@ -90,7 +90,7 @@ namespace WPFStudyGuide.ViewModels.Other
 
             ViewHeaderTitle = "Property Change Notifications Example";
 
-            Customers = new ObservableCollection<SimpleCustomer>(await _customerService.GetSimpleCustomersAsync());
+            Customers = new ObservableCollection<SimpleCustomer>(await _customerService.GetCustomersAsync(true));
         }
 
         public void OnDeleteClicked()

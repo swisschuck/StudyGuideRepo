@@ -150,6 +150,12 @@ C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\App.baml
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Styles\BaseStyles.baml
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Styles\FontStyles.baml
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Styles\ViewStyles.baml
-C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csprojAssemblyReference.cache
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\ParentAndChildViewsExampleView.g.cs
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\ParentAndChildViewsExampleView.baml
+C:\Repos\StudyGuideRepo\WPFStudyGuide\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Repos\StudyGuideRepo\WPFStudyGuide\bin\Debug\System.Windows.Interactivity.dll
+C:\Repos\StudyGuideRepo\WPFStudyGuide\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Repos\StudyGuideRepo\WPFStudyGuide\bin\Debug\System.Windows.Interactivity.xml
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csproj.CopyComplete
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\PlaceOrderView.g.cs
+C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\PlaceOrderView.baml

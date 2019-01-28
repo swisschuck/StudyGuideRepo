@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using WPFStudyGuide.Classes;
+using WPFStudyGuide.Classes.Other;
 using WPFStudyGuide.Commands.Other;
-using WPFStudyGuide.Helpers;
 using WPFStudyGuide.Services.Customers;
 
 namespace WPFStudyGuide.ViewModels.Other
@@ -17,7 +10,7 @@ namespace WPFStudyGuide.ViewModels.Other
     {
         #region fields
 
-        private ICustomerService _customerService = new CustomerService();
+        private ICustomerService _customerService = new CustomerServiceJSON();
         private SimpleCustomer _selectedCustomer;
 
         #endregion fields
@@ -59,7 +52,7 @@ namespace WPFStudyGuide.ViewModels.Other
 
             ViewHeaderTitle = "Commands Example";
             // the .Result property on the task forces it to be syncronous
-            Customers = new ObservableCollection<SimpleCustomer>(_customerService.GetSimpleCustomersAsync().Result);
+            Customers = new ObservableCollection<SimpleCustomer>(_customerService.GetCustomersAsync(true).Result);
             DeleteCommand = new MyFirstRelayCommand(OnDeleteClicked, IsDeleteEnabled);
         }
 
