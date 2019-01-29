@@ -159,6 +159,5 @@ C:\Repos\StudyGuideRepo\WPFStudyGuide\bin\Debug\System.Windows.Interactivity.xml
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csproj.CopyComplete
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\PlaceOrderView.g.cs
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\PlaceOrderView.baml
-C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\WPFStudyGuide.csprojAssemblyReference.cache
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\AddEditCustomerView.g.cs
 C:\Repos\StudyGuideRepo\WPFStudyGuide\obj\Debug\Views\Other\AddEditCustomerView.baml
