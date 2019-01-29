@@ -61,6 +61,7 @@ namespace WPFStudyGuide.ViewModels
             _parentAndChildViewsExampleViewModel.PlaceOrderRequested += NavigateToOrder;
             _parentAndChildViewsExampleViewModel.AddCustomerRequested += NavigateToAddCustomer;
             _parentAndChildViewsExampleViewModel.EditCustomerRequested += NavigateToEditCustomer;
+            _addEditCustomerViewModel.Done += NavigateToCustomerList;
         }
 
         #endregion constructors
@@ -136,6 +137,11 @@ namespace WPFStudyGuide.ViewModels
             _addEditCustomerViewModel.EditMode = true;
             _addEditCustomerViewModel.SetCustomer(customerToEdit);
             CurrentViewModel = _addEditCustomerViewModel;
+        }
+
+        private void NavigateToCustomerList()
+        {
+            CurrentViewModel = _parentAndChildViewsExampleViewModel;
         }
 
         #endregion private methods

@@ -93,3 +93,20 @@ Property Change Notifications
 
 + for ViewModels and Models INotifyPropertyChanged is the better choice.
 + Are the best way to keep your view and view models in sync.
+
+
+
+Validation in MVVM
+===============================
++ Data entry forms can still leverage WPF data binding validation features.
++ Validation logic belongs in the Model or ViewModel, not the view.
++ We can use any of the following:
+	- Exceptions
+	- IDataErrorInfo
+	- INotifyDataErrorInfo
+	- ValidationRules
++ Favor INotifyDataErrorInfo
+	- introduced to WPF in .NET 4.5
+	- supports querying the object for errors associated with the object
+	- allows async validation
+	- allows properties to have more than one error message.

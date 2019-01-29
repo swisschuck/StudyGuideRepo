@@ -41,6 +41,7 @@
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
@@ -66,10 +67,12 @@
     <Compile Include="Classes\Other\EmployeeExample.cs" />
     <Compile Include="Classes\Other\MyMvvmBehaviors.cs" />
     <Compile Include="Classes\Other\SimpleCustomer.cs" />
+    <Compile Include="Classes\Other\SimpleEditableCustomer.cs" />
     <Compile Include="Classes\Other\ViewModelLocator.cs" />
     <Compile Include="Commands\Other\MyFirstRelayCommand.cs" />
     <Compile Include="Constants\CommandParameters.cs" />
     <Compile Include="Converters\MyDateConverter.cs" />
+    <Compile Include="Converters\NegatableBooleanToVisibilityConverter.cs" />
     <Compile Include="Enums\Other\PartyAffiliation.cs" />
     <Compile Include="Helpers\ParsingHelpers.cs" />
     <Compile Include="Services\Customers\CustomerServiceJSON.cs" />
@@ -85,6 +88,7 @@
     <Compile Include="ViewModels\Other\ViewFirstExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewModelFirstExampleViewModel.cs" />
     <Compile Include="ViewModels\Other\ViewModelLocaterExampleViewModel.cs" />
+    <Compile Include="ViewModels\ValidationBase.cs" />
     <Compile Include="Views\Other\AddEditCustomerView.xaml.cs">
       <DependentUpon>AddEditCustomerView.xaml</DependentUpon>
     </Compile>
@@ -375,6 +379,7 @@
     </EmbeddedResource>
     <None Include="DataBase\JSON\CustomersMockDB.json" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\WPFStudyGuide.Classes.Other.SimpleCustomer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
