@@ -1,0 +1,49 @@
+SQL Instance
+=========================
+- 
+
+
+Database
+=========================
+- a container to store and organize data.
+
+
+
+Schema
+=========================
+- a physical grouping of tables done in a logical way.
+- helps to organize a data base's tables.
+
+
+
+Table
+=========================
+- a single collection of data
+
+
+
+Views
+=========================
+- are basically just saved queries meant to make common queries more accessable and easier to consume.
+
+
+
+High Level order of clauses (if we used all of them)
+===========================
+SELECT
+FROM
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+
+
+behind the scenes SQL will actually execute them in this order
+===========================
+
+FROM
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY

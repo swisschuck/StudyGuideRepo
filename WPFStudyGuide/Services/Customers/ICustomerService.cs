@@ -8,12 +8,12 @@ using WPFStudyGuide.Classes.Other;
 
 namespace WPFStudyGuide.Services.Customers
 {
-    interface ICustomerService
+    public interface ICustomerService
     {
         Task<List<SimpleCustomer>> GetCustomersAsync(bool getMockedData = false);
         Task<SimpleCustomer> GetCustomerAsync(Guid id);
-        Task<SimpleCustomer> AddCustomerAsync(SimpleCustomer customer);
-        Task<SimpleCustomer> UpdateCustomerAsync(SimpleCustomer customer);
-        Task<bool> DeleteCustomerAsync(Guid customerId);
+        Task<bool> AddCustomerAsync(SimpleCustomer customerToAdd);
+        Task<bool> UpdateCustomerAsync(SimpleCustomer customerToUpdate);
+        Task<bool> DeleteCustomerAsync(SimpleCustomer customerToDelete);
     }
 }

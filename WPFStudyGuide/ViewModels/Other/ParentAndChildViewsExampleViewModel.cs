@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WPFStudyGuide.Classes.Other;
 using WPFStudyGuide.Commands.Other;
 using WPFStudyGuide.Services.Customers;
@@ -26,6 +22,7 @@ namespace WPFStudyGuide.ViewModels.Other
         public event Action<Guid> PlaceOrderRequested = delegate { };
         public event Action<SimpleCustomer> AddCustomerRequested = delegate { };
         public event Action<SimpleCustomer> EditCustomerRequested = delegate { };
+        public event Action<SimpleCustomer> DeleteCustomerRequested = delegate { };
 
         public MyFirstRelayCommand<SimpleCustomer> PlaceOrderCommand
         {
@@ -40,6 +37,12 @@ namespace WPFStudyGuide.ViewModels.Other
         }
 
         public MyFirstRelayCommand<SimpleCustomer> EditCustomerCommand
+        {
+            get;
+            private set;
+        }
+
+        public MyFirstRelayCommand<SimpleCustomer> DeleteCustomerCommand
         {
             get;
             private set;
@@ -74,6 +77,7 @@ namespace WPFStudyGuide.ViewModels.Other
             PlaceOrderCommand = new MyFirstRelayCommand<SimpleCustomer>(OnPlaceOrder);
             AddCustomerCommand = new MyFirstRelayCommand(OnAddCustomer);
             EditCustomerCommand = new MyFirstRelayCommand<SimpleCustomer>(OnEditCustomer);
+            DeleteCustomerCommand = new MyFirstRelayCommand<SimpleCustomer>(OnDeleteCustomer);
         }
 
         #endregion constructors
@@ -85,7 +89,7 @@ namespace WPFStudyGuide.ViewModels.Other
         {
             // the view is calling this method via the interactivity:Interaction.Triggers, you will need the System.Windows.Interactivity sdk
             // from nuget (can normally be obtained from loading the solution in Visual Studio Blend).
-            Customers = new ObservableCollection<SimpleCustomer>(await _customerService.GetCustomersAsync(true));
+            Customers = new ObservableCollection<SimpleCustomer>(await _customerService.GetCustomersAsync());
         }
 
         #endregion public methods
@@ -109,6 +113,12 @@ namespace WPFStudyGuide.ViewModels.Other
         private void OnEditCustomer(SimpleCustomer customerToEdit)
         {
             EditCustomerRequested(customerToEdit);
+        }
+
+        private async void OnDeleteCustomer(SimpleCustomer customerToDelete)
+        {
+            bool deleteStatus = await _customerService.DeleteCustomerAsync(customerToDelete);
+            LoadCustomers();
         }
 
         #endregion private methods

@@ -110,3 +110,29 @@ Validation in MVVM
 	- supports querying the object for errors associated with the object
 	- allows async validation
 	- allows properties to have more than one error message.
+
+
+Dependency Injection and IOC in MVVM
+===============================
++ Data binding decouples Views and ViewModels
++ We need something to decouple ViewModels from Client Services
++ IoC containers (inversion of control)
+	- IoC container creates an object of the specified class and also injects all the dependency objects through 
+	  constructor, property or method at run time and disposes it at the appropriate time. This is done so that we 
+	  don't have to create and manage objects manually.
+
+	- A "Container" is infrastructure code that does both Dependency Injection and IOC for you
+	- The IoC pattern is all about deligating responsibility for construction and the DI pattern is about providing dependencies to an object
+	  that has already been constructed.
+
+	- The container is responsible for:
+		- Constructs an object when asked.
+		- Determine what an object depends on.
+		- Construct the dependencies needed.
+		- Inject the dependencies into the object being constructed, recursively for each child dependency.
+
+	- Popular containers are:
+		- Unity
+		- Autofac
+		- Ninject
+		- StructureMap

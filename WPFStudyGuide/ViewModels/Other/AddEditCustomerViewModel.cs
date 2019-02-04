@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WPFStudyGuide.Classes.Other;
 using WPFStudyGuide.Commands.Other;
+using WPFStudyGuide.Services.Customers;
 
 namespace WPFStudyGuide.ViewModels.Other
 {
@@ -13,13 +10,28 @@ namespace WPFStudyGuide.ViewModels.Other
         #region fields
 
         private bool _editMode;
+        private string _statusMessage;
         private SimpleEditableCustomer _customer = null;
         private SimpleCustomer _editingCustomer = null;
+        private ICustomerService _customerService = new CustomerServiceJSON();
 
         #endregion fields
 
 
         #region properties
+
+        public string StatusMessage
+        {
+            get
+            {
+                return _statusMessage;
+            }
+
+            set
+            {
+                SetProperty(ref _statusMessage, value);
+            }
+        }
 
         public bool EditMode
         {
@@ -60,6 +72,7 @@ namespace WPFStudyGuide.ViewModels.Other
 
         public AddEditCustomerViewModel()
         {
+            StatusMessage = string.Empty;
             ViewHeaderTitle = "Add/Edit Customer";
             CancelCommand = new MyFirstRelayCommand(OnCancel);
             SaveCommand = new MyFirstRelayCommand(OnSave, CanSave);
@@ -123,15 +136,35 @@ namespace WPFStudyGuide.ViewModels.Other
 
         private async void OnSave()
         {
+            _statusMessage = string.Empty;
+
             UpdateCustomer(Customer, _editingCustomer);
 
             if (EditMode)
             {
-                // call update customer
+                bool updateStatus = await _customerService.UpdateCustomerAsync(_editingCustomer);
+
+                if (updateStatus)
+                {
+                    _statusMessage = "Customer was updated successfully!";
+                }
+                else
+                {
+                    _statusMessage = "Failed to update customer! :-(";
+                }
             }
             else
             {
-                // call add customer
+                bool updateStatus = await _customerService.AddCustomerAsync(_editingCustomer);
+
+                if (updateStatus)
+                {
+                    _statusMessage = "Customer was added successfully!";
+                }
+                else
+                {
+                    _statusMessage = "Failed to add customer! :-(";
+                }
             }
 
             Done();

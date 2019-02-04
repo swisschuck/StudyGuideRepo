@@ -7,6 +7,9 @@ using WPFStudyGuide.Classes.Other;
 using WPFStudyGuide.Commands.Other;
 using WPFStudyGuide.Constants;
 using WPFStudyGuide.ViewModels.Other;
+using Unity;
+using WPFStudyGuide.Helpers;
+using WPFStudyGuide.Services.Customers;
 
 namespace WPFStudyGuide.ViewModels
 {
@@ -15,6 +18,8 @@ namespace WPFStudyGuide.ViewModels
         #region fields
 
         private BaseViewModel _currentViewModel;
+
+        #region examples
         private CommandsExampleViewModel _commandsExampleViewModel = new CommandsExampleViewModel();
         private AttachedPropertiesExampleViewModel _attachedPropertiesExampleViewModel = new AttachedPropertiesExampleViewModel();
         private PropertyChangeNotificationsExampleViewModel _propertyChangeNotificationsExampleViewModel = new PropertyChangeNotificationsExampleViewModel();
@@ -24,6 +29,9 @@ namespace WPFStudyGuide.ViewModels
         private ParentAndChildViewsExampleViewModel _parentAndChildViewsExampleViewModel = new ParentAndChildViewsExampleViewModel();
         private PlaceOrderViewModel _placeOrderViewModel = new PlaceOrderViewModel();
         private AddEditCustomerViewModel _addEditCustomerViewModel = new AddEditCustomerViewModel();
+        private DependencyInjectionExampleViewModel _dependencyInjectionExampleViewModel;
+        private AddEditCustomerDIViewModel _addEditCustomerDIViewModel;
+        #endregion examples
 
         #endregion fields
 
@@ -58,10 +66,20 @@ namespace WPFStudyGuide.ViewModels
         {
             //CurrentViewModel = _initialViewModel;
             NavigationCommand = new MyFirstRelayCommand<string>(OnNavigationClicked);
+
+            _dependencyInjectionExampleViewModel = ContainerHelpers.Container.Resolve<DependencyInjectionExampleViewModel>();
+            _addEditCustomerDIViewModel = ContainerHelpers.Container.Resolve<AddEditCustomerDIViewModel>();
+
             _parentAndChildViewsExampleViewModel.PlaceOrderRequested += NavigateToOrder;
             _parentAndChildViewsExampleViewModel.AddCustomerRequested += NavigateToAddCustomer;
             _parentAndChildViewsExampleViewModel.EditCustomerRequested += NavigateToEditCustomer;
+
+            _dependencyInjectionExampleViewModel.PlaceOrderRequested += NavigateToOrder;
+            _dependencyInjectionExampleViewModel.AddCustomerRequested += NavigateToAddCustomerDI;
+            _dependencyInjectionExampleViewModel.EditCustomerRequested += NavigateToEditCustomerDI;
+
             _addEditCustomerViewModel.Done += NavigateToCustomerList;
+            _addEditCustomerDIViewModel.Done += NavigateToCustomerListDI;
         }
 
         #endregion constructors
@@ -114,6 +132,10 @@ namespace WPFStudyGuide.ViewModels
                     CurrentViewModel = _parentAndChildViewsExampleViewModel;
                     break;
 
+                case CommandParameters.LoadDependencyInjectionExample:
+                    CurrentViewModel = _dependencyInjectionExampleViewModel;
+                    break;
+
                     #endregion Examples
             }
         }
@@ -139,10 +161,31 @@ namespace WPFStudyGuide.ViewModels
             CurrentViewModel = _addEditCustomerViewModel;
         }
 
+
+        private void NavigateToAddCustomerDI(SimpleCustomer customerToAdd)
+        {
+            _addEditCustomerDIViewModel.EditMode = false;
+            _addEditCustomerDIViewModel.SetCustomer(customerToAdd);
+            CurrentViewModel = _addEditCustomerDIViewModel;
+        }
+
+        private void NavigateToEditCustomerDI(SimpleCustomer customerToEdit)
+        {
+            _addEditCustomerDIViewModel.EditMode = true;
+            _addEditCustomerDIViewModel.SetCustomer(customerToEdit);
+            CurrentViewModel = _addEditCustomerDIViewModel;
+        }
+
         private void NavigateToCustomerList()
         {
             CurrentViewModel = _parentAndChildViewsExampleViewModel;
         }
+
+        private void NavigateToCustomerListDI()
+        {
+            CurrentViewModel = _dependencyInjectionExampleViewModel;
+        }
+
 
         #endregion private methods
     }
