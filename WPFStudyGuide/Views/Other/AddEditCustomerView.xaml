@@ -13,7 +13,7 @@
         <converters:NegatableBooleanToVisibilityConverter x:Key="VisibilityConverter" />
         <converters:NegatableBooleanToVisibilityConverter x:Key="NegateVisibilityConverter" Negate="True"/>
 
-        <Style TargetType="TextBlock">
+        <Style TargetType="TextBox">
             <Style.Triggers>
                 <Trigger Property="Validation.HasError" Value="true">
                     <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, 
@@ -27,6 +27,7 @@
             <RowDefinition Height="20" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Text="{Binding ViewHeaderTitle}" Style="{StaticResource BaseHeaderTitle}" Grid.Row="0" />
@@ -58,7 +59,7 @@
 
             <Label Content="Phone:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
             <TextBox x:Name="phoneTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" 
-                     Text="{Binding Phone, ValidatesOnNotifyDataErrors=True}" VerticalAlignment="Center" Width="120"/>
+                     Text="{Binding Phone, ValidatesOnNotifyDataErrors=True}" VerticalAlignment="Center" Width="120" MaxLength="10"/>
         </Grid>
         <Grid Grid.Row="2">
             <Button Content="Save" Command="{Binding SaveCommand}" Visibility="{Binding EditMode, Converter={StaticResource VisibilityConverter}}" 
@@ -69,6 +70,9 @@
             
             <Button Content="Cancel" Command="{Binding CancelCommand}" 
                     HorizontalAlignment="Left" Margin="150,5,0,0" VerticalAlignment="Top" Width="75" />
+        </Grid>
+        <Grid Grid.Row="3">
+            <TextBlock Text="{Binding StatusMessage}" />
         </Grid>
     </Grid>
 </UserControl>

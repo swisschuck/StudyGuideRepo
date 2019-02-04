@@ -1,5 +1,26 @@
 [
-    {
-
-    }
+  {
+    "Id": "171a9be4-23c3-46c2-ade5-c8faa2478020",
+    "StoreId": null,
+    "FirstName": "Bob",
+    "LastName": "FakeLastName",
+    "Phone": "1234567891",
+    "Email": "test@test.com",
+    "Street": null,
+    "City": null,
+    "State": null,
+    "Zip": null
+  },
+  {
+    "Id": "32c215c8-dfc9-4742-8717-fee628037cfa",
+    "StoreId": null,
+    "FirstName": "charlie",
+    "LastName": "FakeLastName3",
+    "Phone": "5555555555",
+    "Email": "2@2.com",
+    "Street": null,
+    "City": null,
+    "State": null,
+    "Zip": null
+  }
 ]

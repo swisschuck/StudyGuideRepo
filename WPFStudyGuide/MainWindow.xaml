@@ -40,6 +40,12 @@
         <DataTemplate DataType="{x:Type otherViewModels:AddEditCustomerViewModel}">
             <otherViews:AddEditCustomerView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type otherViewModels:DependencyInjectionExampleViewModel}">
+            <otherViews:DependencyInjectionExampleView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type otherViewModels:AddEditCustomerDIViewModel}">
+            <otherViews:AddEditCustomerDIView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid Style="{StaticResource MainShellGridStyle}">
         <Grid.RowDefinitions>
@@ -72,6 +78,9 @@
                 
                 <MenuItem Header="Parent and Child View Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}"
                           CommandParameter="{x:Static constants:CommandParameters.LoadParentAndChildViewsExample}"/>
+
+                <MenuItem Header="Dependency Injection Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}"
+                          CommandParameter="{x:Static constants:CommandParameters.LoadDependencyInjectionExample}"/>
             </MenuItem>
         </Menu>
         <ContentControl Name="UserControlPlaceHolder" Style="{StaticResource BaseContentControlPlaceHolderStyle}" Content="{Binding CurrentViewModel}" />

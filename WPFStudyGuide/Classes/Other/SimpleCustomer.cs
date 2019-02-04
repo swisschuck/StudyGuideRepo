@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace WPFStudyGuide.Classes.Other
 {
@@ -11,6 +8,7 @@ namespace WPFStudyGuide.Classes.Other
     {
         #region fields
 
+        [JsonIgnore]
         private string _firstName;
 
         #endregion fields
@@ -41,6 +39,8 @@ namespace WPFStudyGuide.Classes.Other
 
         }
         public string LastName { get; set; }
+
+        [JsonIgnore]
         public string FullName { get { return FirstName + " " + LastName; } }
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -49,7 +49,7 @@ namespace WPFStudyGuide.Classes.Other
         public string State { get; set; }
         public string Zip { get; set; }
 
-
+        [JsonIgnore]
         public string FullAddress
         {
             get
