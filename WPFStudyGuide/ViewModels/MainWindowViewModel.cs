@@ -7,6 +7,9 @@ using WPFStudyGuide.Classes.Other;
 using WPFStudyGuide.Commands.Other;
 using WPFStudyGuide.Constants;
 using WPFStudyGuide.ViewModels.Other;
+using Unity;
+using WPFStudyGuide.Helpers;
+using WPFStudyGuide.Services.Customers;
 
 namespace WPFStudyGuide.ViewModels
 {
@@ -26,8 +29,8 @@ namespace WPFStudyGuide.ViewModels
         private ParentAndChildViewsExampleViewModel _parentAndChildViewsExampleViewModel = new ParentAndChildViewsExampleViewModel();
         private PlaceOrderViewModel _placeOrderViewModel = new PlaceOrderViewModel();
         private AddEditCustomerViewModel _addEditCustomerViewModel = new AddEditCustomerViewModel();
-        private DependencyInjectionExampleViewModel _dependencyInjectionExampleViewModel = new DependencyInjectionExampleViewModel();
-        private AddEditCustomerDIViewModel _addEditCustomerDIViewModel = new AddEditCustomerDIViewModel();
+        private DependencyInjectionExampleViewModel _dependencyInjectionExampleViewModel;
+        private AddEditCustomerDIViewModel _addEditCustomerDIViewModel;
         #endregion examples
 
         #endregion fields
@@ -63,6 +66,9 @@ namespace WPFStudyGuide.ViewModels
         {
             //CurrentViewModel = _initialViewModel;
             NavigationCommand = new MyFirstRelayCommand<string>(OnNavigationClicked);
+
+            _dependencyInjectionExampleViewModel = ContainerHelpers.Container.Resolve<DependencyInjectionExampleViewModel>();
+            _addEditCustomerDIViewModel = ContainerHelpers.Container.Resolve<AddEditCustomerDIViewModel>();
 
             _parentAndChildViewsExampleViewModel.PlaceOrderRequested += NavigateToOrder;
             _parentAndChildViewsExampleViewModel.AddCustomerRequested += NavigateToAddCustomer;

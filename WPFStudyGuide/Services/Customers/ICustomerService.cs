@@ -8,7 +8,7 @@ using WPFStudyGuide.Classes.Other;
 
 namespace WPFStudyGuide.Services.Customers
 {
-    interface ICustomerService
+    public interface ICustomerService
     {
         Task<List<SimpleCustomer>> GetCustomersAsync(bool getMockedData = false);
         Task<SimpleCustomer> GetCustomerAsync(Guid id);

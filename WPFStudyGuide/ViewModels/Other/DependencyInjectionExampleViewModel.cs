@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using WPFStudyGuide.Classes.Other;
 using WPFStudyGuide.Commands.Other;
 using WPFStudyGuide.Services.Customers;
@@ -11,8 +13,15 @@ namespace WPFStudyGuide.ViewModels.Other
     {
         #region fields
 
-        private ICustomerService _customerService = new CustomerServiceJSON();
+        // so with our previous setup we were newing up an instance of the customer service here and in the child view model.
+        // this is wastfull and not needed, really we should one instance of the service that is shared between the two views.
+
+        //private ICustomerService _customerService = new CustomerServiceJSON();
+        private ICustomerService _customerService;
+
         private ObservableCollection<SimpleCustomer> _customers;
+        private List<SimpleCustomer> _allCustomers;
+        private string _searchInput;
 
         #endregion fields
 
@@ -48,6 +57,12 @@ namespace WPFStudyGuide.ViewModels.Other
             private set;
         }
 
+        public MyFirstRelayCommand ClearSearchCommand
+        {
+            get;
+            private set;
+        }
+
         public ObservableCollection<SimpleCustomer> Customers
         {
             get
@@ -60,24 +75,58 @@ namespace WPFStudyGuide.ViewModels.Other
             }
         }
 
+        public string SearchInput
+        {
+            get
+            {
+                return _searchInput;
+            }
+            set
+            {
+                SetProperty(ref _searchInput, value);
+                FilterCustomers(_searchInput);
+            }
+        }
+
         #endregion properties
 
 
         #region constructors
 
-        public DependencyInjectionExampleViewModel()
+        // previous
+
+        //public DependencyInjectionExampleViewModel()
+        //{
+        //    // if we are in design mode just return and do nothing so we dont cause problems
+        //    if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
+        //    {
+        //        return;
+        //    }
+
+        //    ViewHeaderTitle = "Dependency Injection Example";
+        //    PlaceOrderCommand = new MyFirstRelayCommand<SimpleCustomer>(OnPlaceOrder);
+        //    AddCustomerCommand = new MyFirstRelayCommand(OnAddCustomer);
+        //    EditCustomerCommand = new MyFirstRelayCommand<SimpleCustomer>(OnEditCustomer);
+        //    DeleteCustomerCommand = new MyFirstRelayCommand<SimpleCustomer>(OnDeleteCustomer);
+        //}
+
+        // here we will add an instance of the customer service and pass it into our constructor
+        // this will allow us to decouple the CustomerServiceJSON to this view model and just use the interface
+
+        public DependencyInjectionExampleViewModel(ICustomerService _incomingCustomerService)
         {
-            // if we are in design mode just return and do nothing so we dont cause problems
             if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
             {
                 return;
             }
+            _customerService = _incomingCustomerService;
 
             ViewHeaderTitle = "Dependency Injection Example";
             PlaceOrderCommand = new MyFirstRelayCommand<SimpleCustomer>(OnPlaceOrder);
             AddCustomerCommand = new MyFirstRelayCommand(OnAddCustomer);
             EditCustomerCommand = new MyFirstRelayCommand<SimpleCustomer>(OnEditCustomer);
             DeleteCustomerCommand = new MyFirstRelayCommand<SimpleCustomer>(OnDeleteCustomer);
+            ClearSearchCommand = new MyFirstRelayCommand(OnClearSearch);
         }
 
         #endregion constructors
@@ -89,7 +138,8 @@ namespace WPFStudyGuide.ViewModels.Other
         {
             // the view is calling this method via the interactivity:Interaction.Triggers, you will need the System.Windows.Interactivity sdk
             // from nuget (can normally be obtained from loading the solution in Visual Studio Blend).
-            Customers = new ObservableCollection<SimpleCustomer>(await _customerService.GetCustomersAsync());
+            _allCustomers = await _customerService.GetCustomersAsync();
+            Customers = new ObservableCollection<SimpleCustomer>(_allCustomers);
         }
 
         #endregion public methods
@@ -119,6 +169,26 @@ namespace WPFStudyGuide.ViewModels.Other
         {
             bool deleteStatus = await _customerService.DeleteCustomerAsync(customerToDelete);
             LoadCustomers();
+        }
+
+        private void FilterCustomers(string searchInput)
+        {
+            if (String.IsNullOrWhiteSpace(searchInput))
+            {
+                Customers = new ObservableCollection<SimpleCustomer>(_allCustomers);
+            }
+            else
+            {
+                Customers = new ObservableCollection<SimpleCustomer>
+                                (
+                                    _allCustomers.Where(c => c.FullName.ToLower().Contains(searchInput.ToLower()))
+                                );
+            }
+        }
+
+        private void OnClearSearch()
+        {
+            SearchInput = null;
         }
 
         #endregion private methods

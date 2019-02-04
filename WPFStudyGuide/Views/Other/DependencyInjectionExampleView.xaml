@@ -16,17 +16,27 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <TextBlock Text="{Binding ViewHeaderTitle}" Style="{StaticResource BaseHeaderTitle}" Grid.Row="0" />
 
-        <Grid>
-            <Button Content="Add Customer" Command="{Binding AddCustomerCommand}" HorizontalAlignment="Left" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Content="Add Customer" Command="{Binding AddCustomerCommand}" HorizontalAlignment="Left" Grid.Column="0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+                <Label Content="Search:" />
+                <TextBox Text="{Binding SearchInput, UpdateSourceTrigger=PropertyChanged}" Width="150" />
+                <Button Content="X" Command="{Binding ClearSearchCommand}" />
+            </StackPanel>
         </Grid>
 
-        <DataGrid ItemsSource="{Binding Customers}" AutoGenerateColumns="False" CanUserAddRows="False" Grid.Row="1">
+        <DataGrid ItemsSource="{Binding Customers}" AutoGenerateColumns="False" CanUserAddRows="False" Grid.Row="2">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="*"/>
                 <DataGridTemplateColumn Width="Auto">

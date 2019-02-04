@@ -13,7 +13,12 @@ namespace WPFStudyGuide.ViewModels.Other
         private string _statusMessage;
         private SimpleEditableCustomer _customer = null;
         private SimpleCustomer _editingCustomer = null;
-        private ICustomerService _customerService = new CustomerServiceJSON();
+
+        // so with our previous setup we were newing up an instance of the customer service here and in the parent view model.
+        // this is wastfull and not needed, really we should one instance of the service that is shared between the two views.
+
+        //private ICustomerService _customerService = new CustomerServiceJSON();
+        private ICustomerService _customerService;
 
         #endregion fields
 
@@ -70,9 +75,25 @@ namespace WPFStudyGuide.ViewModels.Other
 
         #region constructors
 
-        public AddEditCustomerDIViewModel()
+        // previous
+
+        //public AddEditCustomerDIViewModel()
+        //{
+        //    StatusMessage = string.Empty;
+        //    ViewHeaderTitle = "Add/Edit Customer with Dependency Injection";
+        //    CancelCommand = new MyFirstRelayCommand(OnCancel);
+        //    SaveCommand = new MyFirstRelayCommand(OnSave, CanSave);
+        //}
+
+        // here we will add an instance of the customer service and pass it into our constructor
+        // this will allow us to decouple the CustomerServiceJSON to this view model and just use the interface
+
+        public AddEditCustomerDIViewModel(ICustomerService incomingCustomerService)
         {
+            _customerService = incomingCustomerService;
+
             StatusMessage = string.Empty;
+            
             ViewHeaderTitle = "Add/Edit Customer with Dependency Injection";
             CancelCommand = new MyFirstRelayCommand(OnCancel);
             SaveCommand = new MyFirstRelayCommand(OnSave, CanSave);
