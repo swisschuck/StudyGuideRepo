@@ -1,0 +1,44 @@
+﻿ASP.NET Core
+==================================================
++ Was rethought from the ground up.
++ Has tighter security, smaller footprint, cross-platform, and has better performance.
++ Run on full .NET or .NET Core
+
+
+Program Class
+==================================================
++ Responsible for configuring and running the application.
+
+
+Startup Class
+==================================================
++ Entry point of our web application.
+
+
+Configure Services
+==================================================
++ is used to add services to the built in container, and to configure those services.
+
+
+Configure Method
+==================================================
++ is used to specify how an ASP.NET application will respond to individual HTTP requests.
+
+
+Middleware
+==================================================
++ used to configure the http request pipeline.
+
+
+Environments
+==================================================
++ ASP.NET Core supports different environments (development, production, etc)
+
+
+ASP.NET Core request pipeline and middleware
+============================================
+REQUEST -->
+	MIDDLEWARE
+	MIDDLEWARE
+	MIDDLEWARE
+RESPONSE
