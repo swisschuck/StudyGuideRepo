@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGuideUnitTests", "Stud
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFStudyGuide", "WPFStudyGuide\WPFStudyGuide.csproj", "{31B14C06-BC56-4A4C-8360-B76791DC2933}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyGuideUtilities", "StudyGuideUtilities\StudyGuideUtilities.csproj", "{CDA4D7C5-ACB1-4443-B3CB-2E3B928A92DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyGuideUtilities", "StudyGuideUtilities\StudyGuideUtilities.csproj", "{CDA4D7C5-ACB1-4443-B3CB-2E3B928A92DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPIStudyGuide", "RestAPIStudyGuide\RestAPIStudyGuide.csproj", "{9AA7B9A9-BBE3-4B04-B5C6-FAF724B259CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CDA4D7C5-ACB1-4443-B3CB-2E3B928A92DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA4D7C5-ACB1-4443-B3CB-2E3B928A92DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA4D7C5-ACB1-4443-B3CB-2E3B928A92DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AA7B9A9-BBE3-4B04-B5C6-FAF724B259CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA7B9A9-BBE3-4B04-B5C6-FAF724B259CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA7B9A9-BBE3-4B04-B5C6-FAF724B259CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AA7B9A9-BBE3-4B04-B5C6-FAF724B259CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

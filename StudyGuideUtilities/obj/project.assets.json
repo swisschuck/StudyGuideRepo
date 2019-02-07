@@ -179,23 +179,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Owner\\.nuget\\packages\\": {},
+    "C:\\Users\\swiss\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repos\\StudyGuideRepo\\StudyGuideUtilities\\StudyGuideUtilities.csproj",
+      "projectUniqueName": "E:\\Repos\\StudyGuideRepo\\StudyGuideUtilities\\StudyGuideUtilities.csproj",
       "projectName": "StudyGuideUtilities",
-      "projectPath": "C:\\Repos\\StudyGuideRepo\\StudyGuideUtilities\\StudyGuideUtilities.csproj",
-      "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-      "outputPath": "C:\\Repos\\StudyGuideRepo\\StudyGuideUtilities\\obj\\",
+      "projectPath": "E:\\Repos\\StudyGuideRepo\\StudyGuideUtilities\\StudyGuideUtilities.csproj",
+      "packagesPath": "C:\\Users\\swiss\\.nuget\\packages\\",
+      "outputPath": "E:\\Repos\\StudyGuideRepo\\StudyGuideUtilities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\swiss\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -203,7 +203,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
