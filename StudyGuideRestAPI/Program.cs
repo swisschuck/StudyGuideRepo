@@ -12,6 +12,7 @@ namespace StudyGuideRestAPI
 {
     public class Program
     {
+        // ASP.CORE is a console application at its core. To be more specific its a Console application that calls into ASP.NET libraries
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
