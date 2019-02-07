@@ -1,0 +1,17 @@
+﻿The Big Picture
+===============================================
+
++ ASP.NET Core:
+	- Open Source
+	- A framework for building modern internet connected applications.
+	- Can run on windows, mac, and linux.
+	- Based on a set of granular NuGet packges which allows us to only pull in what we need or a smaller "application surface area" which has
+	  some benefits:
+		- Tighter Security
+		- Reduced servicing
+		- Improved performance
+	- Can run on Full .Net Framework or on .NET core.
+	- Is modular version of the .NET framework.
+	- Portable across platforms.
+	- is a subset of the full .NET framework.
+	- is at its heart a console application

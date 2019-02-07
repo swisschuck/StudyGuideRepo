@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Repos\StudyGuideRepo\WPFStudyGuide\App.xaml
 41-411518022
 
-73-768649668
+77-1377096827
 71-1779978392
 Examples\AdvancedControls\ContextMenu.xaml;Examples\AdvancedControls\DataGrid.xaml;Examples\AdvancedControls\Menu.xaml;Examples\AdvancedControls\StatusBar.xaml;Examples\AdvancedControls\TabControl.xaml;Examples\AdvancedControls\TreeView.xaml;Examples\Animations\Animations.xaml;Examples\Animations\Animations2.xaml;Examples\Animations\Animations3.xaml;Examples\Animations\Brushes.xaml;Examples\Animations\Shapes.xaml;Examples\Async\AsyncDemo.xaml;Examples\Basics\Canvas.xaml;Examples\Basics\ControlsAndEvents.xaml;Examples\Basics\DockPanel.xaml;Examples\Basics\RowsAndColumns.xaml;Examples\Basics\StackPanel.xaml;Examples\Basics\WrapPanel.xaml;Examples\DataBinding\DataConversion.xaml;Examples\DataBinding\ElementDataBinding.xaml;Examples\DataBinding\INPCBinding.xaml;Examples\DataBinding\ListDataBinding.xaml;Examples\DataBinding\OneWayBinding.xaml;Examples\DataBinding\TwoWayBinding.xaml;Examples\Styles\BasicStyles.xaml;Examples\Templates\BasicTemplates.xaml;MainWindow.xaml;Styles\BaseStyles.xaml;Styles\FontStyles.xaml;Styles\ViewStyles.xaml;Views\Other\AddEditCustomerDIView.xaml;Views\Other\AddEditCustomerView.xaml;Views\Other\AttachedPropertiesExampleView.xaml;Views\Other\CommandsExampleView.xaml;Views\Other\DependencyInjectionExampleView.xaml;Views\Other\ParentAndChildViewsExampleView.xaml;Views\Other\PlaceOrderView.xaml;Views\Other\PropertyChangeNotificationsExampleView.xaml;Views\Other\ViewFirstExampleView.xaml;Views\Other\ViewModelFirstExampleView.xaml;Views\Other\ViewModelLocaterExampleView.xaml;
 
-False
+True
 
