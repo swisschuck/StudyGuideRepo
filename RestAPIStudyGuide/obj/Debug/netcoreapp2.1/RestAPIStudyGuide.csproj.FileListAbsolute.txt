@@ -1,0 +1,14 @@
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\bin\Debug\netcoreapp2.1\RestAPIStudyGuide.deps.json
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\bin\Debug\netcoreapp2.1\RestAPIStudyGuide.runtimeconfig.json
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\bin\Debug\netcoreapp2.1\RestAPIStudyGuide.runtimeconfig.dev.json
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\bin\Debug\netcoreapp2.1\RestAPIStudyGuide.dll
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\bin\Debug\netcoreapp2.1\RestAPIStudyGuide.pdb
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.csproj.CoreCompileInputs.cache
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.RazorAssemblyInfo.cache
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.RazorAssemblyInfo.cs
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.AssemblyInfoInputs.cache
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.AssemblyInfo.cs
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.RazorTargetAssemblyInfo.cache
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.dll
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.pdb
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.csprojAssemblyReference.cache

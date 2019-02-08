@@ -1,0 +1,148 @@
+﻿ASP.NET Core
+==================================================
++ Was rethought from the ground up.
++ Has tighter security, smaller footprint, cross-platform, and has better performance.
++ Run on full .NET or .NET Core
+
+
+Program Class
+==================================================
++ Responsible for configuring and running the application.
+
+
+Startup Class
+==================================================
++ Entry point of our web application.
+
+
+Configure Services
+==================================================
++ is used to add services to the built in container, and to configure those services.
+
+
+Configure Method
+==================================================
++ is used to specify how an ASP.NET application will respond to individual HTTP requests.
+
+
+Middleware
+==================================================
++ used to configure the http request pipeline.
+
+
+Environments
+==================================================
++ ASP.NET Core supports different environments (development, production, etc)
+
+
+ASP.NET Core request pipeline and middleware
+============================================
+REQUEST -->
+	MIDDLEWARE (these are just layers, they can be one or many layers deep)
+	MIDDLEWARE
+	MIDDLEWARE
+RESPONSE
+
++ In previous versions of ASP.NET we would have used ASP.NET Web API to build out http services and ASP.NET MVC to a build client facing web applications.
+  In ASP.NET core there is no seperate WEB API framework anymore, now ASP.NET Web API and ASP.NET MVC functionalities are now unified under one framework.
+
+
+ASP.NET Core MVC Pattern
+============================================
++ Model-View-Controller - its an architectural pattern for implmenting user interfaces.
++ It has been implemented in many different ways but its overall purpose is to:
+	- Loose coupling
+	- Seperation of concerns
+	- Testability
+	- Code reuse
+	- Something to note is the architecture is meant to handle the presentation layer only, its not the full application architecture.
+
++ Model - Handles the logic for your application data.
+		- Has logic in it to send and recieve data at the models level.
+
++ View - Handles the rendering of the actual form or view that is displayed to the user.
+
++ Controller - Handles the interactions between the View and the Model, including user input. The controller will choose the view that is needed and model that is best for
+			   that view.
+			 - When it comes to API's the consumer of the API will send a request to the controller which will get handled through some business logic then sent back to the
+			   user in some form of resource representation (often JSON or XML)
+
+
+
+ASP.NET Core 2 Metapackage and Runtime Store
+============================================
+
+Metapackage:
+
+	+ ASP.NET Core is modular and is therfor made up of many different small assemblies instead of one large assembliy like the old ASP.NET core. These can be difficult to 
+	manage.
+		- It can be hard to find the functionality you need.
+		- Keeping track of version numbers is cumbersome.
+	So Microsoft introduced something called metapackage to help.
+
+	+ Metapackage is referenced by default for new ASP.NET Core 2.0 applications.
+	+ Metapackage adds the references to a list of packages, you can add a list of packages by just referencing one package.
+
+Runtime Store:
+	
+	+ The runtime store is a location on disk that contains all the packages in the Metapackage library.
+	+ This allows for:
+		- faster deployment
+		- lower disk space use
+		- improved startup performace cause the packages are precompiled.
+
+
+Routing
+============================================
++ the MVC framework will parse a URI (Uniform Resource Identifier) so it can try to find a controller and method that matches the request.
+
++ This is accomplished in two ways:
+
+	- Convention-based:
+		- convention based routing involved setting up a config object that needs to be configured with Name, template, defaults, etc. This is typically used for an MVC
+		  application that is retering html driven views and is not recommended for API's.
+
+	- Attribute-based:
+		- allows us to use attributes at the controller and action level which can also include an optional template.
+		- the URI is matched to a specific action on a controller.
+
++ Common Routing Commands:
+
+	- GET
+		- Attribute: HttpGet
+		- Level: Action
+		- Sample: "/api/cities" or "/api/cities/1"
+		- Purpose: used to get information
+
+	- POST (ADD)
+		- Attribute: HttpPost
+		- Level: Action
+		- Sample: "/api/cities"
+		- Purpose: used to create information
+
+	- PUT (FULL UPDATE)
+		- Attribute: HttpPut
+		- Level: Action
+		- Sample: "/api/cities/1"
+		- Purpose: used to update information, more so its used to completely override the information so all fields should be filled in
+
+	- PATCH (PARTIAL UPDATE)
+		- Attribute: HttpPatch
+		- Level: Action
+		- Sample: "/api/cities/1"
+		- Purpose: used to update information, more so its used to only update certain fields
+
+	- DELETE
+		- Attribute: HttpDelete
+		- Level: Action
+		- Sample: "/api/cities/1"
+		- Purpose: used to delete information
+
+	- ---
+		- Attribute: Route
+		- Level: Controller
+		- Sample: 
+		- Purpose: used at the controller level to provide a template that will pre-fix all templates in the controller level attributes. For example if you wanted to have
+				   all your calls prefixed with "/api/...." you can use this to auto assign the template with the prefix so calls dont need to have it.
+
+
