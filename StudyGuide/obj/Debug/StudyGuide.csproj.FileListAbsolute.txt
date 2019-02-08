@@ -23,3 +23,13 @@ C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CopyComplete
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.exe
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.pdb
 C:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csprojAssemblyReference.cache
+E:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe.config
+E:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.exe
+E:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\StudyGuide.pdb
+E:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\Newtonsoft.Json.dll
+E:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\Newtonsoft.Json.xml
+E:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csprojAssemblyReference.cache
+E:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CoreCompileInputs.cache
+E:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CopyComplete
+E:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.exe
+E:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.pdb

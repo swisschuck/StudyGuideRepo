@@ -11,3 +11,4 @@ E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGu
 E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.RazorTargetAssemblyInfo.cache
 E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.dll
 E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.pdb
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.csprojAssemblyReference.cache
