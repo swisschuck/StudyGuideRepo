@@ -1,0 +1,12 @@
+﻿+ Not getting responses back in postman (it just sits there)
+	- check to make sure you have the [HttpGet()] attribute applied to your controller method.
+	- check to make sure the URI for local host is correct:
+		- DO NOT USE the local host value (http://localhost:44320/.....), open the launchSettings.json file under the project properties section to see what
+		  correct URL should be:
+
+		"iisExpress": {
+			"applicationUrl": "http://localhost:54908",
+			"sslPort": 44320
+		}
+
+		now change http://localhost:44320/ to http://localhost:54908 in postman or the browser and you should start to get a response back.
