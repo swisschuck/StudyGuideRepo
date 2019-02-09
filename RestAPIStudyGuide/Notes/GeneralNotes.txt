@@ -1,4 +1,10 @@
-﻿ASP.NET Core
+﻿Terms
+==================================================
++ DTO = Data Transfer Object
+
+
+
+ASP.NET Core
 ==================================================
 + Was rethought from the ground up.
 + Has tighter security, smaller footprint, cross-platform, and has better performance.
@@ -144,5 +150,55 @@ Routing
 		- Sample: 
 		- Purpose: used at the controller level to provide a template that will pre-fix all templates in the controller level attributes. For example if you wanted to have
 				   all your calls prefixed with "/api/...." you can use this to auto assign the template with the prefix so calls dont need to have it.
+
+
+Status Codes		
+============================================
+
++ Are an important part of the http response we give back to consumer of the API.
+
++ We need to provide information on:
+	- Whether or not the request worked out as expected.
+	- What is responsible for a failed request (user, API, etc).
+
++ Status Code Levels
+	- 100's: are informational and are not part of the http 1.0 standard and are not used for API's
+
+	- 200's: are used for sucessful results
+		- 200 - successful get request.
+		- 201 - successful get request that resulted in something getting created.
+		- 204 - successful get request that is not supposed to return something (delete).
+
+	- 400's: are use for client errors
+		- 400 - bad request.
+		- 401 - Unauthorized.
+		- 403 - Forbidden (they have acces to the API but not to the specific resource they are requesting).
+		- 404 - Not Found (requesting resource does not exist).
+		- 409 - Conficts (edit conflict for two updates happening at the same time).
+
+	- 500's: Server errors
+		- 500 - Internal Server Error (Server made a mistake, client cant do much other than updating)
+
+
+
+
+Formatters and Content Navigation		
+============================================
+
++ this is the process of selecting the best representation for a given response when there are multiple representations available.
+
++ The requested media type is passed via the Accept header of the request, common formats include:
+	- application/json
+	- application/xml
+	- ...
+
++ Output Formatter
+	- Deals with output.
+	- Media type is defined in the Accept header.
+
++ Input Formatter
+	- Deals with input.
+	- Media type is defined in the content-type header.
+
 
 
