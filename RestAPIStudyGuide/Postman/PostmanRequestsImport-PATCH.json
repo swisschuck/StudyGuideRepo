@@ -18,7 +18,7 @@
     {
       "id": "2c860018-e447-1055-a305-481767afe029",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "url": "http://localhost:54908/api/cities/1/pointsofinterest/1",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "PATCH",
@@ -38,7 +38,7 @@
     {
       "id": "30b21bce-e7d1-6161-02a5-6b8a526d2cd3",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "url": "http://localhost:54908/api/cities/1/pointsofinterest/1",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "PATCH",
@@ -58,7 +58,7 @@
     {
       "id": "5452776f-a168-af20-dff1-ce17490f355e",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "url": "http://localhost:54908/api/cities/1/pointsofinterest/1",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "PATCH",
@@ -78,7 +78,7 @@
     {
       "id": "c2b3b1f6-a20f-53a4-e208-868ed44b2ffb",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "url": "http://localhost:54908/api/cities/1/pointsofinterest/1",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "PATCH",
@@ -98,7 +98,7 @@
     {
       "id": "d8cdbb42-c5fa-d560-20f8-59da36a88fed",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "url": "http://localhost:54908/api/cities/1/pointsofinterest/1",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "PATCH",

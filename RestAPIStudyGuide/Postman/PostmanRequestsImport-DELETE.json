@@ -14,7 +14,7 @@
     {
       "id": "fad6b681-76f8-a005-5286-ccf69718f553",
       "headers": "",
-      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "url": "http://localhost:54908/api/cities/1/pointsofinterest/1",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "DELETE",

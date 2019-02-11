@@ -46,8 +46,9 @@ namespace RestAPIStudyGuide.Controllers.Other
             return Ok(city.PointsOfInterest);
         }
 
-
-        [HttpGet("{cityId}/pointsofinterest/{id}")]
+        // here we can use the Name = parameter of this method attribute to give this method a name, this name can then be used as a reference in some of our
+        // create responses.
+        [HttpGet("{cityId}/pointsofinterest/{id}", Name = "GetPointOfInterestReferenceName")]
         // an important note, the parameter placeholder in the HttpGet route defined above needs to match exactly with the parameter name defined in
         // actual method signature.
         public IActionResult GetPointOfInterest(int cityId, int id) 
@@ -69,9 +70,8 @@ namespace RestAPIStudyGuide.Controllers.Other
             return Ok(pointOfInterest);
         }
 
-        // here we can use the Name = parameter of this method attribute to give this method a name, this name can then be used as a reference in some of our
-        // create responses.
-        [HttpPost("{cityId}/pointsofinterest", Name = "GetPointOfInterestReferenceName")]
+
+        [HttpPost("{cityId}/pointsofinterest")]
         public IActionResult CreatePointOfInterest(int cityId, [FromBody] PointOfInterestForCreationDto pointOfInterest)
         {
             // [FromBody]  - allows us to get the content of the request. The request body will contain the information needed
@@ -84,7 +84,26 @@ namespace RestAPIStudyGuide.Controllers.Other
                 return BadRequest();
             }
 
-            // make sure he city exists
+            //validate the incoming PointOfInterestForCreationDto has valid properties
+
+
+            // we can of course create our own validation on the object like so:
+
+            if (pointOfInterest.Description == pointOfInterest.Name)
+            {
+                ModelState.AddModelError("Description", "The provided description should be different than the name.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                //return BadRequest(); // if we just want to return a bad request then we can just use this
+
+                return BadRequest(ModelState); // if we want to include the property error messages (in the response body) that are defined on the
+                                               // PointOfInterestForCreationDto model then we need to include the model state.
+            }
+
+
+            // make sure the city exists
             CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
 
             if (city == null)

@@ -17,7 +17,7 @@
     {
       "id": "747e85bf-1537-4ff4-5686-26562994e879",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/3/pointsofinterest",
+      "url": "http://localhost:54908/api/cities/3/pointsofinterest",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "POST",
@@ -37,7 +37,7 @@
     {
       "id": "7703aac9-50be-b45f-568e-548fd0dc5134",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/3/pointsofinterest",
+      "url": "http://localhost:54908/api/cities/3/pointsofinterest",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "POST",
@@ -57,7 +57,7 @@
     {
       "id": "85e6a46f-922b-06eb-7784-737305336bb1",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/3/pointsofinterest",
+      "url": "http://localhost:54908/api/cities/3/pointsofinterest",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "POST",
@@ -77,7 +77,7 @@
     {
       "id": "c92beb2f-bb37-f3c3-27db-d940984c09a6",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/3/pointsofinterest",
+      "url": "http://localhost:54908/api/cities/3/pointsofinterest",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "POST",
