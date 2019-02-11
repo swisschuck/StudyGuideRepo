@@ -1,0 +1,35 @@
+{
+  "id": "6b9cea48-e924-4ffa-e42c-a45a84ebbb42",
+  "name": "DELETE",
+  "description": "Postman import file: Delete requests for the ASP.NET Core API course on plural site",
+  "order": [
+    "fad6b681-76f8-a005-5286-ccf69718f553"
+  ],
+  "folders": [],
+  "timestamp": 1465911681321,
+  "owner": "805617",
+  "public": false,
+  "published": false,
+  "requests": [
+    {
+      "id": "fad6b681-76f8-a005-5286-ccf69718f553",
+      "headers": "",
+      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "preRequestScript": null,
+      "pathVariables": {},
+      "method": "DELETE",
+      "data": [],
+      "dataMode": "raw",
+      "version": 2,
+      "tests": null,
+      "currentHelper": "normal",
+      "helperAttributes": {},
+      "time": 1474383513074,
+      "name": "DELETE Point of Interest",
+      "description": "",
+      "collectionId": "6b9cea48-e924-4ffa-e42c-a45a84ebbb42",
+      "responses": [],
+      "rawModeData": ""
+    }
+  ]
+}
