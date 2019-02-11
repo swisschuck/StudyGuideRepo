@@ -1,0 +1,56 @@
+{
+  "id": "546465566564564",
+  "name": "PUT",
+  "description": "Postman import file: Put requests for the ASP.NET Core API course on plural site",
+  "order": [
+    "2128fecb-075d-5caa-d46a-ea91ef55799c",
+    "b76596bc-c554-dfe0-02d3-1abeef9885e2"
+  ],
+  "folders": [],
+  "timestamp": 1465911681321,
+  "owner": "805617",
+  "public": false,
+  "published": false,
+  "requests": [
+    {
+      "id": "2128fecb-075d-5caa-d46a-ea91ef55799c",
+      "headers": "Content-Type: application/json\n",
+      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "preRequestScript": null,
+      "pathVariables": {},
+      "method": "PUT",
+      "data": [],
+      "dataMode": "raw",
+      "version": 2,
+      "tests": null,
+      "currentHelper": "normal",
+      "helperAttributes": {},
+      "time": 1474383466779,
+      "name": "PUT Point of Interest (no description)",
+      "description": "",
+      "collectionId": "6b9cea48-e924-4ffa-e42c-a45a84ebbb42",
+      "responses": [],
+      "rawModeData": "{\n    \"name\": \"Updated again - Central Park\"\n}"
+    },
+    {
+      "id": "b76596bc-c554-dfe0-02d3-1abeef9885e2",
+      "headers": "Content-Type: application/json\n",
+      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "preRequestScript": null,
+      "pathVariables": {},
+      "method": "PUT",
+      "data": [],
+      "dataMode": "raw",
+      "version": 2,
+      "tests": null,
+      "currentHelper": "normal",
+      "helperAttributes": {},
+      "time": 1474383460164,
+      "name": "PUT Point of Interest",
+      "description": "",
+      "collectionId": "6b9cea48-e924-4ffa-e42c-a45a84ebbb42",
+      "responses": [],
+      "rawModeData": "{\n    \"name\": \"Updated - Central Park\",\n    \"description\": \"Updated - The most visited urban park in the United States.\"\n}"
+    }
+  ]
+}

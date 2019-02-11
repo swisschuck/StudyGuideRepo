@@ -69,6 +69,48 @@ namespace RestAPIStudyGuide.Controllers.Other
             return Ok(pointOfInterest);
         }
 
+        // here we can use the Name = parameter of this method attribute to give this method a name, this name can then be used as a reference in some of our
+        // create responses.
+        [HttpPost("{cityId}/pointsofinterest", Name = "GetPointOfInterestReferenceName")]
+        public IActionResult CreatePointOfInterest(int cityId, [FromBody] PointOfInterestForCreationDto pointOfInterest)
+        {
+            // [FromBody]  - allows us to get the content of the request. The request body will contain the information needed
+            // to create a new point of interest. We want to serialize this point of interest dto.
+
+
+            // because we are expecting a well formed PointOfInterestForCreationDto json object to be passed in we need to do some validation first
+            if (pointOfInterest == null)
+            {
+                return BadRequest();
+            }
+
+            // make sure he city exists
+            CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+
+            if (city == null)
+            {
+                return NotFound();
+            }
+
+            // get the last POI ID so we can create the new one
+            int lastPointOfInterestID = CitiesDataStore.Current.Cities.SelectMany(c => city.PointsOfInterest).Max(p => p.Id);
+
+            // map the POI for creation object to a DTO that we will use
+            PointOfInterestDto newPointOfInterestDto = new PointOfInterestDto()
+            { 
+                Id = ++lastPointOfInterestID,
+                Name = pointOfInterest.Name,
+                Description = pointOfInterest.Description
+            };
+
+            city.PointsOfInterest.Add(newPointOfInterestDto);
+
+            // for posts, its recommended to return a 201 Created response, we can return this using a the built in helper methods.
+            // This helper response method will allow us to add a location header to the response, this will contain the new location URI where
+            // the newly created information can be found.
+            return CreatedAtRoute("GetPointOfInterestReferenceName", new { cityId = cityId, id = newPointOfInterestDto.Id} , newPointOfInterestDto);
+        }
+
         #endregion public methods
 
 

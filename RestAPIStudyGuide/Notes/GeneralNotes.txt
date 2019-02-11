@@ -193,10 +193,12 @@ Formatters and Content Navigation
 	- ...
 
 + Output Formatter
+	- also called the accept header.
 	- Deals with output.
 	- Media type is defined in the Accept header.
 
 + Input Formatter
+	- also called the content-type header.
 	- Deals with input.
 	- Media type is defined in the content-type header.
 
