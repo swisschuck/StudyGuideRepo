@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
 using RestAPIStudyGuide.DataStore.Other;
 using RestAPIStudyGuide.Models.Other;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using System;
+using RestAPIStudyGuide.Services.Other;
 
 namespace RestAPIStudyGuide.Controllers.Other
 {
@@ -14,6 +15,10 @@ namespace RestAPIStudyGuide.Controllers.Other
     public class PointsOfInterestController : Controller
     {
         #region fields
+
+        private ILogger<PointsOfInterestController> _logger;
+        private IMailService _mailService;
+
         #endregion fields
 
 
@@ -23,9 +28,12 @@ namespace RestAPIStudyGuide.Controllers.Other
 
         #region constructors
 
-        public PointsOfInterestController()
-        {
 
+        // here we are injecting a dependancy into this controller of some form of ILogger
+        public PointsOfInterestController(ILogger<PointsOfInterestController> logger, IMailService mailService)
+        {
+            _logger = logger;
+            _mailService = mailService;
         }
 
         #endregion constructors
@@ -36,14 +44,32 @@ namespace RestAPIStudyGuide.Controllers.Other
         [HttpGet("{cityId}/pointsofinterest")]
         public IActionResult GetPointsOfInterest(int cityId)
         {
-            CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
-
-            if (city == null)
+            try
             {
-                return NotFound();
+                // for testing only
+                // throw new Exception("test - exception test.");
+
+                CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+
+                if (city == null)
+                {
+                    _logger.LogInformation($"City with id {cityId} wasnt found when accessing points of interest.");
+                    return NotFound();
+                }
+
+                return Ok(city.PointsOfInterest);
+            }
+            catch (Exception ex)
+            {
+                // all exceptions should be of Critical status.
+                _logger.LogCritical($"Exception while getting points of interest for city with id {cityId}.", ex);
+
+                // we know that unhandled exceptions will return a 500 status code request by default so we need to define the status code to be
+                // returned manually, this way we can provide the consumer of the API a message. Be careful what you send back to the client as too
+                // much details can provide a way for hackers to figure out whats happening with your API.
+                return StatusCode(500, "A problem happened while handling your request :-(");
             }
 
-            return Ok(city.PointsOfInterest);
         }
 
         // here we can use the Name = parameter of this method attribute to give this method a name, this name can then be used as a reference in some of our
@@ -128,6 +154,131 @@ namespace RestAPIStudyGuide.Controllers.Other
             // This helper response method will allow us to add a location header to the response, this will contain the new location URI where
             // the newly created information can be found.
             return CreatedAtRoute("GetPointOfInterestReferenceName", new { cityId = cityId, id = newPointOfInterestDto.Id} , newPointOfInterestDto);
+        }
+
+        [HttpPut("{cityId}/pointsofinterest/{id}")]
+        public IActionResult UpdatePointOfInterest(int cityId, int id, [FromBody] PointOfInterestForUpdateDto pointOfInterest)
+        {
+            if (pointOfInterest == null)
+            {
+                return BadRequest();
+            }
+
+            if (pointOfInterest.Description == pointOfInterest.Name)
+            {
+                ModelState.AddModelError("Description", "The provided description should be different than the name.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+
+            if (city == null)
+            {
+                return NotFound();
+            }
+
+            PointOfInterestDto pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == id);
+
+            if (pointOfInterestFromStore == null)
+            {
+                return NotFound();
+            }
+
+            pointOfInterestFromStore.Name = pointOfInterest.Name;
+            pointOfInterestFromStore.Description = pointOfInterest.Description;
+
+            return NoContent(); // the request complete succesfully but there is nothing to return. The user sent in the content that needed to be
+                                // changed so we dont need to return the updated object to them.
+        }
+
+
+        [HttpPatch("{cityId}/pointsofinterest/{id}")]
+        public IActionResult PartiallyUpdatePointOfInterest(int cityId, int id, [FromBody] JsonPatchDocument<PointOfInterestForUpdateDto> patchDocument)
+        {
+            // first lets check to make sure the patch document is ok
+            if (patchDocument == null)
+            {
+                return BadRequest();
+            }
+
+            // now we run our normal validation checks
+            CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+
+            if (city == null)
+            {
+                return NotFound();
+            }
+
+            PointOfInterestDto pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == id);
+
+            if (pointOfInterestFromStore == null)
+            {
+                return NotFound();
+            }
+
+            PointOfInterestForUpdateDto pointOfInterestToPatch =
+                new PointOfInterestForUpdateDto()
+                {
+                    Name = pointOfInterestFromStore.Name,
+                    Description = pointOfInterestFromStore.Description
+                };
+
+            // here we are applying the incoming patch document to our update dto object to see if it passes the requirements
+            patchDocument.ApplyTo(pointOfInterestToPatch, ModelState);
+            
+            // check the model state after the patch document has been applied to see if it passes.
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            // check our custom validation rule
+            if (pointOfInterestToPatch.Description == pointOfInterestToPatch.Name)
+            {
+                ModelState.AddModelError("Description", "The provided description should be different than the name.");
+            }
+
+            // now we are going to use a built in validation helper to check the model itself for its validation.
+            TryValidateModel(pointOfInterestToPatch);
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            pointOfInterestFromStore.Name = pointOfInterestToPatch.Name;
+            pointOfInterestFromStore.Description = pointOfInterestToPatch.Description;
+
+            return NoContent();
+        }
+
+
+        [HttpDelete("{cityId}/pointsofinterest/{id}")]
+        public IActionResult DeletePointOfInterest(int cityId, int id)
+        {
+            CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+
+            if (city == null)
+            {
+                return NotFound();
+            }
+
+            PointOfInterestDto pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == id);
+
+            if (pointOfInterestFromStore == null)
+            {
+                return NotFound();
+            }
+
+            city.PointsOfInterest.Remove(pointOfInterestFromStore);
+
+            _mailService.Send("A point of interest was deleted.", $"Point of interest {pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id} was deleted.");
+
+            return NoContent();
         }
 
         #endregion public methods

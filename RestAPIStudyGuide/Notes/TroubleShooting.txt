@@ -26,3 +26,8 @@
 
 
 =================================================================================================================================================================
+
++ If Nlog is not actually creating a log file when you try to log
+	
+	- right click on the nlog.config file you created when setting up Nlog and choose properties, then change the "Copy To Output Directory" setting from
+	  "Do Not Copy" to "Copy Always".

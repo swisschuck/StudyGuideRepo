@@ -12,3 +12,4 @@ E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGu
 E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.dll
 E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.pdb
 E:\Repos\StudyGuideRepo\RestAPIStudyGuide\obj\Debug\netcoreapp2.1\RestAPIStudyGuide.csprojAssemblyReference.cache
+E:\Repos\StudyGuideRepo\RestAPIStudyGuide\bin\Debug\netcoreapp2.1\nlog.config

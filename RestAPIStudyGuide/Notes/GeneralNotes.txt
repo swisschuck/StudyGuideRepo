@@ -204,3 +204,35 @@ Formatters and Content Navigation
 
 
 
+
+Json Patch (RFC 6902) document	
+============================================
+
++ Describes a document structure for expressing a sequence of operations to apply to a JSON document.
+
++ The document has parts to it:
+	- Array of operations - the document will start with json array brackets
+		- "op" - means operation.
+		- "path" - is the name of the property, usually prefixed with a forward slash.
+		- "value" - is the new value that will be replacing the old value of the property.
+	- List of operations must be applied to a resource.
+
++ Example:
+[
+    {
+      "op": "replace",
+      "path": "/name",
+      "value": "Updated - Central Park"
+    }
+]
+
+
+
+
+Dependency Injection
+==================================================
+
++ Dependency Injection is a specialization of the Inversion of Control pattern. The Dependency Injection pattern uses an object called a
+  container to intialize objects and provide the required dependencies to the object.
+
+
