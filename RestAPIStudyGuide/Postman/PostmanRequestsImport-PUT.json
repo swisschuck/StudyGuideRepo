@@ -15,7 +15,7 @@
     {
       "id": "2128fecb-075d-5caa-d46a-ea91ef55799c",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "url": "http://localhost:54908/api/cities/1/pointsofinterest/1",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "PUT",
@@ -35,7 +35,7 @@
     {
       "id": "b76596bc-c554-dfe0-02d3-1abeef9885e2",
       "headers": "Content-Type: application/json\n",
-      "url": "http://localhost:1028/api/cities/1/pointsofinterest/1",
+      "url": "http://localhost:54908/api/cities/1/pointsofinterest/1",
       "preRequestScript": null,
       "pathVariables": {},
       "method": "PUT",

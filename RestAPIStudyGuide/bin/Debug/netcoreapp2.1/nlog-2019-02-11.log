@@ -1,0 +1,63 @@
+2019-02-11 16:30:43.3018|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-11 16:30:43.3018|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-11 16:30:43.3773|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 82.3518ms 200 
+2019-02-11 16:30:43.4681|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 174.1874ms 200 
+2019-02-11 16:30:43.4903|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-11 16:30:43.4903|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.6359ms 200 
+2019-02-11 16:30:55.1074|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/cities/5/pointsofinterest  
+2019-02-11 16:30:55.1376|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetPointsOfInterest", controller = "PointsOfInterest"}. Executing action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide)
+2019-02-11 16:30:55.1585|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide) with arguments (5) - Validation state: Valid
+2019-02-11 16:30:55.1585|INFO|RestAPIStudyGuide.Controllers.Other.PointsOfInterestController|City with id 5 wasnt found when accessing points of interest.
+2019-02-11 16:30:55.1717|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 7.6434ms.
+2019-02-11 16:30:55.1717|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2019-02-11 16:30:55.1717|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide) in 41.7206ms
+2019-02-11 16:30:55.1941|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 86.6832ms 404 text/plain
+2019-02-11 16:31:40.9899|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/cities/5/pointsofinterest  
+2019-02-11 16:31:40.9899|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetPointsOfInterest", controller = "PointsOfInterest"}. Executing action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide)
+2019-02-11 16:31:41.0022|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide) with arguments (5) - Validation state: Valid
+2019-02-11 16:31:45.6450|INFO|RestAPIStudyGuide.Controllers.Other.PointsOfInterestController|City with id 5 wasnt found when accessing points of interest.
+2019-02-11 16:31:45.6450|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 4642.2726ms.
+2019-02-11 16:31:45.6450|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2019-02-11 16:31:45.6571|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide) in 4656.4258ms
+2019-02-11 16:31:45.6571|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4671.4852ms 404 text/plain
+2019-02-11 16:31:59.1929|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-11 16:31:59.1929|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-11 16:31:59.2658|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 78.9237ms 200 
+2019-02-11 16:31:59.3558|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 170.0417ms 200 
+2019-02-11 16:31:59.3806|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-11 16:31:59.3806|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 5.3047ms 200 
+2019-02-11 16:32:10.1426|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/cities/5/pointsofinterest  
+2019-02-11 16:32:10.1910|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetPointsOfInterest", controller = "PointsOfInterest"}. Executing action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide)
+2019-02-11 16:32:10.2130|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide) with arguments (5) - Validation state: Valid
+2019-02-11 16:32:12.5183|FATAL|RestAPIStudyGuide.Controllers.Other.PointsOfInterestController|Exception while getting points of interest for city with id 5.
+2019-02-11 16:32:12.5183|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2305.3756ms.
+2019-02-11 16:32:12.5325|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String'.
+2019-02-11 16:32:12.5325|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide) in 2341.4533ms
+2019-02-11 16:32:12.5483|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 2404.8711ms 500 text/plain; charset=utf-8
+2019-02-11 16:32:43.9780|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-11 16:32:43.9780|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-11 16:32:44.0617|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 88.0877ms 200 
+2019-02-11 16:32:44.1498|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 179.0142ms 200 
+2019-02-11 16:32:44.1724|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-11 16:32:44.1724|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.8977ms 200 
+2019-02-11 16:32:50.5152|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/cities/5/pointsofinterest  
+2019-02-11 16:32:50.5477|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetPointsOfInterest", controller = "PointsOfInterest"}. Executing action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide)
+2019-02-11 16:32:50.5731|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide) with arguments (5) - Validation state: Valid
+2019-02-11 16:32:54.9900|FATAL|RestAPIStudyGuide.Controllers.Other.PointsOfInterestController|Exception while getting points of interest for city with id 5.
+2019-02-11 16:33:14.0784|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 23497.1363ms.
+2019-02-11 16:33:14.0894|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String'.
+2019-02-11 16:33:14.1018|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.GetPointsOfInterest (RestAPIStudyGuide) in 23546.3339ms
+2019-02-11 16:33:14.1018|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 23591.7938ms 500 text/plain; charset=utf-8
+2019-02-11 17:57:14.6765|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-11 17:57:14.6765|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-11 17:57:14.7456|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 75.1388ms 200 
+2019-02-11 17:57:14.8383|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 168.9763ms 200 
+2019-02-11 17:57:14.8609|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-11 17:57:14.8609|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.3516ms 200 
+2019-02-11 17:57:26.8972|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:54908/api/cities/1/pointsofinterest/1  0
+2019-02-11 17:57:26.9279|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "DeletePointOfInterest", controller = "PointsOfInterest"}. Executing action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.DeletePointOfInterest (RestAPIStudyGuide)
+2019-02-11 17:57:26.9488|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.DeletePointOfInterest (RestAPIStudyGuide) with arguments (1, 1) - Validation state: Valid
+2019-02-11 17:57:29.3529|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.DeletePointOfInterest (RestAPIStudyGuide), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 2398.8785ms.
+2019-02-11 17:57:29.3618|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2019-02-11 17:57:29.3618|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action RestAPIStudyGuide.Controllers.Other.PointsOfInterestController.DeletePointOfInterest (RestAPIStudyGuide) in 2433.3159ms
+2019-02-11 17:57:29.3618|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 2478.4624ms 204 

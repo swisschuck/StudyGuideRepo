@@ -2,14 +2,49 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Net.Http.Headers;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
+using NLog.Extensions.Logging;
+using RestAPIStudyGuide.Services.Other;
 
 namespace RestAPIStudyGuide
 {
     public class Startup
     {
+        #region Properties
+
+        public static IConfigurationRoot Configuration;
+        public IConfiguration Configuration2; // we can use this interface instead if we want access to our configuration object
+
+        #endregion Properties
+
+
+        #region Constructors
+
+        //public Startup(IConfiguration configuration) // see above property Configuration2 notes.
+        public Startup(IHostingEnvironment environment)
+        {
+            // if we want to perform more actions that would happen at start up we can add a constructor to this class and inject them here.
+
+            // here we are setting up a config file to be used with the application.
+            // we can set different config files for different environments or for whatever reason we want.
+            // these config files will get loaded in, in the order specified here.
+            var builder = new ConfigurationBuilder()
+                            .SetBasePath(environment.ContentRootPath)
+                            .AddJsonFile("appSettings.json", optional : false, reloadOnChange : true) // by making this one not optional, it will be the default
+                            //.AddJsonFile($"appSettings.{environment.EnvironmentName}.json", optional: true, reloadOnChange: true); // we can also plug the environment value in like this
+                            .AddJsonFile("appSettings.Production.json", optional: true, reloadOnChange: true);
+
+            // then storing those config values in the Configuration container from anywhere in the app.
+            Configuration = builder.Build();
+        }
+
+        #endregion Constructors
+
+
+
         // notes that came with this file:
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -35,11 +70,30 @@ namespace RestAPIStudyGuide
                         }
                     });
 
+            #region custom services
+            // when we add a new service we can specify the lifetime of the service like so:
+
+            // services.AddTransient - the service will get created each time its requested, works best for lightweight stateless services.
+            // services.AddScoped - the service will get created once per request.
+            // services.AddSingleton - are created the first time they are requested but each service request will use the same instance.
+
+            //services.AddTransient<LocalMailService>(); // we can add the service as a concrete implementation.
+
+            //services.AddTransient<IMailService, LocalMailService>(); // we can add the service coupled with an Interface.
+
+#if DEBUG // we can also switch between the two types depending on if we're ni debug mode or not.
+            services.AddTransient<IMailService, LocalMailService>();
+#else
+            services.AddTransient<IMailService, CloudMailService>();
+#endif
+
+            #endregion custom services
+
         }
 
         // notes that came with this file:
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -53,6 +107,15 @@ namespace RestAPIStudyGuide
                 app.UseExceptionHandler();
             }
 
+            // adds the ability to log to the console window.
+            loggerFactory.AddConsole();
+
+            // adds the ability to log to the debug window, LogLevel.Information is the default.
+            loggerFactory.AddDebug(LogLevel.Information);
+
+            // adds the ability to use NLog in our application so logs can be logged to an actual file
+            //loggerFactory.AddProvider(new NLog.Extensions.Logging.NLogLoggerProvider()); // here is one way to do it.
+            loggerFactory.AddNLog(); // however some extension libraries have their own built/slightly easier way to add this to your application.
 
             // so if we have a bad request or some other problem the browser will not display this, the user would have to look at whats happening in the
             // browsers console window. When we add this line to the pipeline, .NET Core will use a simple text based system to show the user the status code

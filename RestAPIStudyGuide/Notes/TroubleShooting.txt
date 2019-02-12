@@ -12,3 +12,22 @@
 	  now change http://localhost:44320/ to http://localhost:54908 in postman or the browser and you should start to get a response back.
 
 =================================================================================================================================================================
+
++ if when you place a POST request and you get an odd looking/invalid location header like:
+
+	http://localhost:54908/api/cities/3/pointsofinterest?id=7
+
+	when your looking for it to be like:
+
+	http://localhost:54908/api/cities/3/pointsofinterest/7
+
+	Then check the CreatedAtRoute helper method that should be in the POST controller method to make sure its reference name is correct and it pointed to the
+	correct reference method.
+
+
+=================================================================================================================================================================
+
++ If Nlog is not actually creating a log file when you try to log
+	
+	- right click on the nlog.config file you created when setting up Nlog and choose properties, then change the "Copy To Output Directory" setting from
+	  "Do Not Copy" to "Copy Always".
