@@ -2,17 +2,30 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NLog.Extensions.Logging;
+using RestAPIStudyGuide.EntityFramework.Context.Other;
 using RestAPIStudyGuide.Services.Other;
+using System;
+using System.Data.SqlClient;
 
 namespace RestAPIStudyGuide
 {
     public class Startup
     {
+
+        #region fields
+
+        //private string _sqlConnectionString = @"Data Source=CHARLIESHPENVY\CHARLIESQL2017;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;Authentication=&quot;Active Directory Integrated&quot;; ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private string _sqlConnectionString = @"Data Source=CHARLIESHPENVY\CHARLIESQL2017;Database=CityInfoDB;Trusted_Connection=True;Integrated Security=True;";
+
+        #endregion fields
+
+
         #region Properties
 
         public static IConfigurationRoot Configuration;
@@ -33,8 +46,8 @@ namespace RestAPIStudyGuide
             // these config files will get loaded in, in the order specified here.
             var builder = new ConfigurationBuilder()
                             .SetBasePath(environment.ContentRootPath)
-                            .AddJsonFile("appSettings.json", optional : false, reloadOnChange : true) // by making this one not optional, it will be the default
-                            //.AddJsonFile($"appSettings.{environment.EnvironmentName}.json", optional: true, reloadOnChange: true); // we can also plug the environment value in like this
+                            .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true) // by making this one not optional, it will be the default
+                                                                                                    //.AddJsonFile($"appSettings.{environment.EnvironmentName}.json", optional: true, reloadOnChange: true); // we can also plug the environment value in like this
                             .AddJsonFile("appSettings.Production.json", optional: true, reloadOnChange: true);
 
             // then storing those config values in the Configuration container from anywhere in the app.
@@ -84,10 +97,22 @@ namespace RestAPIStudyGuide
 #if DEBUG // we can also switch between the two types depending on if we're ni debug mode or not.
             services.AddTransient<IMailService, LocalMailService>();
 #else
-            services.AddTransient<IMailService, CloudMailService>();
+                        services.AddTransient<IMailService, CloudMailService>();
 #endif
 
             #endregion custom services
+
+            // here we need to register our DBContext's that we will use with the Entity Framework. By default it will get registered with a
+            // scope lifetime
+            //services.AddDbContext<CityInfoDBContext>(); // this is the way if you wanted to define the options in each of the context
+            SqlConnectionStringBuilder myLocalDB = new SqlConnectionStringBuilder()
+            {
+                DataSource = @"CHARLIESHPENVY\CHARLIESQL2017",
+                InitialCatalog = "CityInfoDB",
+                IntegratedSecurity = true,
+                TrustServerCertificate = true
+            };
+            services.AddDbContext<CityInfoDBContext>(options => options.UseSqlServer(myLocalDB.ConnectionString)); // here we can define the options once and apply to all DB contexts
 
         }
 

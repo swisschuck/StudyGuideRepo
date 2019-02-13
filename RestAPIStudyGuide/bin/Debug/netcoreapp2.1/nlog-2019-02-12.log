@@ -1,0 +1,115 @@
+2019-02-12 17:54:12.4672|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 17:54:12.4672|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 17:54:12.5502|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 88.7034ms 200 
+2019-02-12 17:54:12.6640|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 204.0904ms 200 
+2019-02-12 17:54:12.6900|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 17:54:12.6900|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.9413ms 200 
+2019-02-12 17:55:00.5696|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-12 17:55:00.5757|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.7736ms 200 
+2019-02-12 17:57:00.1447|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 17:57:00.1447|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 17:57:00.2160|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 76.5199ms 200 
+2019-02-12 17:57:00.3102|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 172.5039ms 200 
+2019-02-12 17:57:00.3333|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 17:57:00.3333|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.7838ms 200 
+2019-02-12 17:57:05.2615|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-12 17:57:05.2615|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.3799ms 200 
+2019-02-12 17:59:44.2099|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 17:59:44.2099|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 17:59:44.2812|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 77.0018ms 200 
+2019-02-12 17:59:44.3721|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 169.2293ms 200 
+2019-02-12 17:59:44.3952|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 17:59:44.3952|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.5892ms 200 
+2019-02-12 17:59:49.8615|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-12 17:59:49.8615|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.2037ms 200 
+2019-02-12 18:02:12.0179|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 18:02:12.0179|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 18:02:12.0871|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 74.614ms 200 
+2019-02-12 18:02:12.1736|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 162.8146ms 200 
+2019-02-12 18:02:12.1957|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 18:02:12.1994|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.5652ms 200 
+2019-02-12 18:02:20.9008|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-12 18:02:20.9008|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.6139ms 200 
+2019-02-12 18:11:20.7758|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 18:11:20.7758|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 18:11:20.8443|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 74.1575ms 200 
+2019-02-12 18:11:20.9309|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 162.3562ms 200 
+2019-02-12 18:11:20.9535|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 18:11:20.9535|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.503ms 200 
+2019-02-12 18:11:26.1409|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-12 18:11:26.1409|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.235ms 200 
+2019-02-12 18:20:27.5100|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 18:20:27.5100|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 18:20:27.5791|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 75.1656ms 200 
+2019-02-12 18:20:27.6673|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 164.5894ms 200 
+2019-02-12 18:20:27.6895|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 18:20:27.6895|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.255ms 200 
+2019-02-12 18:20:33.2294|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-12 18:20:33.2294|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.2625ms 200 
+2019-02-12 18:26:18.9086|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 18:26:18.9086|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 18:26:18.9808|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 77.2876ms 200 
+2019-02-12 18:26:19.0729|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 171.6782ms 200 
+2019-02-12 18:26:19.0961|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 18:26:19.0961|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.5971ms 200 
+2019-02-12 18:26:23.1889|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-12 18:26:23.1889|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.3134ms 200 
+2019-02-12 18:29:32.7261|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 18:29:32.8155|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 93.8113ms 200 
+2019-02-12 18:29:32.8460|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 18:29:32.8460|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1.0125ms 200 
+2019-02-12 18:29:46.9865|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 18:29:46.9865|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 18:29:47.0558|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 74.5249ms 200 
+2019-02-12 18:29:47.1557|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 176.0019ms 200 
+2019-02-12 18:29:47.1781|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 18:29:47.1781|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.0441ms 200 
+2019-02-12 18:29:51.8163|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-12 18:29:51.8163|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.5114ms 200 
+2019-02-12 18:33:00.7437|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 18:33:00.7437|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 18:33:00.8142|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 75.6105ms 200 
+2019-02-12 18:33:00.8996|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 162.5715ms 200 
+2019-02-12 18:33:00.9227|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 18:33:00.9227|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.1156ms 200 
+2019-02-12 18:36:06.9867|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 18:36:07.0749|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 92.6521ms 200 
+2019-02-12 18:43:59.4871|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-12 18:43:59.4871|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-12 18:43:59.5555|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 74.0341ms 200 
+2019-02-12 18:43:59.6482|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 167.8973ms 200 
+2019-02-12 18:43:59.6758|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-12 18:43:59.6758|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.4755ms 200 
+2019-02-12 18:44:03.9424|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-12 18:44:03.9667|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "TestDatabase", controller = "Dummy"}. Executing action RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide)
+2019-02-12 18:44:09.1548|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.8-servicing-32085 initialized 'CityInfoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-12 18:44:19.5713|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (255ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [CityInfoDB];
+2019-02-12 18:44:19.6227|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (46ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [CityInfoDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2019-02-12 18:44:19.7218|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Cities] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Cities] PRIMARY KEY ([Id])
+);
+2019-02-12 18:44:19.7218|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [PointsOfInterest] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [CityDtoId] int NULL,
+    CONSTRAINT [PK_PointsOfInterest] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_PointsOfInterest_Cities_CityDtoId] FOREIGN KEY ([CityDtoId]) REFERENCES [Cities] ([Id]) ON DELETE NO ACTION
+);
+2019-02-12 18:44:19.7299|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_PointsOfInterest_CityDtoId] ON [PointsOfInterest] ([CityDtoId]);
+2019-02-12 18:44:25.3868|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide) - Validation state: Valid
+2019-02-12 18:44:28.4040|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide), returned result Microsoft.AspNetCore.Mvc.OkResult in 3012.2072ms.
+2019-02-12 18:44:28.4040|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2019-02-12 18:44:28.4040|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide) in 24443.9379ms
+2019-02-12 18:44:28.4238|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 24480.4518ms 200 
