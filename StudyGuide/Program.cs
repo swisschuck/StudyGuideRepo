@@ -4,6 +4,7 @@ using StudyGuide.Classes.Examples.Cryptography;
 using StudyGuide.Classes.Examples.Generics;
 using StudyGuide.Classes.Examples.InterviewQuestions;
 using StudyGuide.Classes.Examples.LINQ;
+using StudyGuide.Classes.Examples.SQLBulkCopy;
 using System;
 using System.Collections.Generic;
 
@@ -60,6 +61,10 @@ namespace StudyGuide
                         RunInterviewQuestionsExample();
                         break;
 
+                    case "11":
+                        RunSQLBulkCopyMenu();
+                        break;
+
                     default:
                         Console.WriteLine("Sorry that option is not valid");
                         Console.WriteLine("");
@@ -87,6 +92,7 @@ namespace StudyGuide
             Console.WriteLine("8 - ASYNC Programming");
             Console.WriteLine("9 - Cryptography");
             Console.WriteLine("10 - Interview Example Questions");
+            Console.WriteLine("11 - SQL Bulk Copy");
             Console.WriteLine("Esc - Exit Program");
         }
 
@@ -207,6 +213,13 @@ namespace StudyGuide
         {
             InterviewQuestionsMenu IQ = new InterviewQuestionsMenu();
             IQ.RunInterviewQuestionsMenu();
+        }
+
+
+        private static void RunSQLBulkCopyMenu()
+        {
+            SQLBulkCopyMenu menu = new SQLBulkCopyMenu();
+            menu.RunSQLBulkCopyMenu();
         }
     }
 }
