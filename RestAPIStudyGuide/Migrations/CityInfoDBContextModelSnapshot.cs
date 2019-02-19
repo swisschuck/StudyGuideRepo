@@ -8,9 +8,6 @@ using RestAPIStudyGuide.EntityFramework.Context.Other;
 
 namespace RestAPIStudyGuide.Migrations
 {
-    // this file contains a snapshot of our entities
-
-
     [DbContext(typeof(CityInfoDBContext))]
     partial class CityInfoDBContextModelSnapshot : ModelSnapshot
     {

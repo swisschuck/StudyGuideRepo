@@ -29,6 +29,9 @@ namespace RestAPIStudyGuide.EntityFramework.Entities.Other
 
         public int CityId { get; set; }
 
+        [MaxLength(200)]
+        public string Description { get; set; }
+
         #endregion properties
 
 
