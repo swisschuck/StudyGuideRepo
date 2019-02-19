@@ -112,7 +112,8 @@ namespace RestAPIStudyGuide
                 IntegratedSecurity = true,
                 TrustServerCertificate = true
             };
-            services.AddDbContext<CityInfoDBContext>(options => options.UseSqlServer(myLocalDB.ConnectionString)); // here we can define the options once and apply to all DB contexts
+            // here we can define the options once and apply to all DB contexts
+            services.AddDbContext<CityInfoDBContext>(options => options.UseSqlServer(myLocalDB.ConnectionString));
 
         }
 

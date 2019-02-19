@@ -20,3 +20,12 @@
 
 + DBContext
 	- Its simply a context to interact with our database. This context represents a session with the database, it can be used to save and query instances.
+
+
+Migrations	
+==================================================
+
++ allow us to save snapshots of our entities and the database scructure so we can revert back or just to have versions
++ we can create a new migration by first installing the nuget package Microsoft.EntityFrameworkCore.Tools. 
+  After the install open the Package Manager Console and type: PM> Add-Migration <TheNameOfYourMigrationGoesHere>
++ if we want to update the database using our current snapshot we can open the Package Manager Console and type: PM> Update-Database

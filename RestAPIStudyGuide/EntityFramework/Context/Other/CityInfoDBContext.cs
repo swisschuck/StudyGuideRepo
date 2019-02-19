@@ -30,7 +30,11 @@ namespace RestAPIStudyGuide.EntityFramework.Context.Other
         {
             // if the database already exists then this line will do nothing, however if for some reason the DB has not been 
             // created then this will make sure it happens.
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
+
+            // If we have migrations configured (see EF Notes) then this call will execute migrations, this also means that if there is no database
+            // created, it will create it.
+            Database.Migrate();
         }
 
 

@@ -10,7 +10,7 @@ namespace RestAPIStudyGuide.Controllers.Other
     public class DummyController : Controller
     {
         // this dummy controller is/was just used for testing things like:
-        // - SQL server connetions
+        // - SQL server connections
         #region fields
 
         private CityInfoDBContext _cityInfoDBContext;
@@ -26,6 +26,7 @@ namespace RestAPIStudyGuide.Controllers.Other
 
         public DummyController(CityInfoDBContext context)
         {
+            // just by instantiating the CityInfoDBContext we should at the very least get some blank tables created.
             _cityInfoDBContext = context;
         }
 
