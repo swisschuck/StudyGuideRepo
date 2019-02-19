@@ -1,0 +1,78 @@
+2019-02-18 17:14:25.2951|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-18 17:14:25.2951|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-18 17:14:25.3788|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 89.9786ms 200 
+2019-02-18 17:14:25.4944|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 206.8134ms 200 
+2019-02-18 17:14:25.5185|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-18 17:14:25.5185|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.4832ms 200 
+2019-02-18 17:14:28.6608|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-18 17:14:28.6859|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "TestDatabase", controller = "Dummy"}. Executing action RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide)
+2019-02-18 17:14:29.1736|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.8-servicing-32085 initialized 'CityInfoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-18 17:14:39.4819|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (214ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [CityInfoDB];
+2019-02-18 17:14:39.5342|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (47ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [CityInfoDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2019-02-18 17:14:39.6289|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2019-02-18 17:14:39.6367|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-18 17:14:39.6367|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2019-02-18 17:14:39.6551|INFO|Microsoft.EntityFrameworkCore.Migrations|Applying migration '20190218234945_CityInfoDBInitialMigration'.
+2019-02-18 17:14:39.7149|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Cities] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Cities] PRIMARY KEY ([Id])
+);
+2019-02-18 17:14:39.7149|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [PointsOfInterest] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [CityDtoId] int NULL,
+    CONSTRAINT [PK_PointsOfInterest] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_PointsOfInterest_Cities_CityDtoId] FOREIGN KEY ([CityDtoId]) REFERENCES [Cities] ([Id]) ON DELETE NO ACTION
+);
+2019-02-18 17:14:39.7149|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_PointsOfInterest_CityDtoId] ON [PointsOfInterest] ([CityDtoId]);
+2019-02-18 17:14:39.7284|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20190218234945_CityInfoDBInitialMigration', N'2.1.8-servicing-32085');
+2019-02-18 17:14:39.7284|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide) - Validation state: Valid
+2019-02-18 17:14:39.7449|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide), returned result Microsoft.AspNetCore.Mvc.OkResult in 0.269ms.
+2019-02-18 17:14:39.7449|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2019-02-18 17:14:39.7449|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide) in 11065.5831ms
+2019-02-18 17:14:39.7634|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 11102.6152ms 200 
+2019-02-18 17:24:20.8379|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-18 17:24:20.8379|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-18 17:24:20.9084|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 75.9007ms 200 
+2019-02-18 17:24:21.0078|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 176.7949ms 200 
+2019-02-18 17:24:21.0321|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-18 17:24:21.0321|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.7727ms 200 
+2019-02-18 17:24:25.1244|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-18 17:24:25.1492|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "TestDatabase", controller = "Dummy"}. Executing action RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide)
+2019-02-18 17:24:25.6394|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.8-servicing-32085 initialized 'CityInfoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-18 17:24:25.7089|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-18 17:24:25.7140|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-18 17:24:25.7290|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2019-02-18 17:24:25.7290|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2019-02-18 17:24:25.7513|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide) - Validation state: Valid
+2019-02-18 17:24:25.7513|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide), returned result Microsoft.AspNetCore.Mvc.OkResult in 0.26ms.
+2019-02-18 17:24:25.7642|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2019-02-18 17:24:25.7642|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide) in 614.0999ms
+2019-02-18 17:24:25.7770|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 652.1106ms 200 

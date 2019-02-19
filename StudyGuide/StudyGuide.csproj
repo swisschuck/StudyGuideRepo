@@ -50,6 +50,9 @@
     <ApplicationIcon>StudyGuideIcon48.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -57,6 +60,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Speech" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -107,6 +113,11 @@
     <Compile Include="Classes\Examples\LINQ\LINQExamples.cs" />
     <Compile Include="Classes\Examples\Polymorphism\Polymorphism.cs" />
     <Compile Include="Classes\Examples\Polymorphism\PolymorphismBase.cs" />
+    <Compile Include="Classes\Examples\SQLBulkCopy\DoubleConverter.cs" />
+    <Compile Include="Classes\Examples\SQLBulkCopy\EarthQuakeData.cs" />
+    <Compile Include="Classes\Examples\SQLBulkCopy\EarthQuakeDataEventMapper.cs" />
+    <Compile Include="Classes\Examples\SQLBulkCopy\SQLBulkCopyMenu.cs" />
+    <Compile Include="Classes\Examples\SQLBulkCopy\SQLBulkCopyTest.cs" />
     <Compile Include="Classes\Speech\TextToSpeech.cs" />
     <Compile Include="Classes\Testing\GradeBook.cs" />
     <Compile Include="Classes\Testing\GradeStatistics.cs" />
@@ -118,6 +129,7 @@
     <None Include="App.config" />
     <None Include="Database\JSON\RSAKeys.json" />
     <None Include="Database\JSON\Users.json" />
+    <None Include="Media\Docs\EarthquakeData.csv" />
     <None Include="Notes\HelpfulSlides\Cryptography\1-practical-cryptography-dotnet-m1-slides.pdf" />
     <None Include="Notes\HelpfulSlides\Cryptography\10-practical-cryptography-dotnet-m10-slides.pdf" />
     <None Include="Notes\HelpfulSlides\Cryptography\2-practical-cryptography-dotnet-m2-slides.pdf" />
@@ -141,7 +153,7 @@
     <Content Include="StudyGuideIcon48.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Media\Docs\" />
+    <Folder Include="Database\SQL\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

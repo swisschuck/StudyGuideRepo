@@ -1,0 +1,31 @@
+﻿+ Entity framework is an ORM
++ Object-Relational Mapping (ORM) - is a technique that lets you query and manipulate data from a database using an object-oriented paradigm.
+
++ Industry problems that created the Entity Framework
+	- Relation models and object models do not work well together
+	- Tabular database format versus an interconnected object graph
+
++ Solutions that the EF provides
+	- An ORM - the library that implements the object-relational mapping technique.
+	- It takes care of mapping between that tabular format and the object graph.
+
++ Entity Framework Core
+	- Entity framework core is a lightweight, extensible, and cross-platform version of the Entity Framework.
+	- Recommended for newer applications that dont need the full EF6 feature set and programs like this one that are built with .NET Core.
+	- It comes with a variety of databases, even non-relational ones.
+	- can be used with Code-First or database-first approaches.
+
++ Entites
+	- just simple objects that are used to define our data structure.
+
++ DBContext
+	- Its simply a context to interact with our database. This context represents a session with the database, it can be used to save and query instances.
+
+
+Migrations	
+==================================================
+
++ allow us to save snapshots of our entities and the database scructure so we can revert back or just to have versions
++ we can create a new migration by first installing the nuget package Microsoft.EntityFrameworkCore.Tools. 
+  After the install open the Package Manager Console and type: PM> Add-Migration <TheNameOfYourMigrationGoesHere>
++ if we want to update the database using our current snapshot we can open the Package Manager Console and type: PM> Update-Database
