@@ -73,6 +73,10 @@ namespace StudyGuide.Classes.Examples.SQLBulkCopy
                         RunBulkCopyWithMultipleTables();
                         break;
 
+                    case "9":
+                        RunBulkCopyFromCSVFile();
+                        break;
+
                     case "0":
                         // go back to previous menu
                         return;
@@ -171,6 +175,15 @@ namespace StudyGuide.Classes.Examples.SQLBulkCopy
         }
 
 
+        private void RunBulkCopyFromCSVFile()
+        {
+            Console.WriteLine("RunBulkCopyFromCSVFile Started");
+
+            Console.WriteLine($" Did it work? {_sqlBulkCopyTest.PerformBulkCopyFromCSVFile()} ");
+
+            Console.WriteLine("RunBulkCopyFromCSVFile Complete");
+        }
+
 
         private void printBulkCopyMenu()
         {
@@ -184,6 +197,7 @@ namespace StudyGuide.Classes.Examples.SQLBulkCopy
             Console.WriteLine("6) Bulk Copy with notifications");
             Console.WriteLine("7) Bulk Copy with Column Mappings");
             Console.WriteLine("8) Bulk Copy with Multiple Tables");
+            Console.WriteLine("9) Bulk Copy from CSV file");
 
             Console.WriteLine("0) Back Home");
         }

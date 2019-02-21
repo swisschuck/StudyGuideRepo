@@ -33,3 +33,7 @@ E:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CoreCompileInputs
 E:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.csproj.CopyComplete
 E:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.exe
 E:\Repos\StudyGuideRepo\StudyGuide\obj\Debug\StudyGuide.pdb
+E:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\CsvHelper.dll
+E:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\System.ValueTuple.dll
+E:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\CsvHelper.xml
+E:\Repos\StudyGuideRepo\StudyGuide\bin\Debug\System.ValueTuple.xml

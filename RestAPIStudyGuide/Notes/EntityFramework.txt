@@ -22,6 +22,7 @@
 	- Its simply a context to interact with our database. This context represents a session with the database, it can be used to save and query instances.
 
 
+
 Migrations	
 ==================================================
 
@@ -29,3 +30,16 @@ Migrations
 + we can create a new migration by first installing the nuget package Microsoft.EntityFrameworkCore.Tools. 
   After the install open the Package Manager Console and type: PM> Add-Migration <TheNameOfYourMigrationGoesHere>
 + if we want to update the database using our current snapshot we can open the Package Manager Console and type: PM> Update-Database
+
+
+
+Repository Pattern	
+==================================================
++ The Repository Pattern allows to create an abstraction layer between the data access layer and the business logic layer of an application. 
+  The purpose of creating this layer is to isolate data access layer so that the changes we may operate cannot affect the business logic layer directly. 
+  Implementing these patterns is also helpful for automated unit testing or test-driven development.
+
++ If we chose not to use a Repository Pattern then we can run into the following problems:
+	- Code duplication
+	- More error-prone code
+	- Harder to test the consuming class

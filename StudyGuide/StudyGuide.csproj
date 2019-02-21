@@ -113,11 +113,13 @@
     <Compile Include="Classes\Examples\LINQ\LINQExamples.cs" />
     <Compile Include="Classes\Examples\Polymorphism\Polymorphism.cs" />
     <Compile Include="Classes\Examples\Polymorphism\PolymorphismBase.cs" />
+    <Compile Include="Classes\Examples\SQLBulkCopy\DateTimeConverter.cs" />
     <Compile Include="Classes\Examples\SQLBulkCopy\DoubleConverter.cs" />
     <Compile Include="Classes\Examples\SQLBulkCopy\EarthQuakeData.cs" />
     <Compile Include="Classes\Examples\SQLBulkCopy\EarthQuakeDataEventMapper.cs" />
     <Compile Include="Classes\Examples\SQLBulkCopy\SQLBulkCopyMenu.cs" />
     <Compile Include="Classes\Examples\SQLBulkCopy\SQLBulkCopyTest.cs" />
+    <Compile Include="Classes\Extensions\Other\DataTableExtensions.cs" />
     <Compile Include="Classes\Speech\TextToSpeech.cs" />
     <Compile Include="Classes\Testing\GradeBook.cs" />
     <Compile Include="Classes\Testing\GradeStatistics.cs" />

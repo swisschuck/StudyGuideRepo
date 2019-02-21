@@ -8,8 +8,14 @@ namespace StudyGuide.Classes.Examples.SQLBulkCopy
     {
         public override object ConvertFromString(string text, IReaderRow row, MemberMapData memberMapData)
         {
-            if (string.Compare(text, "NONE", true) == 0) return null;
-            else return double.Parse(text);
+            if (string.Compare(text, "NONE", true) == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return double.Parse(text);
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NLog.Extensions.Logging;
 using RestAPIStudyGuide.EntityFramework.Context.Other;
+using RestAPIStudyGuide.EntityFramework.Extensions;
 using RestAPIStudyGuide.Services.Other;
 using System;
 using System.Data.SqlClient;
@@ -47,8 +48,8 @@ namespace RestAPIStudyGuide
             var builder = new ConfigurationBuilder()
                             .SetBasePath(environment.ContentRootPath)
                             .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true) // by making this one not optional, it will be the default
-                                                                                                    //.AddJsonFile($"appSettings.{environment.EnvironmentName}.json", optional: true, reloadOnChange: true); // we can also plug the environment value in like this
-                            .AddJsonFile("appSettings.Production.json", optional: true, reloadOnChange: true);
+                            .AddJsonFile($"appSettings.{environment.EnvironmentName}.json", optional: true, reloadOnChange: true) // we can also plug the environment value in like this 
+                            .AddEnvironmentVariables();
 
             // then storing those config values in the Configuration container from anywhere in the app.
             Configuration = builder.Build();
@@ -94,7 +95,7 @@ namespace RestAPIStudyGuide
 
             //services.AddTransient<IMailService, LocalMailService>(); // we can add the service coupled with an Interface.
 
-#if DEBUG // we can also switch between the two types depending on if we're ni debug mode or not.
+#if DEBUG // we can also switch between the two types depending on if we're in debug mode or not.
             services.AddTransient<IMailService, LocalMailService>();
 #else
                         services.AddTransient<IMailService, CloudMailService>();
@@ -112,14 +113,22 @@ namespace RestAPIStudyGuide
                 IntegratedSecurity = true,
                 TrustServerCertificate = true
             };
+
+            // getting the connection string from the appSettings.json file instead of building it out above. this will be needed to switch environments from development to production.
+            // in the project properties, there is a section for environment variables, it will take the most recent one
+            string connectionStringFromConfigFile = Startup.Configuration["connectionStrings:cityInfoDBConnectionString"];
+
             // here we can define the options once and apply to all DB contexts
             services.AddDbContext<CityInfoDBContext>(options => options.UseSqlServer(myLocalDB.ConnectionString));
+
+            // for repositories, its based to use a scoped lifetime
+            services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
         }
 
         // notes that came with this file:
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, CityInfoDBContext cityInfoDBContext)
         {
             if (env.IsDevelopment())
             {
@@ -153,6 +162,10 @@ namespace RestAPIStudyGuide
             // its important to note that this was added AFTER the exception handler was added to the pipeline so we can catch any problems
             // before we hand off to the MVC.
             app.UseMvc();
+
+
+            // here we are using the passed in context (dependency injection) and calling our extension method to ensure we are seeding the data if its not already there
+            cityInfoDBContext.EnsureSeedDataForContext();
 
 
             app.Run(async (context) =>
