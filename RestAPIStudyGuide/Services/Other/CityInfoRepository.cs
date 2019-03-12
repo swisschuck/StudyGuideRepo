@@ -65,6 +65,11 @@ namespace RestAPIStudyGuide.Services.Other
             return _cityInfoDBContext.PointsOfInterest.Where(p => p.Id == cityId).ToList();
         }
 
+        public bool CityExists(int cityId)
+        {
+            return _cityInfoDBContext.Cities.Any(city => city.Id == cityId);
+        }
+
         #endregion public methods
 
 

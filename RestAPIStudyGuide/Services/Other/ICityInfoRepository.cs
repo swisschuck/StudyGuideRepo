@@ -12,5 +12,7 @@ namespace RestAPIStudyGuide.Services.Other
         IEnumerable<PointOfInterestDto> GetPointsOfInterestForCity(int cityId);
 
         PointOfInterestDto GetPointOfInterestForCity(int cityId, int pointOfInterestId);
+
+        bool CityExists(int cityId);
     }
 }

@@ -237,4 +237,10 @@ Dependency Injection
 
 
 
+Auto Mapper
+==================================================
++ used to map between Entities and DTO's
+
+
+
 

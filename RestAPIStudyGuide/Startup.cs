@@ -30,7 +30,7 @@ namespace RestAPIStudyGuide
         #region Properties
 
         public static IConfigurationRoot Configuration;
-        public IConfiguration Configuration2; // we can use this interface instead if we want access to our configuration object
+        //public IConfiguration Configuration2; // we can use this interface instead if we want access to our configuration object
 
         #endregion Properties
 
@@ -152,21 +152,36 @@ namespace RestAPIStudyGuide
             //loggerFactory.AddProvider(new NLog.Extensions.Logging.NLogLoggerProvider()); // here is one way to do it.
             loggerFactory.AddNLog(); // however some extension libraries have their own built/slightly easier way to add this to your application.
 
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler();
+            }
+
+            // here we are using the passed in context (dependency injection) and calling our extension method to ensure we are seeding the data if its not already there
+            cityInfoDBContext.EnsureSeedDataForContext();
+
             // so if we have a bad request or some other problem the browser will not display this, the user would have to look at whats happening in the
             // browsers console window. When we add this line to the pipeline, .NET Core will use a simple text based system to show the user the status code
             // in the actual browser itself.
             app.UseStatusCodePages();
 
 
+            // configuring auto mapper to map our entities to our dto's so we dont have to do this everywhere
+            AutoMapper.Mapper.Initialize(cfg =>
+            {
+                // source is the first type, second is the target
+                cfg.CreateMap<EntityFramework.Entities.Other.CityEntity, Models>
+            });
+
+
             // here we are adding the MVC middle ware to the request pipeline
             // its important to note that this was added AFTER the exception handler was added to the pipeline so we can catch any problems
             // before we hand off to the MVC.
             app.UseMvc();
-
-
-            // here we are using the passed in context (dependency injection) and calling our extension method to ensure we are seeding the data if its not already there
-            cityInfoDBContext.EnsureSeedDataForContext();
-
 
             app.Run(async (context) =>
             {

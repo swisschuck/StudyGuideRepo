@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.Extensions.Logging;
 using System;
 using RestAPIStudyGuide.Services.Other;
+using System.Collections.Generic;
 
 namespace RestAPIStudyGuide.Controllers.Other
 {
@@ -18,7 +19,7 @@ namespace RestAPIStudyGuide.Controllers.Other
 
         private ILogger<PointsOfInterestController> _logger;
         private IMailService _mailService;
-
+        private ICityInfoRepository _cityInfoRepository;
         #endregion fields
 
 
@@ -30,10 +31,11 @@ namespace RestAPIStudyGuide.Controllers.Other
 
 
         // here we are injecting a dependancy into this controller of some form of ILogger
-        public PointsOfInterestController(ILogger<PointsOfInterestController> logger, IMailService mailService)
+        public PointsOfInterestController(ILogger<PointsOfInterestController> logger, IMailService mailService, ICityInfoRepository cityInfoRepository)
         {
             _logger = logger;
             _mailService = mailService;
+            _cityInfoRepository = cityInfoRepository;
         }
 
         #endregion constructors
@@ -46,18 +48,35 @@ namespace RestAPIStudyGuide.Controllers.Other
         {
             try
             {
-                // for testing only
-                // throw new Exception("test - exception test.");
-
-                CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
-
-                if (city == null)
+                if (!_cityInfoRepository.CityExists(cityId))
                 {
                     _logger.LogInformation($"City with id {cityId} wasnt found when accessing points of interest.");
                     return NotFound();
                 }
 
-                return Ok(city.PointsOfInterest);
+                //CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+
+                //if (city == null)
+                //{
+                //    _logger.LogInformation($"City with id {cityId} wasnt found when accessing points of interest.");
+                //    return NotFound();
+                //}
+
+                IEnumerable<PointOfInterestDto> pointsOfInterest = _cityInfoRepository.GetPointsOfInterestForCity(cityId);
+
+                List<PointOfInterestDto> results = new List<PointOfInterestDto>();
+
+                foreach (PointOfInterestDto poi in pointsOfInterest)
+                {
+                    results.Add(new PointOfInterestDto()
+                    {
+                        Id = poi.Id,
+                        Name = poi.Name,
+                        Description = poi.Description
+                    });
+                }
+
+                return Ok(results);
             }
             catch (Exception ex)
             {
@@ -79,21 +98,28 @@ namespace RestAPIStudyGuide.Controllers.Other
         // actual method signature.
         public IActionResult GetPointOfInterest(int cityId, int id) 
         {
-            CityDto city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
 
-            if (city == null)
+            if (!_cityInfoRepository.CityExists(cityId))
+            {
+                _logger.LogInformation($"City with id {cityId} wasnt found when accessing points of interest.");
+                return NotFound();
+            }
+
+            PointOfInterestDto poi = _cityInfoRepository.GetPointOfInterestForCity(cityId, id);
+
+            if (poi == null)
             {
                 return NotFound();
             }
 
-            PointOfInterestDto pointOfInterest = city.PointsOfInterest.FirstOrDefault(poi => poi.Id == id);
-
-            if (pointOfInterest == null)
+            PointOfInterestDto result = new PointOfInterestDto()
             {
-                return NotFound();
-            }
+                Id = poi.Id,
+                Name = poi.Name,
+                Description = poi.Description
+            };
 
-            return Ok(pointOfInterest);
+            return Ok(result);
         }
 
 
