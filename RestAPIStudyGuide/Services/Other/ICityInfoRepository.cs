@@ -14,5 +14,9 @@ namespace RestAPIStudyGuide.Services.Other
         PointOfInterestDto GetPointOfInterestForCity(int cityId, int pointOfInterestId);
 
         bool CityExists(int cityId);
+
+        //void AddPointOfInterestForCity(int cityId, PointOfInterestDto pointOfInterest);
+
+        //bool Save();
     }
 }

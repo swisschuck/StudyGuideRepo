@@ -174,7 +174,10 @@ namespace RestAPIStudyGuide
             AutoMapper.Mapper.Initialize(cfg =>
             {
                 // source is the first type, second is the target
-                cfg.CreateMap<EntityFramework.Entities.Other.CityEntity, Models>
+                cfg.CreateMap<EntityFramework.Entities.Other.CityEntity, Models.Other.CityWithoutPointsOfInterestDto>();
+                cfg.CreateMap<EntityFramework.Entities.Other.CityEntity, Models.Other.CityDto>();
+                cfg.CreateMap<EntityFramework.Entities.Other.PointOfInterestEntity, Models.Other.PointOfInterestDto>();
+                cfg.CreateMap<Models.Other.PointOfInterestForCreationDto, EntityFramework.Entities.Other.PointOfInterestEntity>();
             });
 
 

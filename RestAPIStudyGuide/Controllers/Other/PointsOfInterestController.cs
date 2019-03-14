@@ -7,6 +7,8 @@ using Microsoft.Extensions.Logging;
 using System;
 using RestAPIStudyGuide.Services.Other;
 using System.Collections.Generic;
+using AutoMapper;
+using RestAPIStudyGuide.EntityFramework.Entities.Other;
 
 namespace RestAPIStudyGuide.Controllers.Other
 {
@@ -21,6 +23,7 @@ namespace RestAPIStudyGuide.Controllers.Other
         private IMailService _mailService;
         private ICityInfoRepository _cityInfoRepository;
         #endregion fields
+
 
 
         #region properties
@@ -64,17 +67,19 @@ namespace RestAPIStudyGuide.Controllers.Other
 
                 IEnumerable<PointOfInterestDto> pointsOfInterest = _cityInfoRepository.GetPointsOfInterestForCity(cityId);
 
-                List<PointOfInterestDto> results = new List<PointOfInterestDto>();
+                //List<PointOfInterestDto> results = new List<PointOfInterestDto>();
 
-                foreach (PointOfInterestDto poi in pointsOfInterest)
-                {
-                    results.Add(new PointOfInterestDto()
-                    {
-                        Id = poi.Id,
-                        Name = poi.Name,
-                        Description = poi.Description
-                    });
-                }
+                //foreach (PointOfInterestDto poi in pointsOfInterest)
+                //{
+                //    results.Add(new PointOfInterestDto()
+                //    {
+                //        Id = poi.Id,
+                //        Name = poi.Name,
+                //        Description = poi.Description
+                //    });
+                //}
+
+                var results = Mapper.Map<IEnumerable<PointOfInterestDto>>(pointsOfInterest);
 
                 return Ok(results);
             }
@@ -112,12 +117,14 @@ namespace RestAPIStudyGuide.Controllers.Other
                 return NotFound();
             }
 
-            PointOfInterestDto result = new PointOfInterestDto()
-            {
-                Id = poi.Id,
-                Name = poi.Name,
-                Description = poi.Description
-            };
+            //PointOfInterestDto result = new PointOfInterestDto()
+            //{
+            //    Id = poi.Id,
+            //    Name = poi.Name,
+            //    Description = poi.Description
+            //};
+
+            var result = Mapper.Map<PointOfInterestDto>(poi);
 
             return Ok(result);
         }
@@ -168,7 +175,7 @@ namespace RestAPIStudyGuide.Controllers.Other
 
             // map the POI for creation object to a DTO that we will use
             PointOfInterestDto newPointOfInterestDto = new PointOfInterestDto()
-            { 
+            {
                 Id = ++lastPointOfInterestID,
                 Name = pointOfInterest.Name,
                 Description = pointOfInterest.Description
@@ -179,8 +186,9 @@ namespace RestAPIStudyGuide.Controllers.Other
             // for posts, its recommended to return a 201 Created response, we can return this using a the built in helper methods.
             // This helper response method will allow us to add a location header to the response, this will contain the new location URI where
             // the newly created information can be found.
-            return CreatedAtRoute("GetPointOfInterestReferenceName", new { cityId = cityId, id = newPointOfInterestDto.Id} , newPointOfInterestDto);
+            return CreatedAtRoute("GetPointOfInterestReferenceName", new { cityId = cityId, id = newPointOfInterestDto.Id }, newPointOfInterestDto);
         }
+
 
         [HttpPut("{cityId}/pointsofinterest/{id}")]
         public IActionResult UpdatePointOfInterest(int cityId, int id, [FromBody] PointOfInterestForUpdateDto pointOfInterest)

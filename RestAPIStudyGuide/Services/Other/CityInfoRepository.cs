@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using RestAPIStudyGuide.EntityFramework.Context.Other;
+using RestAPIStudyGuide.EntityFramework.Entities.Other;
 using RestAPIStudyGuide.Models.Other;
 
 namespace RestAPIStudyGuide.Services.Other
@@ -69,6 +70,17 @@ namespace RestAPIStudyGuide.Services.Other
         {
             return _cityInfoDBContext.Cities.Any(city => city.Id == cityId);
         }
+
+        //public void AddPointOfInterestForCity(int cityId, PointOfInterestDto pointOfInterest)
+        //{
+        //    var city = GetCity(cityId, false);
+        //    city.PointsOfInterest.Add(pointOfInterest);
+        //}
+
+        //public bool Save()
+        //{
+        //    return (_cityInfoDBContext.SaveChanges() >= 0);
+        //}
 
         #endregion public methods
 
