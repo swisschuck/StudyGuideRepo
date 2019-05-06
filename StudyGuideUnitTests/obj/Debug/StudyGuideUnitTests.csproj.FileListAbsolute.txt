@@ -44,3 +44,7 @@ E:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.csproj
 E:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.csproj.CopyComplete
 E:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.dll
 E:\Repos\StudyGuideRepo\StudyGuideUnitTests\obj\Debug\StudyGuideUnitTests.pdb
+E:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\CsvHelper.dll
+E:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\System.ValueTuple.dll
+E:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\CsvHelper.xml
+E:\Repos\StudyGuideRepo\StudyGuideUnitTests\bin\Debug\System.ValueTuple.xml

@@ -1,0 +1,242 @@
+2019-02-21 13:06:28.5170|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 13:06:28.5170|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 13:06:28.6024|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 91.7073ms 200 
+2019-02-21 13:06:28.7722|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 262.4949ms 200 
+2019-02-21 13:06:28.7964|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-21 13:06:28.7964|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.4407ms 200 
+2019-02-21 13:06:42.7302|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-21 13:06:42.7584|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "TestDatabase", controller = "Dummy"}. Executing action RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide)
+2019-02-21 13:06:43.2683|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.8-servicing-32085 initialized 'CityInfoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-21 13:07:32.0592|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 13:07:32.0592|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 13:07:32.1312|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 76.4947ms 200 
+2019-02-21 13:07:32.2284|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 175.8015ms 200 
+2019-02-21 13:07:32.2514|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-21 13:07:32.2514|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.4768ms 200 
+2019-02-21 13:07:44.2687|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-21 13:07:44.2919|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "TestDatabase", controller = "Dummy"}. Executing action RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide)
+2019-02-21 13:07:44.7752|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.8-servicing-32085 initialized 'CityInfoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-21 13:09:10.9765|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 13:09:10.9765|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 13:09:11.0457|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 74.3547ms 200 
+2019-02-21 13:09:11.1402|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 170.7386ms 200 
+2019-02-21 13:09:11.1627|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-21 13:09:11.1659|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 2.9484ms 200 
+2019-02-21 13:09:15.6009|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/testdatabase  
+2019-02-21 13:09:15.6260|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "TestDatabase", controller = "Dummy"}. Executing action RestAPIStudyGuide.Controllers.Other.DummyController.TestDatabase (RestAPIStudyGuide)
+2019-02-21 13:09:16.1005|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.8-servicing-32085 initialized 'CityInfoDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-02-21 13:09:26.4882|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (269ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [CityInfoDB];
+2019-02-21 13:09:26.5417|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [CityInfoDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2019-02-21 13:09:26.6393|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2019-02-21 13:09:26.6393|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2019-02-21 13:09:26.6522|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2019-02-21 13:09:26.6656|INFO|Microsoft.EntityFrameworkCore.Migrations|Applying migration '20190218234945_CityInfoDBInitialMigration'.
+2019-02-21 13:09:26.7237|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Cities] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Cities] PRIMARY KEY ([Id])
+);
+2019-02-21 13:09:26.7279|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [PointsOfInterest] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [CityDtoId] int NULL,
+    CONSTRAINT [PK_PointsOfInterest] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_PointsOfInterest_Cities_CityDtoId] FOREIGN KEY ([CityDtoId]) REFERENCES [Cities] ([Id]) ON DELETE NO ACTION
+);
+2019-02-21 13:09:26.7279|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_PointsOfInterest_CityDtoId] ON [PointsOfInterest] ([CityDtoId]);
+2019-02-21 13:09:26.7279|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20190218234945_CityInfoDBInitialMigration', N'2.1.8-servicing-32085');
+2019-02-21 13:09:26.7279|INFO|Microsoft.EntityFrameworkCore.Migrations|Applying migration '20190219001805_CityInfoDBAddPointOfInterestDescription'.
+2019-02-21 13:09:26.7732|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [PointsOfInterest] ADD [Description] nvarchar(200) NULL;
+2019-02-21 13:22:08.6458|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 13:22:08.7345|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 93.0264ms 200 
+2019-02-21 13:27:40.4117|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 13:27:40.7611|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 13:27:40.7611|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8.4426ms 500 text/html; charset=utf-8
+2019-02-21 13:32:49.0040|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 13:32:49.3296|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 13:32:49.3380|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8.554ms 500 text/html; charset=utf-8
+2019-02-21 13:36:34.5558|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 13:36:34.9024|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 13:36:34.9024|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8.5414ms 500 text/html; charset=utf-8
+2019-02-21 13:58:18.5224|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-21 13:58:18.7407|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Cities] ([Description], [Name])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Cities]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2019-02-21 13:58:18.7561|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Cities] ([Description], [Name])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Cities]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2019-02-21 13:58:18.7604|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Cities] ([Description], [Name])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Cities]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2019-02-21 13:58:18.7897|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[@p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Int32), @p18='?' (Size = 4000), @p19='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [PointsOfInterest] USING (
+VALUES (@p2, @p3, @p4, 0),
+(@p5, @p6, @p7, 1),
+(@p8, @p9, @p10, 2),
+(@p11, @p12, @p13, 3),
+(@p14, @p15, @p16, 4),
+(@p17, @p18, @p19, 5)) AS i ([CityDtoId], [Description], [Name], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CityDtoId], [Description], [Name])
+VALUES (i.[CityDtoId], i.[Description], i.[Name])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [PointsOfInterest] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+2019-02-21 13:58:18.8240|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 13:58:19.1226|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 13:58:19.1226|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 13:58:19.1363|ERROR|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HLKO7T7BGPFG", Request id "0HLKO7T7BGPFG:00000001": An unhandled exception was thrown by the application.
+2019-02-21 13:58:19.1363|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 20.712ms 500 text/html; charset=utf-8
+2019-02-21 13:58:19.1363|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 23.174ms 500 
+2019-02-21 14:00:36.2044|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-21 14:00:36.2921|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 14:00:36.4352|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 14:00:36.4352|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 14:00:36.4486|ERROR|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HLKO7UG92VVE", Request id "0HLKO7UG92VVE:00000001": An unhandled exception was thrown by the application.
+2019-02-21 14:00:36.4486|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 20.9244ms 500 text/html; charset=utf-8
+2019-02-21 14:00:36.4486|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 22.6633ms 500 
+2019-02-21 14:00:36.4959|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-21 14:00:36.4959|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.0827ms 500 text/html; charset=utf-8
+2019-02-21 15:52:55.2229|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-21 15:52:55.3072|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 15:52:55.5210|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 15:52:55.5210|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 15:52:55.5350|ERROR|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HLKO9T8M0KAT", Request id "0HLKO9T8M0KAT:00000001": An unhandled exception was thrown by the application.
+2019-02-21 15:52:55.5441|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 21.6314ms 500 text/html; charset=utf-8
+2019-02-21 15:52:55.5441|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 20.7359ms 500 
+2019-02-21 15:53:05.4798|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/citiesWithRepo  
+2019-02-21 15:53:05.4798|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.9987ms 500 text/html; charset=utf-8
+2019-02-21 15:53:13.1492|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/citiesWithRepo  
+2019-02-21 15:53:13.1492|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.3338ms 500 text/html; charset=utf-8
+2019-02-21 15:53:19.3921|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/citiesWithRepo  
+2019-02-21 15:53:19.3921|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.6306ms 500 text/html; charset=utf-8
+2019-02-21 15:53:36.5639|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/api/citiesWithRepo  
+2019-02-21 15:53:36.5639|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.1819ms 500 text/html; charset=utf-8
+2019-02-21 15:57:23.7857|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-21 15:57:23.8652|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 15:57:24.0345|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 15:57:24.0345|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 15:57:24.0498|ERROR|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HLKO9VOMO7CH", Request id "0HLKO9VOMO7CH:00000001": An unhandled exception was thrown by the application.
+2019-02-21 15:57:24.0571|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 24.1001ms 500 text/html; charset=utf-8
+2019-02-21 15:57:24.0571|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 21.4369ms 500 
+2019-02-21 15:57:27.6643|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 15:57:27.6682|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.9598ms 500 text/html; charset=utf-8
+2019-02-21 15:57:27.6875|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-21 15:57:27.6875|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.8711ms 500 text/html; charset=utf-8
+2019-02-21 15:57:36.8205|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-21 15:57:36.9004|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 15:57:37.1947|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 15:57:37.1947|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 15:57:37.2078|ERROR|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HLKO9VSK8K99", Request id "0HLKO9VSK8K99:00000001": An unhandled exception was thrown by the application.
+2019-02-21 15:57:37.2166|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 20.4356ms 500 text/html; charset=utf-8
+2019-02-21 15:57:37.2166|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 22.37ms 500 
+2019-02-21 16:03:04.0901|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-21 16:03:04.1720|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 16:03:04.2731|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 16:03:04.2731|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 16:03:04.3092|ERROR|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HLKOA2U3FIUE", Request id "0HLKOA2U3FIUE:00000001": An unhandled exception was thrown by the application.
+2019-02-21 16:03:04.3092|ERROR|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HLKOA2U3FIUD", Request id "0HLKOA2U3FIUD:00000001": An unhandled exception was thrown by the application.
+2019-02-21 16:03:04.3236|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 51.4531ms 500 
+2019-02-21 16:03:04.3236|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 51.4529ms 500 
+2019-02-21 16:03:11.4414|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 16:03:11.4461|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.9149ms 500 text/html; charset=utf-8
+2019-02-21 16:03:11.4685|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/favicon.ico  
+2019-02-21 16:03:11.4685|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.0007ms 500 text/html; charset=utf-8
+2019-02-21 16:04:16.4371|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/  
+2019-02-21 16:04:16.4848|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 29.8223ms 500 text/html; charset=utf-8
+2019-02-21 16:04:16.5233|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/favicon.ico  
+2019-02-21 16:04:16.5273|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.7822ms 500 text/html; charset=utf-8
+2019-02-21 16:04:38.3474|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/  
+2019-02-21 16:04:38.3530|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.1257ms 500 text/html; charset=utf-8
+2019-02-21 16:05:40.5362|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-02-21 16:05:40.6180|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2019-02-21 16:05:40.8158|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:54908/  0
+2019-02-21 16:05:40.8158|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44320/  
+2019-02-21 16:05:40.8301|ERROR|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HLKOA4COE6AD", Request id "0HLKOA4COE6AD:00000001": An unhandled exception was thrown by the application.
+2019-02-21 16:05:40.8368|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 21.0913ms 500 text/html; charset=utf-8
+2019-02-21 16:05:40.8368|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 21.756ms 500 
+2019-02-21 16:06:05.1244|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/  
+2019-02-21 16:06:05.1381|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8.4677ms 500 text/html; charset=utf-8
+2019-02-21 16:06:05.1792|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:54908/favicon.ico  
+2019-02-21 16:06:05.1856|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.6107ms 500 text/html; charset=utf-8

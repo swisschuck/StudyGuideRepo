@@ -27,27 +27,27 @@ namespace StudyGuide.Classes.Examples.SQLBulkCopy
 
             Map(m => m.OGSEventID).Index(i++);
 
-            Map(m => m.OriginTime).Index(i++);
+            Map(m => m.OriginTime).Index(i++).TypeConverter<DateTimeConverter>();
 
             Map(m => m.Magnitude).Index(i++).TypeConverter<DoubleConverter>();
 
             Map(m => m.MagnitudeSource).Index(i++);
 
-            Map(m => m.MaxMMI).Index(i++).TypeConverter<DoubleConverter>(); ;
+            Map(m => m.MaxMMI).Index(i++).TypeConverter<DoubleConverter>();
 
-            Map(m => m.Latitude).Index(i++).TypeConverter<DoubleConverter>(); ;
+            Map(m => m.Latitude).Index(i++).TypeConverter<DoubleConverter>();
 
-            Map(m => m.Longitude).Index(i++).TypeConverter<DoubleConverter>(); ;
+            Map(m => m.Longitude).Index(i++).TypeConverter<DoubleConverter>();
 
-            Map(m => m.DepthKm).Index(i++).TypeConverter<DoubleConverter>(); ;
+            Map(m => m.DepthKm).Index(i++).TypeConverter<DoubleConverter>();
 
-            Map(m => m.ErrorLatitude).Index(i++).TypeConverter<DoubleConverter>(); ;
+            Map(m => m.ErrorLatitude).Index(i++).TypeConverter<DoubleConverter>();
 
-            Map(m => m.ErrorLongitude).Index(i++).TypeConverter<DoubleConverter>(); ;
+            Map(m => m.ErrorLongitude).Index(i++).TypeConverter<DoubleConverter>();
 
-            Map(m => m.ErrorDepth).Index(i++).TypeConverter<DoubleConverter>(); ;
+            Map(m => m.ErrorDepth).Index(i++).TypeConverter<DoubleConverter>();
 
-            Map(m => m.ErrorOriginTime).Index(i++).TypeConverter<DoubleConverter>(); ;
+            Map(m => m.ErrorOriginTime).Index(i++).TypeConverter<DoubleConverter>();
 
             Map(m => m.State).Index(i++);
 

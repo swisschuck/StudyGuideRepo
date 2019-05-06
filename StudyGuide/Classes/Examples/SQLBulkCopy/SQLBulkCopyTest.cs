@@ -1,21 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using CsvHelper;
+using System.Linq;
+using StudyGuide.Classes.Extensions.Other;
 
 namespace StudyGuide.Classes.Examples.SQLBulkCopy
 {
     public class SQLBulkCopyTest
     {
+        // https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/bulk-copy-operations-in-sql-server
+
+
         #region fields
 
         private SqlConnectionStringBuilder _sandboxDB;
+        private string _earthQuakeDataImportFilePath;
 
         #endregion fields
 
 
         #region properties
+
         #endregion properties
 
 
@@ -30,6 +38,8 @@ namespace StudyGuide.Classes.Examples.SQLBulkCopy
                 IntegratedSecurity = true,
                 TrustServerCertificate = true
             };
+
+            _earthQuakeDataImportFilePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Media\Docs\EarthquakeData.csv";
         }
 
         #endregion constructors
@@ -398,49 +408,68 @@ namespace StudyGuide.Classes.Examples.SQLBulkCopy
         public bool PerformBulkCopyFromCSVFile()
         {
             bool statusToReturn = true;
+            IEnumerable<EarthQuakeData> convertedData;
 
             // read the csv file
 
-            using (var textReader = File.OpenText(""))
-            using (CsvReader csvReader = new CsvReader(textReader))
+            using (var textReader = File.OpenText(_earthQuakeDataImportFilePath))
+            using (var csvReader = new CsvReader(textReader))
             {
-                csvReader.Configuration.HasHeaderRecord = true;
-                csvReader.Configuration.RegisterClassMap<EarthQuakeDataEventMapper>();
-
-                //TVPCollection<ogs_Event> tvpCollection = new TVPCollection<ogs_Event>(csvReader.GetRecords<ogs_Event>());
-
-                //IDataReader convertedEarthquakeData = csvReader.GetRecords<Model.ogs_Event>().AsDataReader();
-            }
-
-
-
-
-            using (SqlConnection connection = new SqlConnection(_sandboxDB.ConnectionString))
-            {
-                connection.Open();
-
-                SqlTransaction transaction = connection.BeginTransaction();
-
-                using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(connection, SqlBulkCopyOptions.KeepIdentity, transaction))
+                try
                 {
+                    csvReader.Configuration.HasHeaderRecord = true;
+                    csvReader.Configuration.RegisterClassMap<EarthQuakeDataEventMapper>();
+
+                    // TODO - get this working with IDataReader and stream to bulk copy
+
+                    convertedData = csvReader.GetRecords<EarthQuakeData>();
+
+                    //using (SqlConnection connection = new SqlConnection(_sandboxDB.ConnectionString))
+                    //{
+                    //    connection.Open();
+
+                    //    SqlTransaction transaction = connection.BeginTransaction();
+
+                    //    using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(connection, SqlBulkCopyOptions.KeepIdentity, transaction))
+                    //    {
+                    //        try
+                    //        {
+                    //            sqlBulkCopy.DestinationTableName = "EarthQuakeDataTableTest3";
+
+                    //            DataTable tempDataTable = convertedData.ToList().ToDataTable();
+                    //            sqlBulkCopy.WriteToServer(tempDataTable);
+
+                    //            transaction.Commit();
+                    //        }
+                    //        catch (Exception ex)
+                    //        {
+                    //            transaction.Rollback();
+                    //            statusToReturn = false;
+                    //        }
+
+                    //    }
+                    //}
+
                     try
                     {
-                        sqlBulkCopy.DestinationTableName = "EarthQuakeDataTableTest";
-                        //sqlBulkCopy.WriteToServer(tempEmployeesDataTable);
-
-                        transaction.Commit();
+                        using (SqlBulkCopy sqlBulk = new SqlBulkCopy(_sandboxDB.ConnectionString))
+                        {
+                            sqlBulk.DestinationTableName = "EarthQuakeDataTableTest3";
+                            sqlBulk.WriteToServer(convertedData.ToList().ToDataTable());
+                        }
                     }
-                    catch (Exception ex)
+                    catch(Exception ex)
                     {
-                        transaction.Rollback();
                         statusToReturn = false;
                     }
 
                 }
+                catch(Exception ex)
+                {
+                    statusToReturn = false;
+                }
+
             }
-
-            statusToReturn = true;
-
 
             return statusToReturn;
         }
