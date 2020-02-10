@@ -1,0 +1,60 @@
+﻿<Window x:Class="WPFAnimations.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:WPFAnimations.Views"
+        xmlns:viewModels="clr-namespace:WPFAnimations.ViewModels"
+        xmlns:triggerViewModels="clr-namespace:WPFAnimations.ViewModels.Triggers"
+        xmlns:triggerViews="clr-namespace:WPFAnimations.Views.Triggers"
+        xmlns:animationViewModels="clr-namespace:WPFAnimations.ViewModels.Animations"
+        xmlns:animationViews="clr-namespace:WPFAnimations.Views.Animations"
+        mc:Ignorable="d"
+        Style="{StaticResource BaseWindowStyle}">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
+            <views:HomeView />
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type triggerViewModels:SingleTriggersViewModel}">
+            <triggerViews:SingleTriggersView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type triggerViewModels:MultiTriggerViewModel}">
+            <triggerViews:MultiTriggerView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type triggerViewModels:EventTriggersViewModel}">
+            <triggerViews:EventTriggersView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type triggerViewModels:DataTriggersViewModel}">
+            <triggerViews:DataTriggersView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type triggerViewModels:MultiDataTriggersViewModel}">
+            <triggerViews:MultiDataTriggersView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type animationViewModels:BasicAnimationsViewModel}">
+            <animationViews:BasicAnimationsView/>
+        </DataTemplate>
+        
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Home" Command="{Binding NavigateToHomeCommand}" />
+            <MenuItem Header="Triggers">
+                <MenuItem Header="Single Triggers" Command="{Binding NavigateToSingleTriggersCommand}"/>
+                <MenuItem Header="Multi Triggers" Command="{Binding NavigateToMultiTriggersCommand}"/>
+                <MenuItem Header="Event Triggers" Command="{Binding NavigateToEventTriggersCommand}" />
+                <MenuItem Header="Data Triggers" Command="{Binding NavigateToDataTriggersCommand}" />
+                <MenuItem Header="Multi Data Triggers" Command="{Binding NavigateToMultiDataTriggersCommand}" />
+            </MenuItem>
+            <MenuItem Header="Animations">
+                <MenuItem Header="Basic Animations" Command="{Binding NavigateToBasicAnimationsCommand}"/>
+            </MenuItem>
+        </Menu>
+        <ContentControl Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPageViewModel}" Margin="0,0,0,0"/>
+    </DockPanel>
+</Window>

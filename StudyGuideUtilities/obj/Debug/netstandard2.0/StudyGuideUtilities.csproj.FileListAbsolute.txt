@@ -15,3 +15,4 @@ E:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideU
 E:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideUtilities.AssemblyInfo.cs
 E:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideUtilities.dll
 E:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideUtilities.pdb
+E:\Repos\StudyGuideRepo\StudyGuideUtilities\obj\Debug\netstandard2.0\StudyGuideUtilities.csprojAssemblyReference.cache

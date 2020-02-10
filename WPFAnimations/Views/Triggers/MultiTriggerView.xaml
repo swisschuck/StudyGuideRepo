@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="WPFAnimations.Views.Triggers.MultiTriggerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFAnimations.Views.Triggers"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="0" 
+                    Grid.Column="0" 
+                    Width="300">
+            <StackPanel.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Background" Value="LemonChiffon"/>
+ 
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Yellow"/>
+                        </Trigger>
+                        <Trigger Property="Content" Value="Charlie">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            <Label Content="multi trigger, mouse over and content" HorizontalAlignment="Center"/>
+            <ListBox>
+                <ListBoxItem>Bryan Cranston</ListBoxItem>
+                <ListBoxItem>Anna Gunn</ListBoxItem>
+                <ListBoxItem>Aaron Paul</ListBoxItem>
+                <ListBoxItem>Dean Norris</ListBoxItem>
+                <ListBoxItem>Charlie</ListBoxItem>
+                <ListBoxItem>RJ Mitte</ListBoxItem>
+                <ListBoxItem>Bob Odenkirk</ListBoxItem>
+                <ListBoxItem>Steven Michael Quezada</ListBoxItem>
+                <ListBoxItem>Johnathan Banks</ListBoxItem>
+                <ListBoxItem>Giancarlo Esposito</ListBoxItem>
+            </ListBox>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="0" 
+                    Grid.Column="1" 
+                    Width="300">
+            <StackPanel.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Background" Value="LemonChiffon"/>
+ 
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Yellow"/>
+                        </Trigger>
+                        <Trigger Property="Content" Value="Charlie">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="Content" Value="Aaron Paul"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="Background" Value="Orange"/>
+                                <Setter Property="FontSize" Value="15"/>
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            <Label Content="multi trigger, mouse over, content, background" HorizontalAlignment="Center"/>
+            <ListBox>
+                <ListBoxItem>Bryan Cranston</ListBoxItem>
+                <ListBoxItem>Anna Gunn</ListBoxItem>
+                <ListBoxItem>Aaron Paul</ListBoxItem>
+                <ListBoxItem>Dean Norris</ListBoxItem>
+                <ListBoxItem>Charlie</ListBoxItem>
+                <ListBoxItem>RJ Mitte</ListBoxItem>
+                <ListBoxItem>Bob Odenkirk</ListBoxItem>
+                <ListBoxItem>Steven Michael Quezada</ListBoxItem>
+                <ListBoxItem>Johnathan Banks</ListBoxItem>
+                <ListBoxItem>Giancarlo Esposito</ListBoxItem>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+
+</UserControl>
