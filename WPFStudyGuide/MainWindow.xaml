@@ -56,6 +56,7 @@
             <MenuItem Header="Animations" Style="{StaticResource BaseMenuItemStyle}">
                 <MenuItem Header="Basics" Style="{StaticResource BaseMenuItemStyle}" />
                 <MenuItem Header="Something else here" Style="{StaticResource BaseMenuItemStyle}" />
+                <!--http://www.blackwasp.co.uk/WPFAnimation.aspx-->
             </MenuItem>
             <MenuItem Header="Examples" Style="{StaticResource BaseMenuItemStyle}">
                 <MenuItem Header="Commands Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}" 

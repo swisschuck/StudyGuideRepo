@@ -1,0 +1,25 @@
+﻿
+@*@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>@ViewData["someAction"]</h2>
+<div>
+    @Html.ActionLink("Sword", "Sword", "Home") <br />
+    @Html.ActionLink("Arrow", "Arrow", "Home") <br />
+    @Html.ActionLink("Gun", "Gun", "Home") <br />
+</div>*@
+
+@model string
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>@Model</h1>
+
+<h2>Go to the Following links</h2>
+
+@Html.ActionLink("Sword", "Sword", "Home") <br />
+@Html.ActionLink("Arrow", "Arrow", "Home") <br />
+@Html.ActionLink("Gun", "Gun", "Home") <br />
