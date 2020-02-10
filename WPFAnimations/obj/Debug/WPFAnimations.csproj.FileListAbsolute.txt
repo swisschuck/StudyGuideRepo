@@ -60,3 +60,5 @@ E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Triggers\DataTriggersView.
 E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Triggers\DataTriggersView.baml
 E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Triggers\MultiDataTriggersView.g.cs
 E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Triggers\MultiDataTriggersView.baml
+E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\BasicAnimationsView.g.cs
+E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\BasicAnimationsView.baml
