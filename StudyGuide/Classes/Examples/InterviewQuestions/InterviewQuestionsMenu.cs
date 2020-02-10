@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace StudyGuide.Classes.Examples.InterviewQuestions
 {
@@ -48,6 +49,10 @@ namespace StudyGuide.Classes.Examples.InterviewQuestions
                     case "3":
                         RunRecursionExample();
                         break;
+
+                    case "4":
+                        RunTimerExample();
+                        break;
                 }
                 Console.WriteLine(string.Empty);
                 printInterviewQuestionsMenu();
@@ -67,6 +72,7 @@ namespace StudyGuide.Classes.Examples.InterviewQuestions
             Console.WriteLine("1) Write a method that will determine if a string value is a palindrome");
             Console.WriteLine("2) Write a method that will determine if a int value is a palindrome");
             Console.WriteLine("3) Demonstrate a recursive method");
+            Console.WriteLine("4) Demonstrate a Timer");
             Console.WriteLine("0) Back Home");
         }
 
@@ -152,6 +158,20 @@ namespace StudyGuide.Classes.Examples.InterviewQuestions
                 valueEntered = Console.ReadLine();
                 doSomethingOverAndOver(valueEntered);
             }
+        }
+
+        private void RunTimerExample()
+        {
+            Timer timer = new Timer();
+            timer.Interval = 10000;
+            timer.AutoReset = true;
+            timer.Elapsed += Timer_Elapsed;
+            timer.Enabled = true;
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Console.WriteLine("Raised: {0}", e.SignalTime);
         }
 
 

@@ -94,6 +94,7 @@ namespace StudyGuide
             Console.WriteLine("9 - Cryptography");
             Console.WriteLine("10 - Interview Example Questions");
             Console.WriteLine("11 - SQL Bulk Copy");
+            Console.WriteLine("12 - Dependency Injection");
             Console.WriteLine("Esc - Exit Program");
         }
 
@@ -221,6 +222,13 @@ namespace StudyGuide
         {
             SQLBulkCopyMenu menu = new SQLBulkCopyMenu();
             menu.RunSQLBulkCopyMenu();
+        }
+
+        private static void RunDependencyInjectionMenu()
+        {
+            // .net - https://www.yogihosting.com/aspnet-core-dependency-injection/
+            // Ninject - https://hackernoon.com/ddd-5a1x3zl2
+
         }
     }
 }

@@ -155,6 +155,9 @@
     <Content Include="StudyGuideIcon48.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Classes\Examples\DependencyInjection\DotNetDI\" />
+    <Folder Include="Classes\Examples\DependencyInjection\NinjectDI\" />
+    <Folder Include="Classes\Examples\DependencyInjection\UnityDI\" />
     <Folder Include="Database\SQL\" />
   </ItemGroup>
   <ItemGroup>

@@ -53,9 +53,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" Style="{StaticResource BaseMenuStyle}">
-            <MenuItem Header="Just For Fun" Style="{StaticResource BaseMenuItemStyle}">
-                <MenuItem Header="Fun with Shapes" Style="{StaticResource BaseMenuItemStyle}" />
-                <MenuItem Header="Fun with Animations" Style="{StaticResource BaseMenuItemStyle}" />
+            <MenuItem Header="Animations" Style="{StaticResource BaseMenuItemStyle}">
+                <MenuItem Header="Basics" Style="{StaticResource BaseMenuItemStyle}" />
+                <MenuItem Header="Something else here" Style="{StaticResource BaseMenuItemStyle}" />
             </MenuItem>
             <MenuItem Header="Examples" Style="{StaticResource BaseMenuItemStyle}">
                 <MenuItem Header="Commands Example" Style="{StaticResource BaseMenuItemStyle}" Command="{Binding NavigationCommand}" 

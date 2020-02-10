@@ -147,6 +147,7 @@ namespace WPFStudyGuide.ViewModels
             CurrentViewModel = _placeOrderViewModel;
         }
 
+
         private void NavigateToAddCustomer(SimpleCustomer customerToAdd)
         {
             _addEditCustomerViewModel.EditMode = false;
