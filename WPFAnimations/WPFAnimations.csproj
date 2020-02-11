@@ -91,6 +91,9 @@
     <Compile Include="Commands\MyRelayCommand.cs" />
     <Compile Include="Converters\ProgressBarColorConverter.cs" />
     <Compile Include="ViewModels\Animations\BasicAnimationsViewModel.cs" />
+    <Compile Include="ViewModels\Animations\EasingAnimationsViewModel.cs" />
+    <Compile Include="ViewModels\Animations\KeyFrameAnimationsViewModel.cs" />
+    <Compile Include="ViewModels\Animations\PathAnimationsViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -101,6 +104,15 @@
     <Compile Include="ViewModels\Triggers\SingleTriggersViewModel.cs" />
     <Compile Include="Views\Animations\BasicAnimationsView.xaml.cs">
       <DependentUpon>BasicAnimationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Animations\EasingAnimationsView.xaml.cs">
+      <DependentUpon>EasingAnimationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Animations\KeyFrameAnimationsView.xaml.cs">
+      <DependentUpon>KeyFrameAnimationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Animations\PathAnimationsView.xaml.cs">
+      <DependentUpon>PathAnimationsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -146,6 +158,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Animations\BasicAnimationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Animations\EasingAnimationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Animations\KeyFrameAnimationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Animations\PathAnimationsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

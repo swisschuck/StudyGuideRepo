@@ -62,3 +62,9 @@ E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Triggers\MultiDataTriggers
 E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Triggers\MultiDataTriggersView.baml
 E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\BasicAnimationsView.g.cs
 E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\BasicAnimationsView.baml
+E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\EasingAnimationsView.g.cs
+E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\EasingAnimationsView.baml
+E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\KeyFrameAnimationsView.g.cs
+E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\KeyFrameAnimationsView.baml
+E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\PathAnimationsView.g.cs
+E:\Repos\StudyGuideRepo\WPFAnimations\obj\Debug\Views\Animations\PathAnimationsView.baml

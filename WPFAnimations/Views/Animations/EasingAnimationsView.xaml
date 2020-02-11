@@ -1,0 +1,495 @@
+﻿<UserControl x:Class="WPFAnimations.Views.Animations.EasingAnimationsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFAnimations.Views.Animations"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        
+            <StackPanel Grid.Row="0" 
+                        Grid.Column="0" 
+                        Width="300">
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Basic Easing (click the circle)"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+        
+            <StackPanel Grid.Row="0" 
+                        Grid.Column="1" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CircleEase EasingMode="EaseIn" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseIn Mode (click the circle)"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+        
+            <StackPanel Grid.Row="0" 
+                        Grid.Column="2" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CircleEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseOut Mode (click the circle)"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+        
+            <StackPanel Grid.Row="1" 
+                        Grid.Column="0" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CircleEase EasingMode="EaseInOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseInOut Mode (click the circle)"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1" 
+                        Grid.Column="1" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <ExponentialEase EasingMode="EaseIn" Exponent="1"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseIn Mode - ExponentialEase - Speed 1"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" 
+                        Grid.Column="2" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <ExponentialEase EasingMode="EaseIn" Exponent="10"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseIn Mode - ExponentialEase - Speed 10"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+            
+            <StackPanel Grid.Row="2" 
+                        Grid.Column="0" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseInOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseInOut Mode - BackEase"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" 
+                        Grid.Column="1" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BounceEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseOut Mode - BounceEase"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+            
+            <StackPanel Grid.Row="2" 
+                        Grid.Column="2" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BounceEase EasingMode="EaseOut" Bounces="4" Bounciness="1.5"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseOut Mode - BounceEase, 4 Bounces, 1.5 Bounciness"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" 
+                        Grid.Column="0" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <ElasticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseOut Mode - ElasticEase"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" 
+                        Grid.Column="1" 
+                        Width="300">
+            
+                <StackPanel.Resources>
+                    <Style x:Key="EllipseEasing" TargetType="Ellipse">
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Fill" Value="Black"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="260" Duration="0:0:5"
+                                            Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"/>
+                                        <DoubleAnimation From="0" To="130" Duration="0:0:5"
+                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <ElasticEase EasingMode="EaseOut" Oscillations="5" Springiness="6"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Border BorderBrush="Black" BorderThickness="1" Height="300" Width="300">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="EaseOut Mode - ElasticEase, 5 Oscillations, 6 Springiness"/>
+                        <Canvas>
+                            <Ellipse Style="{StaticResource EllipseEasing}" Canvas.Top="0" />
+                        </Canvas>
+                    </StackPanel>
+                </Border>
+            
+            </StackPanel>
+
+        </Grid>
+
+    </ScrollViewer>
+</UserControl>

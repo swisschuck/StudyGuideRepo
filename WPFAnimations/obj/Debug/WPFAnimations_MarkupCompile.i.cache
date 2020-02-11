@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\Repos\StudyGuideRepo\WPFAnimations\App.xaml
-112132422412
+14-944163899
 
-291816023468
+35227019036
 77-1626154384
-MainWindow.xaml;Styles\BaseStyles.xaml;Styles\BrushStyles.xaml;Styles\FontStyles.xaml;Views\Animations\BasicAnimationsView.xaml;Views\HomeView.xaml;Views\Triggers\DataTriggersView.xaml;Views\Triggers\EventTriggersView.xaml;Views\Triggers\MultiDataTriggersView.xaml;Views\Triggers\MultiTriggerView.xaml;Views\Triggers\SingleTriggersView.xaml;
+MainWindow.xaml;Styles\BaseStyles.xaml;Styles\BrushStyles.xaml;Styles\FontStyles.xaml;Views\Animations\BasicAnimationsView.xaml;Views\Animations\EasingAnimationsView.xaml;Views\Animations\KeyFrameAnimationsView.xaml;Views\Animations\PathAnimationsView.xaml;Views\HomeView.xaml;Views\Triggers\DataTriggersView.xaml;Views\Triggers\EventTriggersView.xaml;Views\Triggers\MultiDataTriggersView.xaml;Views\Triggers\MultiTriggerView.xaml;Views\Triggers\SingleTriggersView.xaml;
 
 False
 

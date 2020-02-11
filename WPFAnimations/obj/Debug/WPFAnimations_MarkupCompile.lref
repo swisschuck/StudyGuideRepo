@@ -10,4 +10,7 @@ FE:\Repos\StudyGuideRepo\WPFAnimations\Views\Triggers\EventTriggersView.xaml;;
 FE:\Repos\StudyGuideRepo\WPFAnimations\Views\Triggers\DataTriggersView.xaml;;
 FE:\Repos\StudyGuideRepo\WPFAnimations\Views\Triggers\MultiDataTriggersView.xaml;;
 FE:\Repos\StudyGuideRepo\WPFAnimations\Views\Animations\BasicAnimationsView.xaml;;
+FE:\Repos\StudyGuideRepo\WPFAnimations\Views\Animations\EasingAnimationsView.xaml;;
+FE:\Repos\StudyGuideRepo\WPFAnimations\Views\Animations\KeyFrameAnimationsView.xaml;;
+FE:\Repos\StudyGuideRepo\WPFAnimations\Views\Animations\PathAnimationsView.xaml;;
 

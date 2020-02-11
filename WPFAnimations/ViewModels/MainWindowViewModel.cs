@@ -70,6 +70,11 @@ namespace WPFAnimations.ViewModels
 
         public MyRelayCommand NavigateToBasicAnimationsCommand { get; private set; }
 
+        public MyRelayCommand NavigateToEasingAnimationsCommand { get; private set; }
+
+        public MyRelayCommand NavigateToKeyFrameAnimationsCommand { get; private set; }
+
+        public MyRelayCommand NavigateToPathAnimationsCommand { get; private set; }
         #endregion Commands
 
 
@@ -100,6 +105,9 @@ namespace WPFAnimations.ViewModels
             PageViewModels.Add(new DataTriggersViewModel());
             PageViewModels.Add(new MultiDataTriggersViewModel());
             PageViewModels.Add(new BasicAnimationsViewModel());
+            PageViewModels.Add(new EasingAnimationsViewModel());
+            PageViewModels.Add(new KeyFrameAnimationsViewModel());
+            PageViewModels.Add(new PathAnimationsViewModel());
 
             // add all navigation methods to the mediator so views can navigate if they want
             //NavigationMediator.Subscribe("OnNavigateToHome", OnNavigateToHome);
@@ -114,6 +122,9 @@ namespace WPFAnimations.ViewModels
             NavigateToDataTriggersCommand = new MyRelayCommand(OnNavigateToDataTriggers);
             NavigateToMultiDataTriggersCommand = new MyRelayCommand(OnNavigateToMultiDataTriggers);
             NavigateToBasicAnimationsCommand = new MyRelayCommand(OnNavigateToBasicAnimations);
+            NavigateToEasingAnimationsCommand = new MyRelayCommand(OnNavigateToEasingAnimations);
+            NavigateToKeyFrameAnimationsCommand = new MyRelayCommand(OnNavigateToKeyFrameAnimations);
+            NavigateToPathAnimationsCommand = new MyRelayCommand(OnNavigateToPathAnimations);
 
             //load up our starting view
             CurrentPageViewModel = PageViewModels.Where(vm => vm.ViewModelNavName == typeof(HomeViewModel).Name).FirstOrDefault();
@@ -173,6 +184,24 @@ namespace WPFAnimations.ViewModels
         private void OnNavigateToBasicAnimations(object obj)
         {
             IViewModel modelToLoad = PageViewModels.Where(vm => vm.ViewModelNavName == typeof(BasicAnimationsViewModel).Name).FirstOrDefault();
+            ChangeViewModel(modelToLoad);
+        }
+
+        private void OnNavigateToEasingAnimations(object obj)
+        {
+            IViewModel modelToLoad = PageViewModels.Where(vm => vm.ViewModelNavName == typeof(EasingAnimationsViewModel).Name).FirstOrDefault();
+            ChangeViewModel(modelToLoad);
+        }
+
+        private void OnNavigateToKeyFrameAnimations(object obj)
+        {
+            IViewModel modelToLoad = PageViewModels.Where(vm => vm.ViewModelNavName == typeof(KeyFrameAnimationsViewModel).Name).FirstOrDefault();
+            ChangeViewModel(modelToLoad);
+        }
+
+        private void OnNavigateToPathAnimations(object obj)
+        {
+            IViewModel modelToLoad = PageViewModels.Where(vm => vm.ViewModelNavName == typeof(PathAnimationsViewModel).Name).FirstOrDefault();
             ChangeViewModel(modelToLoad);
         }
         #endregion Private Methods

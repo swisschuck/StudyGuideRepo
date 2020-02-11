@@ -40,6 +40,17 @@
             <animationViews:BasicAnimationsView/>
         </DataTemplate>
         
+        <DataTemplate DataType="{x:Type animationViewModels:EasingAnimationsViewModel}">
+            <animationViews:EasingAnimationsView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type animationViewModels:KeyFrameAnimationsViewModel}">
+            <animationViews:KeyFrameAnimationsView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type animationViewModels:PathAnimationsViewModel}">
+            <animationViews:PathAnimationsView/>
+        </DataTemplate>
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -53,6 +64,9 @@
             </MenuItem>
             <MenuItem Header="Animations">
                 <MenuItem Header="Basic Animations" Command="{Binding NavigateToBasicAnimationsCommand}"/>
+                <MenuItem Header="Easing Animations" Command="{Binding NavigateToEasingAnimationsCommand}"/>
+                <MenuItem Header="Key-Frame Animations" Command="{Binding NavigateToKeyFrameAnimationsCommand}"/>
+                <MenuItem Header="Path Animations" Command="{Binding NavigateToPathAnimationsCommand}"/>
             </MenuItem>
         </Menu>
         <ContentControl Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPageViewModel}" Margin="0,0,0,0"/>
